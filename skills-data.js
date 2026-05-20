@@ -50,7 +50,28 @@ window.portfolioSkills = [
     id: "fabrication-testing",
     order: 3,
     featured: true,
-    title: "[Fabrication / Testing]",
+    title: "Stand in Skills 3",
+    description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+  },
+  {
+    id: "fabrication-testing",
+    order: 4,
+    featured: true,
+    title: "Stand in Skills 4",
+    description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+  },
+  {
+    id: "fabrication-testing",
+    order: 5,
+    featured: true,
+    title: "Stand in Skills 5",
+    description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+  },
+  {
+    id: "fabrication-testing",
+    order: 6,
+    featured: true,
+    title: "Stand in Skills 6",
     description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
   }
 ];
