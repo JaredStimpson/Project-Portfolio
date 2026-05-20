@@ -364,11 +364,12 @@ a {
 
 .skill-card {
   flex: 0 1 var(--skills-card-width, 360px);
-  min-width: min(100%, var(--skills-min-card-width, 260px));
+  min-width: 0;
   border-left: 5px solid var(--mustang-gold);
   background: var(--sand);
   padding: 1.5rem;
   border-radius: 0.9rem;
+  overflow-wrap: break-word;
 }
 
 .skill-card h3 {
@@ -543,6 +544,10 @@ a {
 
   .skills-grid {
     max-width: 520px;
+  }
+
+  .skill-card {
+    flex-basis: 100%;
   }
 
   .hero {

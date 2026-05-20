@@ -10,7 +10,8 @@
 // columns: 3
 // columns: 4
 //
-// The rendering code uses this value to set the grid columns and max width.
+// The rendering code uses this value to calculate each card's width. Larger
+// column counts make the cards scale down so they can fit across the row.
 // On narrower screens, the CSS still collapses the grid so it stays readable.
 //
 // How to add a skill:
@@ -26,7 +27,6 @@
 
 window.portfolioSkillsConfig = {
   columns: 3,
-  minCardWidth: 260,
   maxCardWidth: 360,
   gap: 20
 };
