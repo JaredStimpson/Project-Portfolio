@@ -73,5 +73,19 @@ window.portfolioSkills = [
     featured: true,
     title: "Stand in Skills 6",
     description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+  },
+  {
+    id: "fabrication-testing",
+    order: 7,
+    featured: true,
+    title: "Stand in Skills 7",
+    description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+  },
+  {
+    id: "fabrication-testing",
+    order: 8,
+    featured: true,
+    title: "Stand in Skills 8",
+    description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
   }
 ];
