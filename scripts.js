@@ -76,4 +76,40 @@ function renderProjects() {
   grid.replaceChildren(...projects.map(createProjectCard));
 }
 
+function createSkillCard(skill) {
+  const card = document.createElement("div");
+  card.className = "skill-card";
+  card.appendChild(createTextElement("h3", "", skill.title));
+  card.appendChild(createTextElement("p", "", skill.description));
+
+  return card;
+}
+
+function renderSkills() {
+  const grid = document.querySelector("#skills-grid");
+  if (!grid || !window.portfolioSkills) {
+    return;
+  }
+
+  const config = window.portfolioSkillsConfig || {};
+  const skills = window.portfolioSkills
+    .filter((skill) => skill.featured !== false)
+    .sort((first, second) => first.order - second.order);
+
+  const requestedColumns = Number(config.columns) || 3;
+  const columns = Math.max(1, Math.min(requestedColumns, skills.length || 1));
+  const minCardWidth = Number(config.minCardWidth) || 260;
+  const maxCardWidth = Number(config.maxCardWidth) || 360;
+  const gap = Number(config.gap) || 20;
+  const maxGridWidth = columns * maxCardWidth + (columns - 1) * gap;
+
+  grid.style.setProperty("--skills-columns", columns);
+  grid.style.setProperty("--skills-min-card-width", `${minCardWidth}px`);
+  grid.style.setProperty("--skills-card-width", `${maxCardWidth}px`);
+  grid.style.setProperty("--skills-grid-max-width", `${maxGridWidth}px`);
+  grid.style.setProperty("--skills-gap", `${gap}px`);
+  grid.replaceChildren(...skills.map(createSkillCard));
+}
+
 renderProjects();
+renderSkills();
