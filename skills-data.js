@@ -25,7 +25,7 @@
 // Set `featured` to false.
 
 window.portfolioSkillsConfig = {
-  columns: 3,
+  columns: 4,
   minCardWidth: 260,
   maxCardWidth: 360,
   gap: 20
