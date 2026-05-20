@@ -1,9 +1,15 @@
 function resolveProjectPath(path, root) {
-  if (!path || /^(https?:|mailto:|#|\/)/.test(path)) {
-    return path;
+  if (!path) {
+    return "";
   }
 
-  return `${root}${path}`;
+  const normalizedPath = path.replace(/\\/g, "/");
+
+  if (/^(https?:|mailto:|#|\/)/.test(normalizedPath)) {
+    return normalizedPath;
+  }
+
+  return `${root}${normalizedPath}`;
 }
 
 function setProjectText(field, value) {
@@ -18,21 +24,28 @@ function renderProjectMedia(project, root) {
     return;
   }
 
+  const showPlaceholder = () => {
+    const placeholder = document.createElement("span");
+    placeholder.textContent = project.mediaPlaceholder || "[Add project media here]";
+    mediaFrame.className = "project-media-frame project-media-frame--empty";
+    mediaFrame.replaceChildren(placeholder);
+  };
+
   const imagePath = project.detailImage || project.image;
 
   if (imagePath) {
     const image = document.createElement("img");
     image.src = resolveProjectPath(imagePath, root);
     image.alt = project.imageAlt || `${project.title} project media`;
+    image.loading = "lazy";
+    image.decoding = "async";
+    image.onerror = showPlaceholder;
     mediaFrame.className = "project-media-frame";
     mediaFrame.replaceChildren(image);
     return;
   }
 
-  const placeholder = document.createElement("span");
-  placeholder.textContent = project.mediaPlaceholder || "[Add project media here]";
-  mediaFrame.className = "project-media-frame project-media-frame--empty";
-  mediaFrame.replaceChildren(placeholder);
+  showPlaceholder();
 }
 
 function renderProjectPage() {
