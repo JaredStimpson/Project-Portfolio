@@ -25,6 +25,13 @@
 // - `story` is used in the main body of the project page.
 // - `image` is used for both the card and detail page unless `detailImage`
 //   has its own value.
+// - `pageStyle` controls the project page version:
+//   0 or omitted = default overview page
+//   1 = vertical timeline page
+//   2, 3, 4... = reserved for future page styles
+//
+// If you set pageStyle to 1, use a timeline-style index.html page and add that
+// project's timeline events in project-timeline-data.js.
 
 window.portfolioProjects = [
   {
@@ -62,6 +69,7 @@ window.portfolioProjects = [
     tools: ["Tool 1", "Tool 2", "Tool 3"],
     timeline: "[Quarter / Year]",
     outcome: "[Result / Metric / Deliverable]",
+    pageStyle: 1,
     image: "",
     detailImage: "",
     imageAlt: "",
@@ -83,6 +91,7 @@ window.portfolioProjects = [
     tools: ["Tool 1", "Tool 2", "Tool 3"],
     timeline: "[Quarter / Year]",
     outcome: "[Result / Metric / Deliverable]",
+    pageStyle: 1,
     image: "",
     detailImage: "",
     imageAlt: "",

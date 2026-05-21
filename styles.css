@@ -529,6 +529,120 @@ a {
     var(--sand);
 }
 
+.project-media-frame--timeline {
+  min-height: 240px;
+  margin-bottom: 2rem;
+}
+
+.project-timeline-layout {
+  display: grid;
+  grid-template-columns: 310px minmax(0, 1fr);
+  gap: 2rem;
+  align-items: start;
+}
+
+.project-timeline-sidebar {
+  position: sticky;
+  top: 1.5rem;
+}
+
+.project-timeline-main {
+  overflow: hidden;
+}
+
+.project-timeline-intro {
+  max-width: 760px;
+}
+
+.project-timeline {
+  position: relative;
+  display: grid;
+  gap: 1.6rem;
+  list-style: none;
+  margin-top: 0.5rem;
+  padding-left: 0;
+}
+
+.project-timeline::before {
+  content: "";
+  position: absolute;
+  top: 1.25rem;
+  bottom: 1.25rem;
+  left: 1.2rem;
+  width: 2px;
+  background: linear-gradient(var(--mustang-gold), rgba(21, 71, 52, 0.45));
+}
+
+.project-timeline-item {
+  position: relative;
+  display: grid;
+  grid-template-columns: 2.6rem minmax(0, 1fr);
+  gap: 1rem;
+  align-items: start;
+}
+
+.project-timeline-marker {
+  position: relative;
+  z-index: 1;
+  width: 2.4rem;
+  height: 2.4rem;
+  border: 2px solid var(--mustang-gold);
+  border-radius: 50%;
+  background: var(--sand);
+  display: grid;
+  place-items: center;
+}
+
+.project-timeline-marker img {
+  width: 1.35rem;
+  height: 1.35rem;
+  object-fit: contain;
+}
+
+.project-timeline-content {
+  padding-bottom: 1.6rem;
+  border-bottom: 1px solid var(--border);
+}
+
+.project-timeline-item:last-child .project-timeline-content {
+  padding-bottom: 0;
+  border-bottom: 0;
+}
+
+.project-timeline-content .project-timeline-date {
+  color: var(--mustang-gold);
+  font-size: 0.78rem;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  margin-bottom: 0.25rem;
+}
+
+.project-timeline-content h3 {
+  color: var(--poly-green);
+  font-size: clamp(1.25rem, 2vw, 1.6rem);
+  line-height: 1.2;
+  margin-bottom: 0.55rem;
+}
+
+.project-timeline-summary {
+  max-width: 760px;
+}
+
+.project-timeline-details {
+  color: var(--charcoal);
+  display: grid;
+  gap: 0.35rem;
+  margin: -0.5rem 0 0 1.1rem;
+}
+
+.project-timeline-empty {
+  color: var(--muted);
+  font-weight: 700;
+  list-style: none;
+  padding: 1rem 0 0 3.6rem;
+}
+
 @media (max-width: 900px) {
   .navbar,
   .about-section {
@@ -542,8 +656,13 @@ a {
 
   .about-section,
   .project-detail-layout,
+  .project-timeline-layout,
   .project-grid {
     grid-template-columns: 1fr;
+  }
+
+  .project-timeline-sidebar {
+    position: static;
   }
 
   .skills-grid {
