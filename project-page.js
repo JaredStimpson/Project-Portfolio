@@ -49,6 +49,213 @@ function getTimelineIconPath(event) {
   return iconLibrary[iconKey] || event.icon;
 }
 
+function getTimelineImages(event, root) {
+  const configuredImages = Array.isArray(event.images)
+    ? event.images
+    : event.image
+      ? [{ src: event.image, alt: event.imageAlt }]
+      : [];
+
+  return configuredImages
+    .map((image) => {
+      const src = typeof image === "string" ? image : image.src || image.image || "";
+      const alt = typeof image === "string" ? `${event.title} timeline image` : image.alt || image.imageAlt || `${event.title} timeline image`;
+      return src ? { src: resolveProjectPath(src, root), alt } : null;
+    })
+    .filter(Boolean)
+    .slice(0, 4);
+}
+
+let activeTimelineLightboxImages = [];
+let activeTimelineLightboxIndex = 0;
+
+function closeTimelineLightbox() {
+  const lightbox = document.querySelector("[data-timeline-lightbox]");
+  if (!lightbox) {
+    return;
+  }
+
+  lightbox.classList.remove("project-lightbox--open");
+  lightbox.setAttribute("aria-hidden", "true");
+  document.body.classList.remove("project-lightbox-open");
+}
+
+function showTimelineLightboxImage(index) {
+  if (!activeTimelineLightboxImages.length) {
+    return;
+  }
+
+  activeTimelineLightboxIndex = (index + activeTimelineLightboxImages.length) % activeTimelineLightboxImages.length;
+  const imageData = activeTimelineLightboxImages[activeTimelineLightboxIndex];
+  const lightbox = document.querySelector("[data-timeline-lightbox]");
+  const image = lightbox?.querySelector("[data-lightbox-image]");
+  const caption = lightbox?.querySelector("[data-lightbox-caption]");
+  const thumbs = lightbox?.querySelector("[data-lightbox-thumbs]");
+
+  if (!lightbox || !image || !caption || !thumbs) {
+    return;
+  }
+
+  image.src = imageData.src;
+  image.alt = imageData.alt;
+  caption.textContent = imageData.alt;
+  thumbs.replaceChildren(
+    ...activeTimelineLightboxImages.map((item, itemIndex) => {
+      const thumbButton = document.createElement("button");
+      thumbButton.type = "button";
+      thumbButton.className = itemIndex === activeTimelineLightboxIndex
+        ? "project-lightbox-thumb project-lightbox-thumb--active"
+        : "project-lightbox-thumb";
+      thumbButton.setAttribute("aria-label", `Show image ${itemIndex + 1}`);
+      thumbButton.addEventListener("click", () => showTimelineLightboxImage(itemIndex));
+
+      const thumbImage = document.createElement("img");
+      thumbImage.src = item.src;
+      thumbImage.alt = "";
+      thumbImage.loading = "lazy";
+      thumbImage.decoding = "async";
+      thumbButton.appendChild(thumbImage);
+      return thumbButton;
+    })
+  );
+}
+
+function ensureTimelineLightbox() {
+  const existingLightbox = document.querySelector("[data-timeline-lightbox]");
+  if (existingLightbox) {
+    return existingLightbox;
+  }
+
+  const lightbox = document.createElement("div");
+  lightbox.className = "project-lightbox";
+  lightbox.setAttribute("data-timeline-lightbox", "");
+  lightbox.setAttribute("aria-hidden", "true");
+
+  const dialog = document.createElement("div");
+  dialog.className = "project-lightbox-dialog";
+  dialog.setAttribute("role", "dialog");
+  dialog.setAttribute("aria-modal", "true");
+  dialog.setAttribute("aria-label", "Timeline image preview");
+
+  const closeButton = document.createElement("button");
+  closeButton.type = "button";
+  closeButton.className = "project-lightbox-close";
+  closeButton.textContent = "Close";
+  closeButton.addEventListener("click", closeTimelineLightbox);
+
+  const imageFrame = document.createElement("figure");
+  imageFrame.className = "project-lightbox-frame";
+
+  const image = document.createElement("img");
+  image.setAttribute("data-lightbox-image", "");
+  image.alt = "";
+  imageFrame.appendChild(image);
+
+  const caption = document.createElement("figcaption");
+  caption.className = "project-lightbox-caption";
+  caption.setAttribute("data-lightbox-caption", "");
+  imageFrame.appendChild(caption);
+
+  const controls = document.createElement("div");
+  controls.className = "project-lightbox-controls";
+
+  const previousButton = document.createElement("button");
+  previousButton.type = "button";
+  previousButton.textContent = "Previous";
+  previousButton.addEventListener("click", () => showTimelineLightboxImage(activeTimelineLightboxIndex - 1));
+
+  const nextButton = document.createElement("button");
+  nextButton.type = "button";
+  nextButton.textContent = "Next";
+  nextButton.addEventListener("click", () => showTimelineLightboxImage(activeTimelineLightboxIndex + 1));
+
+  controls.appendChild(previousButton);
+  controls.appendChild(nextButton);
+
+  const thumbs = document.createElement("div");
+  thumbs.className = "project-lightbox-thumbs";
+  thumbs.setAttribute("data-lightbox-thumbs", "");
+
+  dialog.appendChild(closeButton);
+  dialog.appendChild(imageFrame);
+  dialog.appendChild(controls);
+  dialog.appendChild(thumbs);
+  lightbox.appendChild(dialog);
+  lightbox.addEventListener("click", (event) => {
+    if (event.target === lightbox) {
+      closeTimelineLightbox();
+    }
+  });
+
+  document.addEventListener("keydown", (event) => {
+    if (!lightbox.classList.contains("project-lightbox--open")) {
+      return;
+    }
+
+    if (event.key === "Escape") {
+      closeTimelineLightbox();
+    }
+
+    if (event.key === "ArrowLeft") {
+      showTimelineLightboxImage(activeTimelineLightboxIndex - 1);
+    }
+
+    if (event.key === "ArrowRight") {
+      showTimelineLightboxImage(activeTimelineLightboxIndex + 1);
+    }
+  });
+
+  document.body.appendChild(lightbox);
+  return lightbox;
+}
+
+function openTimelineLightbox(images, index) {
+  activeTimelineLightboxImages = images;
+  activeTimelineLightboxIndex = index;
+
+  const lightbox = ensureTimelineLightbox();
+  showTimelineLightboxImage(index);
+  lightbox.classList.toggle("project-lightbox--single", images.length === 1);
+  lightbox.classList.add("project-lightbox--open");
+  lightbox.setAttribute("aria-hidden", "false");
+  document.body.classList.add("project-lightbox-open");
+}
+
+function createTimelineGallery(event, root) {
+  const images = getTimelineImages(event, root);
+  if (!images.length) {
+    return null;
+  }
+
+  const figure = document.createElement("figure");
+  figure.className = `project-timeline-gallery project-timeline-gallery--count-${images.length}`;
+
+  images.forEach((imageData, index) => {
+    const preview = document.createElement("button");
+    preview.type = "button";
+    preview.className = "project-timeline-gallery-item";
+    preview.setAttribute("aria-label", `Open timeline image ${index + 1}`);
+    preview.addEventListener("click", () => openTimelineLightbox(images, index));
+
+    const image = document.createElement("img");
+    image.src = imageData.src;
+    image.alt = imageData.alt;
+    image.loading = "lazy";
+    image.decoding = "async";
+    image.onerror = () => {
+      preview.remove();
+      if (!figure.querySelector(".project-timeline-gallery-item")) {
+        figure.remove();
+      }
+    };
+
+    preview.appendChild(image);
+    figure.appendChild(preview);
+  });
+
+  return figure;
+}
+
 function renderProjectMedia(project, root) {
   const mediaFrame = document.querySelector("[data-project-media]");
   if (!mediaFrame) {
@@ -132,6 +339,11 @@ function renderProjectTimeline(project, root) {
     content.appendChild(createTimelineTextElement("p", "project-timeline-date", event.date));
     content.appendChild(createTimelineTextElement("h3", "", event.title));
     content.appendChild(createTimelineTextElement("p", "project-timeline-summary", event.summary));
+
+    const timelineGallery = createTimelineGallery(event, root);
+    if (timelineGallery) {
+      content.appendChild(timelineGallery);
+    }
 
     if (Array.isArray(event.details) && event.details.length) {
       const details = document.createElement("ul");
