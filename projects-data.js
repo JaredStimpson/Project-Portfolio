@@ -41,7 +41,7 @@ window.portfolioProjects = [
     tools: ["Tool 1", "Tool 2", "Tool 3"],
     timeline: "[Quarter / Year]",
     outcome: "[Result / Metric / Deliverable]",
-    image: "projects\project-name-01\media\bottleOpenerFixture.JPG",
+    image: "projects/project-name-01/media/bottleOpenerFixture.JPG",
     detailImage: "",
     imageAlt: "[Project Name 01] preview",
     placeholder: "[Project Image]",

@@ -7,24 +7,47 @@ function createTextElement(tagName, className, text) {
   return element;
 }
 
+function normalizeAssetPath(path) {
+  if (!path) {
+    return "";
+  }
+
+  return path.replace(/\\/g, "/");
+}
+
+function showProjectImagePlaceholder(imageWrap, project) {
+  imageWrap.classList.remove("project-image--photo");
+  imageWrap.classList.add("project-image--placeholder");
+  imageWrap.querySelector("img")?.remove();
+
+  if (!imageWrap.querySelector(".project-image-placeholder")) {
+    const placeholder = createTextElement("span", "project-image-placeholder", project.placeholder || "[Project Image]");
+    imageWrap.prepend(placeholder);
+  }
+}
+
 function createProjectCard(project) {
   const card = document.createElement("a");
   card.className = "project-card project-preview";
   card.href = project.url;
   card.setAttribute("aria-label", `Open ${project.title} project page`);
 
+  const imagePath = normalizeAssetPath(project.image);
   const imageWrap = document.createElement("div");
-  imageWrap.className = project.image
+  imageWrap.className = imagePath
     ? "project-image project-image--photo"
     : "project-image project-image--placeholder";
 
-  if (project.image) {
+  if (imagePath) {
     const image = document.createElement("img");
-    image.src = project.image;
+    image.src = imagePath;
     image.alt = project.imageAlt || `${project.title} preview`;
+    image.loading = "lazy";
+    image.decoding = "async";
+    image.onerror = () => showProjectImagePlaceholder(imageWrap, project);
     imageWrap.appendChild(image);
   } else {
-    imageWrap.appendChild(createTextElement("span", "", project.placeholder || "[Project Image]"));
+    imageWrap.appendChild(createTextElement("span", "project-image-placeholder", project.placeholder || "[Project Image]"));
   }
 
   const overlay = document.createElement("div");
