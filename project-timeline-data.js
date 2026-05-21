@@ -14,7 +14,31 @@
 // How to hide an event without deleting it:
 // Set `featured` to false.
 //
-// Icon paths start from the repo root, just like project images.
+// How timeline icons work:
+// - Each event's `icon` can be a number from window.projectTimelineIcons.
+// - Example: icon: 0 uses timelineStartIcon.svg.
+// - To change one card's icon, change only that event's icon number.
+// - To add a new reusable icon, put the SVG/image file in images/Icons and add
+//   the next number to window.projectTimelineIcons below.
+// - You can also use a direct repo-root file path for one special card, such as:
+//   icon: "images/Icons/customIcon.svg"
+//
+// How to make another project use the timeline page:
+// 1. In projects-data.js, set that project to pageStyle: 1.
+// 2. Copy templates/timeline-project into projects/your-project-id.
+// 3. In the copied index.html, change data-project-id to match your project id.
+// 4. Keep this script line in that index.html:
+//    <script src="../../project-timeline-data.js"></script>
+// 5. In window.projectTimelineEvents below, copy the "project-name-02" block.
+// 6. Rename the copied key to your project id, such as "project-name-08".
+// 7. Edit, add, hide, and reorder that project's timeline events.
+
+window.projectTimelineIcons = {
+  0: "images/Icons/timelineStartIcon.svg",
+  1: "images/Icons/timelineBuildIcon.svg",
+  2: "images/Icons/timelineTestIcon.svg",
+  3: "images/Icons/timelineResultIcon.svg"
+};
 
 window.projectTimelineEvents = {
   "project-name-02": [
@@ -30,7 +54,7 @@ window.projectTimelineEvents = {
         "[Key requirement or design target]",
         "[Early assumption, risk, or constraint]"
       ],
-      icon: "images/Icons/timelineStartIcon.svg"
+      icon: 0
     },
     {
       id: "design-build",
@@ -44,7 +68,7 @@ window.projectTimelineEvents = {
         "[Tool, method, or process used]",
         "[Important design change or decision]"
       ],
-      icon: "images/Icons/timelineBuildIcon.svg"
+      icon: 1
     },
     {
       id: "test-iterate",
@@ -58,7 +82,7 @@ window.projectTimelineEvents = {
         "[What you measured or observed]",
         "[What changed because of the test]"
       ],
-      icon: "images/Icons/timelineTestIcon.svg"
+      icon: 2
     },
     {
       id: "final-outcome",
@@ -72,7 +96,7 @@ window.projectTimelineEvents = {
         "[Final metric, artifact, or status]",
         "[What you would improve next]"
       ],
-      icon: "images/Icons/timelineResultIcon.svg"
+      icon: 3
     }
   ]
 };

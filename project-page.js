@@ -39,6 +39,16 @@ function createTimelineTextElement(tagName, className, text) {
   return element;
 }
 
+function getTimelineIconPath(event) {
+  if (event.icon === undefined || event.icon === null || event.icon === "") {
+    return "";
+  }
+
+  const iconLibrary = window.projectTimelineIcons || {};
+  const iconKey = String(event.icon);
+  return iconLibrary[iconKey] || event.icon;
+}
+
 function renderProjectMedia(project, root) {
   const mediaFrame = document.querySelector("[data-project-media]");
   if (!mediaFrame) {
@@ -106,9 +116,10 @@ function renderProjectTimeline(project, root) {
     marker.className = "project-timeline-marker";
     marker.setAttribute("aria-hidden", "true");
 
-    if (event.icon) {
+    const iconPath = getTimelineIconPath(event);
+    if (iconPath) {
       const icon = document.createElement("img");
-      icon.src = resolveProjectPath(event.icon, root);
+      icon.src = resolveProjectPath(iconPath, root);
       icon.alt = "";
       icon.loading = "lazy";
       icon.decoding = "async";
