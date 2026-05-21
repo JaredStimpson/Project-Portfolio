@@ -91,6 +91,7 @@ window.portfolioProjects = [
     tools: ["Tool 1", "Tool 2", "Tool 3"],
     timeline: "[Quarter / Year]",
     outcome: "[Result / Metric / Deliverable]",
+    pageStyle: 1,
     image: "",
     detailImage: "",
     imageAlt: "",
