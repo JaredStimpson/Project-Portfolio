@@ -58,7 +58,7 @@ window.portfolioProjects = [
   },
   {
     id: "cmm-touch-probe-program",
-    order: 2,
+    order: 3,
     featured: true,
     title: "Zeiss GD&T Inspection",
     tag: "Manufacturing / Metrology / Course Support",
@@ -79,8 +79,30 @@ window.portfolioProjects = [
     url: "projects/cmm-touch-probe-program/index.html"
   },
   {
+    id: "edm-bottleopener-fixture",
+    order: 2,
+    featured: true,
+    title: "EDM Bottle Opener Fixture",
+    tag: "Manufacturing / WEDM / Fixture Design",
+    description:
+      "Built and iterated a Wire EDM fixture setup for machining bottle opener features with more repeatable workholding.",
+    story:
+      "This project is filled from the available folder media, which shows a bottle opener fixture, V1/V2 fixture iterations, Wire EDM setup photos, and before/after bottle opener results. The project appears to center on making the bottle opener easier to locate and machine repeatably in the Wire EDM by improving the fixture and setup process. I treated the image sequence as a workholding and process-planning project: define how the part should be held, iterate the fixture, set up the EDM operation, and compare the machined result. Exact course context, tolerances, material, and final inspection data are still TBD.",
+    role: "Fixture design, WEDM setup, process planning, setup iteration, visual validation",
+    tools: ["Wire EDM", "fixture design", "workholding", "setup planning", "CNC machining (TBD)", "visual inspection"],
+    timeline: "TBD",
+    outcome: "Produced a functional EDM fixture setup and bottle opener result; exact tolerance and inspection outcomes TBD.",
+    pageStyle: 1,
+    image: "projects/edm-bottleopener-fixture/media/bottleOpenerFixture.JPG",
+    detailImage: "projects/edm-bottleopener-fixture/media/edmFixtureBottleopener.JPG",
+    imageAlt: "Bottle opener held on a machined fixture after Wire EDM setup work",
+    placeholder: "[Add EDM bottle opener fixture hero image]",
+    mediaPlaceholder: "[Add EDM bottle opener fixture detail media]",
+    url: "projects/edm-bottleopener-fixture/index.html"
+  },
+  {
     id: "lost-foam-hammer",
-    order: 3,
+    order: 4,
     featured: true,
     title: "Cal Poly Hammer Tooling",
     tag: "Manufacturing / CAM / Tooling",
@@ -102,7 +124,7 @@ window.portfolioProjects = [
   },
   {
     id: "wax-seal-stamps",
-    order: 4,
+    order: 5,
     featured: true,
     title: "CNC Wax Seal Stamp",
     tag: "Manufacturing / CNC / Fixture Design",
@@ -123,8 +145,52 @@ window.portfolioProjects = [
     url: "projects/wax-seal-stamps/index.html"
   },
   {
+    id: "mill-and-edm-setup",
+    order: 6,
+    featured: true,
+    title: "Mill and EDM Setup Fixture",
+    tag: "Manufacturing / Milling / EDM Setup",
+    description:
+      "Prepared a machined setup part and fixture plate installation for a milling-to-EDM workflow.",
+    story:
+      "This entry is inferred from the existing media, which shows an EDM setup part from multiple angles and a fixture plate installed in the machine. I treated it as a setup and workholding project that connects conventional machining preparation with EDM setup. The core story is process control: install the fixture plate, prepare or verify the setup part, and make the workholding repeatable enough for the next machining operation. Exact part purpose, operation sequence, datum scheme, and inspection results are still TBD.",
+    role: "Machining setup, fixture plate installation, EDM preparation, workholding, process documentation",
+    tools: ["Milling", "Wire EDM or sinker EDM (TBD)", "fixture plate", "workholding", "setup planning", "inspection (TBD)"],
+    timeline: "TBD",
+    outcome: "Fixture plate and setup part documented for an EDM workflow; final operation results TBD.",
+    pageStyle: 1,
+    image: "projects/mill-and-edm-setup/media/fixturePlateInstall.jpg",
+    detailImage: "projects/mill-and-edm-setup/media/edmSetupPart.jpg",
+    imageAlt: "Fixture plate installed for a mill and EDM setup workflow",
+    placeholder: "[Add mill and EDM setup hero image]",
+    mediaPlaceholder: "[Add mill and EDM setup detail media]",
+    url: "projects/mill-and-edm-setup/index.html"
+  },
+  {
+    id: "injection-molded-screwdriver",
+    order: 7,
+    featured: true,
+    title: "Injection-Molded Screwdriver",
+    tag: "Manufacturing / Injection Molding / Process Analysis",
+    description:
+      "Documented an injection-molded screwdriver part and gate/runner detail as a manufacturing process analysis project.",
+    story:
+      "This project is filled from the available media, which currently shows a close-up of the molded screwdriver gate and runner area. I treated it as an injection molding process entry focused on understanding how the part, gate, and runner affect molding quality, trimming, and final part function. The current page gives the project a clean structure so more mold photos, process settings, defects, or final part images can be added later. Exact mold design details, material, cycle parameters, and measured results are still TBD.",
+    role: "Injection molding process review, part documentation, gate/runner analysis, manufacturing coursework",
+    tools: ["Injection molding", "mold tooling", "gate and runner analysis", "part inspection", "process documentation"],
+    timeline: "TBD",
+    outcome: "Gate and runner detail documented; full molding process results and final part notes TBD.",
+    pageStyle: 1,
+    image: "projects/injection-molded-screwdriver/media/injectionScrewdriverGateRunnerCloseup.jpg",
+    detailImage: "projects/injection-molded-screwdriver/media/injectionScrewdriverGateRunnerCloseup.jpg",
+    imageAlt: "Close-up of the gate and runner area on an injection-molded screwdriver",
+    placeholder: "[Add injection-molded screwdriver hero image]",
+    mediaPlaceholder: "[Add injection-molded screwdriver detail media]",
+    url: "projects/injection-molded-screwdriver/index.html"
+  },
+  {
     id: "rail-saw-jig",
-    order: 5,
+    order: 8,
     featured: true,
     title: "Acrylic Sheet Track Saw Jig",
     tag: "Personal Build / Fixture Design / Rapid Prototyping",
@@ -146,7 +212,7 @@ window.portfolioProjects = [
   },
   {
     id: "cnc-router-trophies",
-    order: 6,
+    order: 9,
     featured: true,
     title: "CNC Router Trophies",
     tag: "Manufacturing / CNC Router / Production",
@@ -168,7 +234,7 @@ window.portfolioProjects = [
   },
   {
     id: "bridge-less-running-camp-stencil",
-    order: 7,
+    order: 10,
     featured: true,
     title: "Bridge-Less Running Camp Stencil",
     tag: "Personal Build / DFM / Laser Cutting",
@@ -190,7 +256,7 @@ window.portfolioProjects = [
   },
   {
     id: "personal-cuttingboard-project",
-    order: 8,
+    order: 11,
     featured: true,
     title: "Custom Cutting Board and Chopsticks",
     tag: "Personal Build / Laser Cutting / CAD",
@@ -212,7 +278,7 @@ window.portfolioProjects = [
   },
   {
     id: "3d-printed-doughnut-cutter",
-    order: 9,
+    order: 12,
     featured: true,
     title: "3D-Printed Doughnut Cutter",
     tag: "Personal Build / CAD / 3D Printing",
@@ -234,7 +300,7 @@ window.portfolioProjects = [
   },
   {
     id: "manufacturing-class-project-highlights",
-    order: 10,
+    order: 13,
     featured: false,
     title: "Manufacturing Class Project Highlights",
     tag: "Course / Manufacturing Processes",
