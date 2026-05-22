@@ -4,7 +4,8 @@
 // allow comments. Keep each project id matched to the `id` in projects-data.js.
 //
 // How to reorder timeline events:
-// Change the `order` number. Lower numbers show first.
+// Change the `order` number. Lower numbers are earlier in time, so they render
+// lower on the page. Higher numbers are newer and render closer to the top.
 //
 // How to add an event:
 // 1. Copy one full event object, from `{` through `}`.
