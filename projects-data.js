@@ -35,25 +35,26 @@
 
 window.portfolioProjects = [
   {
-    id: "project-name-01",
+    id: "edm-baseplate-fixture",
     order: 1,
     featured: true,
-    title: "[Project Name 01]",
-    tag: "[Course / Lab / Team]",
+    title: "EDM Baseplate Fixture",
+    tag: "Research",
     description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin volutpat magna at sapien facilisis, sed pulvinar erat consequat.",
+      "Designed a fixture for repeatable Wire EDM removal of metal 3D prints from build plates, improving setup reliability for additive manufacturing research.",
     story:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Replace this section with a clear explanation of the engineering challenge, design decisions, testing process, and final outcome.",
-    role: "[Your Role]",
-    tools: ["Tool 1", "Tool 2", "Tool 3"],
-    timeline: "[Quarter / Year]",
-    outcome: "[Result / Metric / Deliverable]",
-    image: "projects/project-name-01/media/bottleOpenerFixture.JPG",
-    detailImage: "",
-    imageAlt: "[Project Name 01] preview",
+      "As part of additive manufacturing research at the Cal Poly AFRL, printed metal parts need reliable post-processing after SLM or DED builds. One common step is removing parts from the baseplate, where Wire EDM can part off the workpiece accurately. I designed and planned a dedicated fixture so baseplate removal setups can be more repeatable, easier to qualify, and more reliable across future prints.",
+    role: "Design, Planning, Sourcing, Manufacturing, Testing, Analysis",
+    tools: ["SolidWorks", "Mastercam", "Waterjet", "WEDM", "Welding", "Tapping"],
+    timeline: "March 2026 - Present",
+    outcome: "Currently completing final post-processing before the first use test.",
+    pageStyle: 1,
+    image: "projects/edm-baseplate-fixture/media/baseplateWaterjet.jpg",
+    detailImage: "projects/edm-baseplate-fixture/media/baseplateFixtureIso.JPG",
+    imageAlt: "Fixture to hold additive print baseplates for EDM part-off",
     placeholder: "[Project Image]",
     mediaPlaceholder: "[Add project media here]",
-    url: "projects/project-name-01/index.html"
+    url: "projects/edm-baseplate-fixture/index.html"
   },
   {
     id: "project-name-02",
@@ -75,7 +76,7 @@ window.portfolioProjects = [
     imageAlt: "",
     placeholder: "[Project Image]",
     mediaPlaceholder: "[Add project media here]",
-    url: "projects/project-name-02/index.html"
+    url: "projects/lost-foam-hammer/index.html"
   },
   {
     id: "project-name-03",
@@ -97,7 +98,7 @@ window.portfolioProjects = [
     imageAlt: "",
     placeholder: "[Project Image]",
     mediaPlaceholder: "[Add project media here]",
-    url: "projects/project-name-03/index.html"
+    url: "projects/edm-bottleopener-fixture/index.html"
   },
   {
     id: "project-name-04",
@@ -118,7 +119,7 @@ window.portfolioProjects = [
     imageAlt: "",
     placeholder: "[Project Image]",
     mediaPlaceholder: "[Add project media here]",
-    url: "projects/project-name-04/index.html"
+    url: "projects/cmm-touch-probe-program/index.html"
   },
   {
     id: "project-name-05",
@@ -139,7 +140,7 @@ window.portfolioProjects = [
     imageAlt: "",
     placeholder: "[Project Image]",
     mediaPlaceholder: "[Add project media here]",
-    url: "projects/project-name-05/index.html"
+    url: "projects/wax-seal-stamps/index.html"
   },
   {
     id: "project-name-06",
@@ -160,7 +161,7 @@ window.portfolioProjects = [
     imageAlt: "",
     placeholder: "[Project Image]",
     mediaPlaceholder: "[Add project media here]",
-    url: "projects/project-name-06/index.html"
+    url: "projects/injection-molded-screwdriver/index.html"
   },
   {
     id: "project-name-07",
@@ -181,6 +182,6 @@ window.portfolioProjects = [
     imageAlt: "",
     placeholder: "[Project Image]",
     mediaPlaceholder: "[Add project media here]",
-    url: "projects/project-name-07/index.html"
+    url: "projects/mill-and-edm-setup/index.html"
   }
 ];
