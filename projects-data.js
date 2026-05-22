@@ -25,6 +25,10 @@
 // - `story` is used in the main body of the project page.
 // - `image` is used for both the card and detail page unless `detailImage`
 //   has its own value.
+// - Keep `image` and `detailImage` pointed at the original media file. The site
+//   automatically uses generated optimized variants when image-variants.js has
+//   a match. After adding media, run:
+//   python tools/generate-image-variants.py
 // - `pageStyle` controls the project page version:
 //   0 or omitted = default overview page
 //   1 = vertical timeline page

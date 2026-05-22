@@ -40,11 +40,24 @@ function createProjectCard(project) {
 
   if (imagePath) {
     const image = document.createElement("img");
-    image.src = imagePath;
-    image.alt = project.imageAlt || `${project.title} preview`;
-    image.loading = "lazy";
-    image.decoding = "async";
-    image.onerror = () => showProjectImagePlaceholder(imageWrap, project);
+    if (window.setPortfolioImageAttributes) {
+      window.setPortfolioImageAttributes(image, imagePath, {
+        alt: project.imageAlt || `${project.title} preview`,
+        role: "preview",
+        sizes: "(max-width: 760px) 92vw, (max-width: 1180px) 44vw, 360px"
+      });
+    } else {
+      image.src = imagePath;
+      image.alt = project.imageAlt || `${project.title} preview`;
+      image.loading = "lazy";
+      image.decoding = "async";
+    }
+    image.onerror = () => {
+      if (window.fallbackPortfolioImageToOriginal?.(image)) {
+        return;
+      }
+      showProjectImagePlaceholder(imageWrap, project);
+    };
     imageWrap.appendChild(image);
   } else {
     imageWrap.appendChild(createTextElement("span", "project-image-placeholder", project.placeholder || "[Project Image]"));

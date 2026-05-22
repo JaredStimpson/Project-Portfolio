@@ -34,6 +34,10 @@
 // - Clicking a preview expands it on the same page with a dark background.
 // - Image paths start from the repo root.
 // - Use `alt` to describe each image for accessibility.
+// - Keep `src` pointed at the original media file. The site automatically uses
+//   generated optimized variants when image-variants.js has a match. After
+//   adding media, run:
+//   python tools/generate-image-variants.py
 //
 // How to make another project use the timeline page:
 // 1. In projects-data.js, set that project to pageStyle: 1.
