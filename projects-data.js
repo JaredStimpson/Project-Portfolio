@@ -5,8 +5,7 @@
 // plus each project page will rebuild automatically.
 //
 // How to reorder projects:
-// Change the `order` number. Lower numbers show first. For example, Project 04
-// is order 2 below, so it appears second.
+// Change the `order` number. Lower numbers show first.
 //
 // How to add a new project:
 // 1. Copy one full project object, including the opening `{` and closing `}`.
@@ -14,7 +13,8 @@
 // 3. Change `id`, `order`, `title`, `url`, and the other text fields.
 // 4. Create the matching project folder/page, such as:
 //    projects/project-name-06/index.html
-// 5. If you have no image yet, leave `image` as an empty string.
+// 5. If you have no image yet, leave `image` as an empty string and make the
+//    `placeholder` text specific enough to identify the missing media.
 // 6. In that new page's <body>, set data-project-id to the same `id`.
 //
 // How to temporarily hide a project:
@@ -52,136 +52,206 @@ window.portfolioProjects = [
     image: "projects/edm-baseplate-fixture/media/baseplateWaterjet.jpg",
     detailImage: "projects/edm-baseplate-fixture/media/baseplateFixtureIso.JPG",
     imageAlt: "Fixture to hold additive print baseplates for EDM part-off",
-    placeholder: "[Project Image]",
-    mediaPlaceholder: "[Add project media here]",
+    placeholder: "[Add EDM baseplate fixture hero image]",
+    mediaPlaceholder: "[Add EDM baseplate fixture detail media]",
     url: "projects/edm-baseplate-fixture/index.html"
   },
   {
-    id: "project-name-02",
+    id: "cmm-touch-probe-program",
     order: 2,
     featured: true,
-    title: "[Project Name 02]",
-    tag: "[Course / Lab / Team]",
+    title: "Zeiss GD&T Inspection",
+    tag: "Manufacturing / Metrology / Course Support",
     description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Replace this with a short project summary.",
+      "Programmed a Zeiss Duramax CMM inspection routine and supporting SOP for first article inspection of a CNC-machined class part.",
     story:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Replace this section with a clear explanation of the engineering challenge, design decisions, testing process, and final outcome.",
-    role: "[Your Role]",
-    tools: ["Tool 1", "Tool 2", "Tool 3"],
-    timeline: "[Quarter / Year]",
-    outcome: "[Result / Metric / Deliverable]",
-    pageStyle: 1,
-    image: "",
-    detailImage: "",
-    imageAlt: "",
-    placeholder: "[Project Image]",
-    mediaPlaceholder: "[Add project media here]",
-    url: "projects/lost-foam-hammer/index.html"
-  },
-  {
-    id: "project-name-03",
-    order: 3,
-    featured: true,
-    title: "[Project Name 03]",
-    tag: "[Internship / Research / Competition]",
-    description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec luctus sapien vitae sem pretium, nec tincidunt eros suscipit.",
-    story:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Replace this section with a clear explanation of the engineering challenge, design decisions, testing process, and final outcome.",
-    role: "[Your Role]",
-    tools: ["Tool 1", "Tool 2", "Tool 3"],
-    timeline: "[Quarter / Year]",
-    outcome: "[Result / Metric / Deliverable]",
-    pageStyle: 1,
-    image: "",
-    detailImage: "",
-    imageAlt: "",
-    placeholder: "[Project Image]",
-    mediaPlaceholder: "[Add project media here]",
-    url: "projects/edm-bottleopener-fixture/index.html"
-  },
-  {
-    id: "project-name-04",
-    order: 4,
-    featured: true,
-    title: "[Project Name 04]",
-    tag: "[Capstone / Personal Build]",
-    description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur vitae ligula vel ipsum bibendum tincidunt non at erat.",
-    story:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Replace this section with a clear explanation of the engineering challenge, design decisions, testing process, and final outcome.",
-    role: "[Your Role]",
-    tools: ["Tool 1", "Tool 2", "Tool 3"],
-    timeline: "[Quarter / Year]",
-    outcome: "[Result / Metric / Deliverable]",
-    image: "",
-    detailImage: "",
-    imageAlt: "",
-    placeholder: "[Project Image]",
-    mediaPlaceholder: "[Add project media here]",
+      "I programmed the Zeiss Duramax CMM for use in Cal Poly IME 335 CNC 1 first article inspection. The inspection needed to verify GD&T requirements on a machined part while handling non-traditional geometry, including a complex contoured ramp. The work focused on repeatable datuming, reliable probing strategy, and clear operator communication. I authored a standard operating procedure that explained safe machine operation, part setup, datum simulation, and common troubleshooting steps for student users.",
+    role: "CMM programming, GD&T interpretation, inspection planning, SOP writing, operator safety documentation",
+    tools: ["Zeiss Duramax CMM", "CMM programming", "GD&T", "first article inspection", "datum simulation", "probing strategy", "SOP documentation"],
+    timeline: "Fall 2025",
+    outcome: "Inspection program and SOP completed for IME 335 student use; validation details TBD.",
+    pageStyle: 0,
+    image: "projects/cmm-touch-probe-program/media/cmmSetupProbe.jpg",
+    detailImage: "projects/cmm-touch-probe-program/media/cmmSetupProgram.jpg",
+    imageAlt: "Part fixtured under the probe on a Zeiss Duramax CMM for first article inspection",
+    placeholder: "[Add Zeiss CMM inspection hero image]",
+    mediaPlaceholder: "[Add Zeiss CMM software or setup media]",
     url: "projects/cmm-touch-probe-program/index.html"
   },
   {
-    id: "project-name-05",
-    order: 5,
+    id: "lost-foam-hammer",
+    order: 3,
     featured: true,
-    title: "[Project Name 05]",
-    tag: "[Capstone / Personal Build]",
+    title: "Cal Poly Hammer Tooling",
+    tag: "Manufacturing / CAM / Tooling",
     description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Replace this with a short project summary.",
+      "Developed CAM toolpaths and process planning for a hammer mold used in a Cal Poly net shape manufacturing class.",
     story:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Replace this section with a clear explanation of the engineering challenge, design decisions, testing process, and final outcome.",
-    role: "[Your Role]",
-    tools: ["Tool 1", "Tool 2", "Tool 3"],
-    timeline: "[Quarter / Year]",
-    outcome: "[Result / Metric / Deliverable]",
-    image: "",
-    detailImage: "",
-    imageAlt: "",
-    placeholder: "[Project Image]",
-    mediaPlaceholder: "[Add project media here]",
+      "I am programming 3D CNC mill toolpaths for a hammer mold that will be used by Cal Poly students in net shape manufacturing coursework. The part needs mold-quality surfaces while staying within the machine and controller constraints available for the project. The main engineering challenge is optimizing the toolpaths and G-code so the program can run on a HAAS TM-2 controller with limited memory while also reducing total cycle time. The CAM is at the final stage before the first prototype run.",
+    role: "CAM programming, process planning, toolpath optimization, fixturing and tooling selection, DFM review",
+    tools: ["Mastercam or Fusion 360 CAM (TBD)", "HAAS TM-2", "3D toolpaths", "G-code optimization", "CNC milling", "mold tooling"],
+    timeline: "2025 to Present",
+    outcome: "CAM nearing final completion for first prototype; first machined prototype and inspection results TBD.",
+    pageStyle: 1,
+    image: "projects/lost-foam-hammer/media/hammerMoldMacroTopView.jpg",
+    detailImage: "projects/lost-foam-hammer/media/hammerMoldMatlRemoval.jpg",
+    imageAlt: "Machined hammer mold tooling for net shape manufacturing coursework",
+    placeholder: "[Add hammer tooling CAM or prototype hero image]",
+    mediaPlaceholder: "[Add hammer tooling detail media]",
+    url: "projects/lost-foam-hammer/index.html"
+  },
+  {
+    id: "wax-seal-stamps",
+    order: 4,
+    featured: true,
+    title: "CNC Wax Seal Stamp",
+    tag: "Manufacturing / CNC / Fixture Design",
+    description:
+      "Machined high-fidelity wax seal stamps using custom fixturing, CNC toolpaths, and repeatable small-part workholding.",
+    story:
+      "I designed and machined a wax seal stamp intended to leave a custom emblem with enough fidelity to remain legible in wax. The part required small features, complex toolpaths, and a material with good heat conductivity, which made CNC-machined aluminum a strong fit. A major focus was repeatable workholding for small parts. I used custom fixturing and soft-jaw style workholding so the stamp heads could be machined reliably while still fitting the handle assembly and standard fasteners. Rapid prototyping helped move the project to completion before the deadline.",
+    role: "Design, fixture design, CNC machining, CAM/toolpath optimization, rapid prototyping, assembly fit verification",
+    tools: ["CNC mill", "aluminum machining", "soft jaws", "fixture design", "Fusion 360 or Mastercam (TBD)", "standard fasteners", "rapid prototyping"],
+    timeline: "2025",
+    outcome: "Completed functional wax seal stamp with replaceable stamp heads; quantitative fidelity or tolerance results TBD.",
+    pageStyle: 1,
+    image: "projects/wax-seal-stamps/media/waxStampV3.jpg",
+    detailImage: "projects/wax-seal-stamps/media/datumDanStamp.jpg",
+    imageAlt: "CNC-machined wax seal stamp heads and stamp assembly",
+    placeholder: "[Add CNC wax seal stamp hero image]",
+    mediaPlaceholder: "[Add wax seal stamp detail media]",
     url: "projects/wax-seal-stamps/index.html"
   },
   {
-    id: "project-name-06",
-    order: 6,
+    id: "rail-saw-jig",
+    order: 5,
     featured: true,
-    title: "[Project Name 06]",
-    tag: "[Capstone / Personal Build]",
+    title: "Acrylic Sheet Track Saw Jig",
+    tag: "Personal Build / Fixture Design / Rapid Prototyping",
     description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Replace this with a short project summary.",
+      "Designed a 3D-printed adjustable stop that reduced repeated measurement steps when cutting acrylic sheets to fixed dimensions.",
     story:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Replace this section with a clear explanation of the engineering challenge, design decisions, testing process, and final outcome.",
-    role: "[Your Role]",
-    tools: ["Tool 1", "Tool 2", "Tool 3"],
-    timeline: "[Quarter / Year]",
-    outcome: "[Result / Metric / Deliverable]",
+      "I designed an adjustable stop for a track saw to speed up repeated acrylic sheet cuts. Instead of remeasuring before each cut, the jig set a repeatable stop position for the required dimensions. The design needed to adjust between 4 and 6 inches while resisting accidental movement. I used a wing nut and embedded nut to apply clamping tension, then iterated through rapid prototypes to solve printer-related adhesion issues without deforming the thin-walled PLA during nut insertion.",
+    role: "CAD design, rapid prototyping, embedded hardware design, fixture iteration, functional testing",
+    tools: ["3D printing", "PLA", "embedded nuts", "wing nut", "track saw", "CAD (TBD)", "heat gun", "standard hardware"],
+    timeline: "TBD",
+    outcome: "Functional adjustable stop created for repeated acrylic sheet cuts; cycle-time improvement not quantified.",
+    pageStyle: 1,
     image: "",
     detailImage: "",
-    imageAlt: "",
-    placeholder: "[Project Image]",
-    mediaPlaceholder: "[Add project media here]",
-    url: "projects/injection-molded-screwdriver/index.html"
+    imageAlt: "Adjustable 3D-printed stop fixture mounted to a track saw guide",
+    placeholder: "[Add acrylic track saw jig hero image]",
+    mediaPlaceholder: "[Add acrylic track saw jig detail media]",
+    url: "projects/rail-saw-jig/index.html"
   },
   {
-    id: "project-name-07",
-    order: 7,
+    id: "cnc-router-trophies",
+    order: 6,
     featured: true,
-    title: "[Project Name 07]",
-    tag: "[Capstone / Personal Build]",
+    title: "CNC Router Trophies",
+    tag: "Manufacturing / CNC Router / Production",
     description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Replace this with a short project summary.",
+      "Operated a CNC router production workflow for custom engraved acrylic and hardwood track-and-field awards.",
     story:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Replace this section with a clear explanation of the engineering challenge, design decisions, testing process, and final outcome.",
-    role: "[Your Role]",
-    tools: ["Tool 1", "Tool 2", "Tool 3"],
-    timeline: "[Quarter / Year]",
-    outcome: "[Result / Metric / Deliverable]",
+      "I oversaw CNC router production for custom engraved track-and-field trophies and award blocks in acrylic and hardwoods. The work included creating toolpaths from source files, homing and fixturing stock, supervising machine runs, and keeping turnover time low during high-volume award production. Material selection affected engraving quality. Medium density fiberboard could not hold fine text details reliably, while poplar produced better detail. Acrylic award blocks also required fast setup turnover because roughly 300 blocks were needed within one month.",
+    role: "CNC router operation, toolpath preparation, fixturing, homing, machine supervision, process improvement",
+    tools: ["CNC router", "G-code", "probing", "acrylic", "hardwood", "poplar", "engraving workflows", "work coordinate setup"],
+    timeline: "2018 to 2023",
+    outcome: "Produced custom awards at scale, including high-volume acrylic award block runs; exact total quantity from resume: over 1000 custom engraved trophies.",
+    pageStyle: 0,
     image: "",
     detailImage: "",
-    imageAlt: "",
-    placeholder: "[Project Image]",
-    mediaPlaceholder: "[Add project media here]",
-    url: "projects/mill-and-edm-setup/index.html"
+    imageAlt: "Custom engraved acrylic award block",
+    placeholder: "[Add CNC router trophy hero image]",
+    mediaPlaceholder: "[Add CNC router trophy detail media]",
+    url: "projects/cnc-router-trophies/index.html"
+  },
+  {
+    id: "bridge-less-running-camp-stencil",
+    order: 7,
+    featured: true,
+    title: "Bridge-Less Running Camp Stencil",
+    tag: "Personal Build / DFM / Laser Cutting",
+    description:
+      "Designed a spray-paint stencil that preserved internal letter features without visible 2D bridges in the final shirt graphic.",
+    story:
+      "I created a stencil for ink-sprayed running camp shirts using a custom logo that needed enclosed letter features, such as the centers of a and o, to stay in place without visible flat bridges. The project had to be completed before camp started, so prototyping and finishing were constrained by a firm deadline. The solution used three-dimensional bridge features that held the internal geometry in place while still allowing spray coverage around the bridges. The design balanced manufacturability, logo appearance, and schedule risk.",
+    role: "Stencil design, DFM, rapid iteration, schedule-driven prototyping, Fusion 360 modeling",
+    tools: ["Fusion 360", "stencil fabrication process TBD", "spray ink/paint", "DFM", "prototyping"],
+    timeline: "TBD",
+    outcome: "Completed stencil design before camp; final shirt output details TBD.",
+    pageStyle: 1,
+    image: "",
+    detailImage: "",
+    imageAlt: "Stencil design with raised bridge features holding internal letter geometry in place",
+    placeholder: "[Add bridge-less stencil hero image]",
+    mediaPlaceholder: "[Add bridge-less stencil detail media]",
+    url: "projects/bridge-less-running-camp-stencil/index.html"
+  },
+  {
+    id: "personal-cuttingboard-project",
+    order: 8,
+    featured: true,
+    title: "Custom Cutting Board and Chopsticks",
+    tag: "Personal Build / Laser Cutting / CAD",
+    description:
+      "Laser-engraved a cutting board and chopstick set using USGS topographic data, CAD artwork, and material-specific laser settings.",
+    story:
+      "I customized a cutting board and chopstick set with a topographic map of San Luis Obispo, a Cal Poly insignia, and a SolidWorks engineering drawing of a steak with section view and bill of materials. The project required converting geographic and CAD data into laser-ready vector and raster operations. The main challenge was tuning laser power and speed for different natural materials. Bamboo is non-homogeneous because it is compressed from many fibers, so engraving depth varied unless settings were adjusted. The hardwood cutting board also required test cuts on similar material to choose between line engraving and rasterization based on detail size.",
+    role: "Laser engraving, vector data preparation, CAD drawing, material testing, feed/power selection",
+    tools: ["Laser cutter", "USGS vector/topographic data", "SolidWorks", "bamboo", "acacia/hardwood cutting board", "line engraving", "raster engraving"],
+    timeline: "TBD",
+    outcome: "Completed customized cutting board and chopstick set; final settings and material test data TBD.",
+    pageStyle: 0,
+    image: "",
+    detailImage: "",
+    imageAlt: "Laser-engraved cutting board with topographic data and Cal Poly insignia",
+    placeholder: "[Add cutting board and chopsticks hero image]",
+    mediaPlaceholder: "[Add cutting board and chopsticks detail media]",
+    url: "projects/personal-cuttingboard-project/index.html"
+  },
+  {
+    id: "3d-printed-doughnut-cutter",
+    order: 9,
+    featured: true,
+    title: "3D-Printed Doughnut Cutter",
+    tag: "Personal Build / CAD / 3D Printing",
+    description:
+      "Designed an iterative 3D-printed doughnut cutter and published it as a first Thingiverse post with downloads and makes.",
+    story:
+      "I modeled a doughnut cutter in Fusion 360 to simplify baking and used the project to practice iterative CAD design. The final design came from testing earlier versions and refining the features that controlled cutting performance and usability. This was my first Thingiverse post with meaningful downloads and user makes, giving the project a small external validation beyond personal use.",
+    role: "CAD modeling, iteration, 3D printing, prototype testing, public file publishing",
+    tools: ["Fusion 360", "3D printing", "Thingiverse", "prototype iteration"],
+    timeline: "TBD",
+    outcome: "Published on Thingiverse with downloads and makes; exact analytics TBD.",
+    pageStyle: 0,
+    image: "",
+    detailImage: "",
+    imageAlt: "Fusion 360 model of a doughnut cutter",
+    placeholder: "[Add doughnut cutter hero image]",
+    mediaPlaceholder: "[Add doughnut cutter detail media]",
+    url: "projects/3d-printed-doughnut-cutter/index.html"
+  },
+  {
+    id: "manufacturing-class-project-highlights",
+    order: 10,
+    featured: false,
+    title: "Manufacturing Class Project Highlights",
+    tag: "Course / Manufacturing Processes",
+    description:
+      "Coursework summary covering metrology, electronics manufacturing, joining, machining, molding, laser cutting, and waterjet cutting.",
+    story:
+      "This section can serve as a compact summary of manufacturing coursework or be split into separate portfolio pages. The work includes metrology programming on Zeiss Duramax, Brown and Sharpe, OGP SmartScope, and MicroVu Vertex systems; Gauge R&R; GD&T; profilometer and optical flat measurements; basic electronics manufacturing; sheet metal; welding and joining; CNC programming; injection molding and mold design; laser cutting; and waterjet cutting. Because the source portfolio lists these as class project highlights instead of fully described projects, the best next step is to decide which items deserve standalone pages and add one or two concrete deliverables for each.",
+    role: "Student engineer, machine operator, inspection programmer, electronics assembler, manufacturing process learner",
+    tools: ["Zeiss Duramax", "Brown and Sharpe CMM", "OGP SmartScope", "MicroVu Vertex", "Gauge R&R", "GD&T", "profilometer", "optical flats", "Arduino", "soldering", "sheet metal", "welding", "Mastercam", "HSMWorks", "Fusion 360", "injection molding", "laser cutting", "waterjet cutting"],
+    timeline: "TBD",
+    outcome: "Coursework completed or in progress; individual project outcomes TBD.",
+    pageStyle: 0,
+    image: "",
+    detailImage: "",
+    imageAlt: "Representative manufacturing coursework image",
+    placeholder: "[Add manufacturing class highlights hero image]",
+    mediaPlaceholder: "[Add manufacturing class highlights media]",
+    url: "projects/manufacturing-class-project-highlights/index.html"
   }
 ];
