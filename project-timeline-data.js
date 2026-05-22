@@ -9,7 +9,8 @@
 // How to add an event:
 // 1. Copy one full event object, from `{` through `}`.
 // 2. Paste it into the matching project's array.
-// 3. Change id, order, date, title, summary, details, and icon.
+// 3. Change id, order, date, title, summary, details, icon, and images.
+// 4. Leave images as [] if that timeline card does not need image previews.
 //
 // How to hide an event without deleting it:
 // Set `featured` to false.
@@ -22,6 +23,32 @@
 //   the next number to window.projectTimelineIcons below.
 // - You can also use a direct repo-root file path for one special card, such as:
 //   icon: "images/Icons/customIcon.svg"
+//
+// How timeline card images work:
+// - Each event can optionally include 1 to 4 preview images.
+// - Leave `images: []` until you have media for that specific timeline event.
+// - One image fills the full preview space for that card.
+// - Two to four images display as a preview grid in the same image space.
+// - If more than four are listed, only the first four show in the preview.
+// - Clicking a preview expands it on the same page with a dark background.
+// - Image paths start from the repo root.
+// - Use `alt` to describe each image for accessibility.
+//
+// One-image example:
+// images: [
+//   {
+//     src: "projects/project-name-02/media/example-step.jpg",
+//     alt: "Short description of the image"
+//   }
+// ]
+//
+// Multiple-image example, up to 4:
+// images: [
+//   { src: "projects/project-name-02/media/step-1.jpg", alt: "Step 1" },
+//   { src: "projects/project-name-02/media/step-2.jpg", alt: "Step 2" },
+//   { src: "projects/project-name-02/media/step-3.jpg", alt: "Step 3" },
+//   { src: "projects/project-name-02/media/step-4.jpg", alt: "Step 4" }
+// ]
 //
 // How to make another project use the timeline page:
 // 1. In projects-data.js, set that project to pageStyle: 1.
@@ -64,7 +91,13 @@ window.projectTimelineEvents = {
         "[Key requirement or design target]",
         "[Early assumption, risk, or constraint]"
       ],
-      icon: 0
+      icon: 0,
+      images: [
+        {
+          src: "projects/project-name-01/media/bottleOpenerFixture.JPG",
+          alt: "Example single timeline card image"
+        }
+      ]
     },
     {
       id: "design-build",
@@ -78,7 +111,21 @@ window.projectTimelineEvents = {
         "[Tool, method, or process used]",
         "[Important design change or decision]"
       ],
-      icon: 1
+      icon: 1,
+      images: [
+        {
+          src: "projects/project-name-01/media/bottleOpenerFixture.JPG",
+          alt: "Example project media preview"
+        },
+        {
+          src: "images/Icons/timelineBuildIcon.svg",
+          alt: "Example build icon preview"
+        },
+        {
+          src: "images/Icons/timelineTestIcon.svg",
+          alt: "Example test icon preview"
+        }
+      ]
     },
     {
       id: "test-iterate",
@@ -92,7 +139,8 @@ window.projectTimelineEvents = {
         "[What you measured or observed]",
         "[What changed because of the test]"
       ],
-      icon: 2
+      icon: 2,
+      images: []
     },
     {
       id: "final-outcome",
@@ -106,7 +154,8 @@ window.projectTimelineEvents = {
         "[Final metric, artifact, or status]",
         "[What you would improve next]"
       ],
-      icon: 3
+      icon: 3,
+      images: []
     }
   ],
   // COPY PROJECT BLOCK END
@@ -125,7 +174,8 @@ window.projectTimelineEvents = {
         "[Key requirement or design target]",
         "[Early assumption, risk, or constraint]"
       ],
-      icon: 0
+      icon: 0,
+      images: []
     },
     {
       id: "project-03-design-build",
@@ -139,7 +189,8 @@ window.projectTimelineEvents = {
         "[Tool, method, or process used]",
         "[Important design change or decision]"
       ],
-      icon: 1
+      icon: 1,
+      images: []
     },
     {
       id: "project-03-test-iterate",
@@ -153,7 +204,8 @@ window.projectTimelineEvents = {
         "[What you measured or observed]",
         "[What changed because of the test]"
       ],
-      icon: 2
+      icon: 2,
+      images: []
     },
     {
       id: "project-03-final-outcome",
@@ -167,7 +219,8 @@ window.projectTimelineEvents = {
         "[Final metric, artifact, or status]",
         "[What you would improve next]"
       ],
-      icon: 3
+      icon: 3,
+      images: []
     }
   ],
 };
