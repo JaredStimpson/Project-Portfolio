@@ -12,6 +12,21 @@ function resolveProjectPath(path, root) {
   return `${root}${normalizedPath}`;
 }
 
+function setProjectImageAttributes(image, imagePath, root, options = {}) {
+  if (window.setPortfolioImageAttributes) {
+    window.setPortfolioImageAttributes(image, imagePath, {
+      root,
+      ...options
+    });
+    return;
+  }
+
+  image.src = resolveProjectPath(imagePath, root);
+  image.alt = options.alt || "";
+  image.loading = options.loading || "lazy";
+  image.decoding = "async";
+}
+
 function setProjectText(field, value) {
   document.querySelectorAll(`[data-project-field="${field}"]`).forEach((element) => {
     element.textContent = value || "";
@@ -64,8 +79,9 @@ function getTimelineImages(event, root) {
   return configuredImages
     .map((image) => {
       const src = typeof image === "string" ? image : image.src || image.image || "";
+      const source = src.replace(/\\/g, "/");
       const alt = typeof image === "string" ? `${event.title} timeline image` : image.alt || image.imageAlt || `${event.title} timeline image`;
-      return src ? { src: resolveProjectPath(src, root), alt } : null;
+      return source ? { src: resolveProjectPath(source, root), source, root, alt } : null;
     })
     .filter(Boolean)
     .slice(0, 4);
@@ -101,8 +117,12 @@ function showTimelineLightboxImage(index) {
     return;
   }
 
-  image.src = imageData.src;
-  image.alt = imageData.alt;
+  setProjectImageAttributes(image, imageData.source || imageData.src, imageData.root || "", {
+    alt: imageData.alt,
+    role: "lightbox",
+    sizes: "(max-width: 900px) 92vw, 1400px",
+    loading: "eager"
+  });
   caption.textContent = imageData.alt;
   thumbs.replaceChildren(
     ...activeTimelineLightboxImages.map((item, itemIndex) => {
@@ -115,10 +135,11 @@ function showTimelineLightboxImage(index) {
       thumbButton.addEventListener("click", () => showTimelineLightboxImage(itemIndex));
 
       const thumbImage = document.createElement("img");
-      thumbImage.src = item.src;
-      thumbImage.alt = "";
-      thumbImage.loading = "lazy";
-      thumbImage.decoding = "async";
+      setProjectImageAttributes(thumbImage, item.source || item.src, item.root || "", {
+        alt: "",
+        role: "thumb",
+        sizes: "88px"
+      });
       thumbButton.appendChild(thumbImage);
       return thumbButton;
     })
@@ -243,11 +264,15 @@ function createTimelineGallery(event, root) {
     preview.addEventListener("click", () => openTimelineLightbox(images, index));
 
     const image = document.createElement("img");
-    image.src = imageData.src;
-    image.alt = imageData.alt;
-    image.loading = "lazy";
-    image.decoding = "async";
+    setProjectImageAttributes(image, imageData.source || imageData.src, imageData.root || "", {
+      alt: imageData.alt,
+      role: "preview",
+      sizes: "(max-width: 900px) 92vw, 620px"
+    });
     image.onerror = () => {
+      if (window.fallbackPortfolioImageToOriginal?.(image)) {
+        return;
+      }
       preview.remove();
       if (!figure.querySelector(".project-timeline-gallery-item")) {
         figure.remove();
@@ -289,11 +314,17 @@ function renderProjectMedia(project, root) {
 
   if (imagePath) {
     const image = document.createElement("img");
-    image.src = resolveProjectPath(imagePath, root);
-    image.alt = project.imageAlt || `${project.title} project media`;
-    image.loading = "lazy";
-    image.decoding = "async";
-    image.onerror = showPlaceholder;
+    setProjectImageAttributes(image, imagePath, root, {
+      alt: project.imageAlt || `${project.title} project media`,
+      role: "detail",
+      sizes: "(max-width: 900px) 92vw, 760px"
+    });
+    image.onerror = () => {
+      if (window.fallbackPortfolioImageToOriginal?.(image)) {
+        return;
+      }
+      showPlaceholder();
+    };
     setMediaFrameState(false);
     mediaFrame.replaceChildren(image);
     return;
