@@ -35,37 +35,15 @@
 // - Image paths start from the repo root.
 // - Use `alt` to describe each image for accessibility.
 //
-// One-image example:
-// images: [
-//   {
-//     src: "projects/project-name-02/media/example-step.jpg",
-//     alt: "Short description of the image"
-//   }
-// ]
-//
-// Multiple-image example, up to 4:
-// images: [
-//   { src: "projects/project-name-02/media/step-1.jpg", alt: "Step 1" },
-//   { src: "projects/project-name-02/media/step-2.jpg", alt: "Step 2" },
-//   { src: "projects/project-name-02/media/step-3.jpg", alt: "Step 3" },
-//   { src: "projects/project-name-02/media/step-4.jpg", alt: "Step 4" }
-// ]
-//
 // How to make another project use the timeline page:
 // 1. In projects-data.js, set that project to pageStyle: 1.
 // 2. Copy templates/timeline-project into projects/your-project-id.
 // 3. In the copied index.html, change data-project-id to match your project id.
 // 4. Keep this script line in that index.html:
 //    <script src="../../project-timeline-data.js"></script>
-// 5. In window.projectTimelineEvents below, copy one full project timeline block.
-//    Start at the COPY PROJECT BLOCK START comment.
-//    End at the COPY PROJECT BLOCK END comment.
-// 6. Paste the copied block below the existing project block, before the final
-//    closing `};`.
-// 7. Rename the copied key to your project id, such as "project-name-08".
-// 8. Edit, add, hide, and reorder that project's timeline events.
-// 9. Keep a comma between project blocks. The copied example already ends with
-//    one, so pasting another block below it is usually safe.
+// 5. Copy one full project block below, from the quoted project id through the
+//    closing array bracket, then change the project id and event content.
+// 6. Keep a comma between project blocks.
 
 window.projectTimelineIcons = {
   0: "images/Icons/timelineStartIcon.svg",
@@ -175,135 +153,339 @@ window.projectTimelineEvents = {
       ]
     }
   ],
-  // COPY PROJECT BLOCK START
-  // Copy from this comment through COPY PROJECT BLOCK END to make another
-  // timeline project. Then rename "project-name-02" to the exact project id
-  // from projects-data.js.
-  "project-name-02": [
+  "lost-foam-hammer": [
     {
-      id: "define-scope",
+      id: "define-tooling-need",
       order: 1,
       featured: true,
-      date: "[Phase 01 / Date]",
-      title: "[Define the Problem]",
+      date: "Project start",
+      title: "Defined Class Tooling Requirement",
       summary:
-        "Replace this with the project need, constraint, or question that started the work.",
+        "Identified the need for a CNC-machined hammer mold for future net shape manufacturing coursework.",
       details: [
-        "[Key requirement or design target]",
-        "[Early assumption, risk, or constraint]"
+        "Reviewed mold quality requirements.",
+        "Considered DFM needs for student use.",
+        "Defined the CNC machining approach."
+      ],
+      icon: 0,
+      images: [
+        {
+          src: "projects/lost-foam-hammer/media/hammerMoldFoamAssortment.jpg",
+          alt: "Foam hammer mold components used to define tooling requirements"
+        },
+        {
+          src: "projects/lost-foam-hammer/media/hammerMoldFoamDetail.jpg",
+          alt: "Hammer mold foam detail used to evaluate tooling needs"
+        }
+      ]
+    },
+    {
+      id: "program-toolpaths",
+      order: 2,
+      featured: true,
+      date: "CAM phase",
+      title: "Programmed 3D Toolpaths",
+      summary:
+        "Created advanced 3D milling toolpaths for the hammer mold geometry.",
+      details: [
+        "Built toolpath strategy for mold surfaces.",
+        "Balanced finish quality with run time.",
+        "Prepared program for HAAS controller limits."
+      ],
+      icon: 1,
+      images: [
+        {
+          src: "projects/lost-foam-hammer/media/hammerMoldMacro.jpg",
+          alt: "Machined hammer mold surface showing detailed toolpath results"
+        },
+        {
+          src: "projects/lost-foam-hammer/media/hammerMoldMacroSide.jpg",
+          alt: "Side view of the machined hammer mold cavity"
+        },
+        {
+          src: "projects/lost-foam-hammer/media/hammerMoldMacroTopView.jpg",
+          alt: "Top view of machined hammer mold tooling"
+        }
+      ]
+    },
+    {
+      id: "optimize-gcode",
+      order: 3,
+      featured: true,
+      date: "Current phase",
+      title: "Optimized for Controller Limits",
+      summary:
+        "Reduced and organized G-code to address HAAS TM-2 memory constraints.",
+      details: [
+        "Worked around controller memory size.",
+        "Optimized total cycle time.",
+        "Prepared for first prototype run."
+      ],
+      icon: 2,
+      images: [
+        {
+          src: "projects/lost-foam-hammer/media/hammerMoldFoamSubOptimal.jpg",
+          alt: "Suboptimal hammer mold result used to guide process improvements"
+        },
+        {
+          src: "projects/lost-foam-hammer/media/hammerMoldFoamDefect.jpg",
+          alt: "Hammer mold defect used to evaluate tooling and process issues"
+        }
+      ]
+    },
+    {
+      id: "first-prototype",
+      order: 4,
+      featured: true,
+      date: "Next step",
+      title: "Run First Prototype",
+      summary:
+        "First prototype machining and mold verification are the next validation steps.",
+      details: [
+        "Prototype run TBD.",
+        "Dimensional verification TBD.",
+        "Class-use readiness TBD."
+      ],
+      icon: 3,
+      images: [
+        {
+          src: "projects/lost-foam-hammer/media/hammerMoldCast1.jpg",
+          alt: "Hammer casting prototype from the mold process"
+        },
+        {
+          src: "projects/lost-foam-hammer/media/hammerMoldCast2.jpg",
+          alt: "Second view of hammer casting prototype"
+        },
+        {
+          src: "projects/lost-foam-hammer/media/hammerMoldCast3.jpg",
+          alt: "Cleaned hammer casting prototype"
+        },
+        {
+          src: "projects/lost-foam-hammer/media/hammerMoldMatlRemoval.jpg",
+          alt: "Hammer mold material removal and machining result"
+        }
+      ]
+    }
+  ],
+  "wax-seal-stamps": [
+    {
+      id: "define-stamp-goal",
+      order: 1,
+      featured: true,
+      date: "Concept",
+      title: "Defined Fidelity and Assembly Goals",
+      summary:
+        "Set the goal of creating a CNC-machined stamp that could leave a legible custom wax emblem.",
+      details: [
+        "Needed small, detailed features.",
+        "Needed to fit handle assembly and fasteners.",
+        "Selected aluminum for machinability and heat conductivity."
+      ],
+      icon: 0,
+      images: [
+        {
+          src: "projects/wax-seal-stamps/media/waxStampV1.jpg",
+          alt: "Early wax seal stamp version used to define the design goal"
+        }
+      ]
+    },
+    {
+      id: "design-fixture",
+      order: 2,
+      featured: true,
+      date: "Design/manufacturing",
+      title: "Designed Repeatable Workholding",
+      summary:
+        "Created custom workholding to secure small stamp heads during machining.",
+      details: [
+        "Focused on repeatability and reliability.",
+        "Used soft-jaw style fixturing.",
+        "Accounted for small part geometry and tool access."
+      ],
+      icon: 1,
+      images: [
+        {
+          src: "projects/wax-seal-stamps/media/datumDanStamp.jpg",
+          alt: "Machined wax seal stamp head used in the assembly"
+        },
+        {
+          src: "projects/wax-seal-stamps/media/waxStampV3.jpg",
+          alt: "Completed replaceable wax seal stamp heads"
+        }
+      ]
+    },
+    {
+      id: "machine-stamp",
+      order: 3,
+      featured: true,
+      date: "Machining",
+      title: "Machined Detailed Stamp Features",
+      summary:
+        "Ran CNC toolpaths for the emblem geometry and assembly features.",
+      details: [
+        "Managed complex toolpaths.",
+        "Balanced feature fidelity with tool life and time.",
+        "Machined features needed for assembly fit."
+      ],
+      icon: 1,
+      images: [
+        {
+          src: "projects/wax-seal-stamps/media/waxStampMacroChau.JPG",
+          alt: "Close-up of machined wax seal stamp emblem details"
+        }
+      ]
+    },
+    {
+      id: "test-wax-emblem",
+      order: 4,
+      featured: true,
+      date: "Validation",
+      title: "Tested Wax Impression",
+      summary:
+        "Verified the stamp could leave a readable wax emblem using a temporary handle.",
+      details: [
+        "Observed wax impression quality.",
+        "Confirmed functional concept.",
+        "Final measurement data TBD."
+      ],
+      icon: 2,
+      images: [
+        {
+          src: "projects/wax-seal-stamps/media/waxStampPOC.jpg",
+          alt: "Proof-of-concept wax impression from the machined stamp"
+        },
+        {
+          src: "projects/wax-seal-stamps/media/waxStampPOC2.jpg",
+          alt: "Second wax impression test from the machined stamp"
+        },
+        {
+          src: "projects/wax-seal-stamps/media/waxStampPOC3.jpg",
+          alt: "Close-up wax impression validation test"
+        }
+      ]
+    }
+  ],
+  "rail-saw-jig": [
+    {
+      id: "identify-cutting-problem",
+      order: 1,
+      featured: true,
+      date: "Problem",
+      title: "Identified Repeated Measurement Bottleneck",
+      summary:
+        "Acrylic sheet cuts required repeated measurement before each cut, slowing the process.",
+      details: [
+        "Needed repeatable 4 inch and 6 inch stops.",
+        "Needed to resist accidental bumps.",
+        "Needed to attach to the track saw setup.",
+        "TBD: add problem/setup media when available."
       ],
       icon: 0,
       images: []
     },
     {
-      id: "design-build",
+      id: "prototype-stop",
       order: 2,
       featured: true,
-      date: "[Phase 02 / Date]",
-      title: "[Design and Build]",
+      date: "Prototype",
+      title: "Rapid-Prototyped Adjustable Stop",
       summary:
-        "Replace this with how you modeled, fabricated, coded, tested, or iterated the solution.",
+        "Iterated on a 3D-printed stop design with embedded hardware.",
       details: [
-        "[Tool, method, or process used]",
-        "[Important design change or decision]"
+        "Designed for standard parts.",
+        "Used an embedded nut and wing nut for tension.",
+        "Adjusted geometry for the required range.",
+        "TBD: add prototype images when available."
       ],
       icon: 1,
       images: []
     },
     {
-      id: "test-iterate",
+      id: "solve-embedded-nut",
       order: 3,
       featured: true,
-      date: "[Phase 03 / Date]",
-      title: "[Test and Iterate]",
+      date: "Build issue",
+      title: "Solved Embedded-Nut Print Issue",
       summary:
-        "Replace this with the validation step, measured result, failure mode, or improvement loop.",
+        "Managed adhesion problems caused by pausing and cooling during nut insertion.",
       details: [
-        "[What you measured or observed]",
-        "[What changed because of the test]"
+        "Used heat carefully to complete the insert.",
+        "Avoided deformation of thin-walled PLA.",
+        "Maintained function of the clamping feature.",
+        "TBD: add embedded nut close-up when available."
       ],
       icon: 2,
       images: []
     },
     {
-      id: "final-outcome",
+      id: "install-fixture",
       order: 4,
       featured: true,
-      date: "[Phase 04 / Date]",
-      title: "[Outcome]",
+      date: "Result",
+      title: "Installed Adjustable Cutting Stop",
       summary:
-        "Replace this with the final deliverable, result, lesson learned, or next step.",
+        "Mounted the fixture to the track saw guide for repeated acrylic sheet cuts.",
       details: [
-        "[Final metric, artifact, or status]",
-        "[What you would improve next]"
+        "Reduced repeated measurement steps.",
+        "Allowed adjustment between required cut lengths.",
+        "Quantified time savings TBD.",
+        "TBD: add final installed fixture media when available."
       ],
       icon: 3,
       images: []
     }
   ],
-  // COPY PROJECT BLOCK END
-  // Paste additional project timeline blocks below this line, before the final
-  // closing `};`.
-  "project-name-03": [
+  "bridge-less-running-camp-stencil": [
     {
-      id: "project-03-define-scope",
+      id: "define-logo-problem",
       order: 1,
       featured: true,
-      date: "[Project 03 Phase 01 / Date]",
-      title: "[Project 03 Define the Problem]",
+      date: "Problem",
+      title: "Defined Bridge-Less Stencil Requirement",
       summary:
-        "Replace this with the project need, constraint, or question that started the work.",
+        "The logo needed enclosed letter features without visible stencil bridges.",
       details: [
-        "[Key requirement or design target]",
-        "[Early assumption, risk, or constraint]"
+        "Internal features in letters needed support.",
+        "Flat bridges would obstruct the sprayed design.",
+        "Deadline was tied to camp start.",
+        "TBD: add source logo or problem image when available."
       ],
       icon: 0,
       images: []
     },
     {
-      id: "project-03-design-build",
+      id: "model-3d-bridges",
       order: 2,
       featured: true,
-      date: "[Project 03 Phase 02 / Date]",
-      title: "[Project 03 Design and Build]",
+      date: "Design",
+      title: "Modeled 3D Bridge Supports",
       summary:
-        "Replace this with how you modeled, fabricated, coded, tested, or iterated the solution.",
+        "Used raised bridge geometry so spray could reach around the support features.",
       details: [
-        "[Tool, method, or process used]",
-        "[Important design change or decision]"
+        "Designed in Fusion 360.",
+        "Kept enclosed character details in place.",
+        "Balanced support with spray coverage.",
+        "TBD: add Fusion 360 stencil model image when available."
       ],
       icon: 1,
       images: []
     },
     {
-      id: "project-03-test-iterate",
+      id: "fabricate-and-use",
       order: 3,
       featured: true,
-      date: "[Project 03 Phase 03 / Date]",
-      title: "[Project 03 Test and Iterate]",
+      date: "Result",
+      title: "Fabricated and Used Stencil",
       summary:
-        "Replace this with the validation step, measured result, failure mode, or improvement loop.",
+        "Completed the stencil in time for use on running camp shirts.",
       details: [
-        "[What you measured or observed]",
-        "[What changed because of the test]"
-      ],
-      icon: 2,
-      images: []
-    },
-    {
-      id: "project-03-final-outcome",
-      order: 4,
-      featured: true,
-      date: "[Project 03 Phase 04 / Date]",
-      title: "[Project 03 Outcome]",
-      summary:
-        "Replace this with the final deliverable, result, lesson learned, or next step.",
-      details: [
-        "[Final metric, artifact, or status]",
-        "[What you would improve next]"
+        "Prototype and finish work completed on schedule.",
+        "Post-use stencil images available in source portfolio.",
+        "Final shirt image/path TBD.",
+        "TBD: add top view of used stencil or shirt result."
       ],
       icon: 3,
       images: []
     }
-  ],
+  ]
 };
