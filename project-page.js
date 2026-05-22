@@ -39,6 +39,11 @@ function createTimelineTextElement(tagName, className, text) {
   return element;
 }
 
+function getTimelineOrder(event) {
+  const order = Number(event.order);
+  return Number.isFinite(order) ? order : 0;
+}
+
 function getTimelineIconPath(event) {
   if (event.icon === undefined || event.icon === null || event.icon === "") {
     return "";
@@ -305,7 +310,7 @@ function renderProjectTimeline(project, root) {
 
   const events = (window.projectTimelineEvents?.[project.id] || [])
     .filter((event) => event.featured !== false)
-    .sort((first, second) => first.order - second.order);
+    .sort((first, second) => getTimelineOrder(second) - getTimelineOrder(first));
 
   if (!events.length) {
     const emptyItem = document.createElement("li");
