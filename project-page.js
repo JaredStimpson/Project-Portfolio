@@ -341,7 +341,7 @@ function renderProjectTimeline(project, root) {
 
   const events = (window.projectTimelineEvents?.[project.id] || [])
     .filter((event) => event.featured !== false)
-    .sort((first, second) => getTimelineOrder(second) - getTimelineOrder(first));
+    .sort((first, second) => getTimelineOrder(first) - getTimelineOrder(second));
 
   if (!events.length) {
     const emptyItem = document.createElement("li");
