@@ -33,59 +33,59 @@ window.portfolioSkillsConfig = {
 
 window.portfolioSkills = [
   {
-    id: "engineering-skill-category",
+    id: "cnc-machining-cam",
     order: 1,
     featured: true,
-    title: "[Engineering Skill Category]",
-    description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+    title: "CNC Machining & CAM",
+    description: "CNC mill and lathe operation with Mastercam, Fusion 360, HAAS TM-1P setup, tooling selection, and 3D toolpath programming."
   },
   {
-    id: "software-programming",
+    id: "fixture-workholding-design",
     order: 2,
     featured: true,
-    title: "[Software / Programming]",
-    description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+    title: "Fixturing & Workholding Design",
+    description: "Fixture, tooling, gauge, and workholding design for repeatable machining, small parts, irregular geometry, and DFMA-driven setups."
   },
   {
-    id: "fabrication-testing",
+    id: "metrology-inspection",
     order: 3,
     featured: true,
-    title: "Stand in Skills 3",
-    description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+    title: "Metrology & Inspection",
+    description: "GD&T inspection, First Article Inspection Reports, touch-probe and vision CMMs, 3D scanning, profilometer inspection, and precision hand tools."
   },
   {
-    id: "fabrication-testing",
+    id: "cad-dfma",
     order: 4,
     featured: true,
-    title: "Stand in Skills 4",
-    description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+    title: "CAD & DFMA",
+    description: "SolidWorks modeling, fits and clearance design, design for manufacturability and assembly, and engineering drawing interpretation."
   },
   {
-    id: "fabrication-testing",
+    id: "additive-net-shape-processes",
     order: 5,
     featured: true,
-    title: "Stand in Skills 5",
-    description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+    title: "Additive & Net Shape Processes",
+    description: "3D printing, Cura slicing, additive manufacturing qualification, lost foam tooling, injection molding, and other net-shape manufacturing processes."
   },
   {
-    id: "fabrication-testing",
+    id: "digital-fabrication-routing",
     order: 6,
     featured: true,
-    title: "Stand in Skills 6",
-    description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+    title: "Digital Fabrication",
+    description: "Laser cutting, water jet cutting, CNC routing, engraved production work, rapid prototyping, and setup optimization with probing workflows."
   },
   {
-    id: "fabrication-testing",
+    id: "electronics-packaging",
     order: 7,
     featured: true,
-    title: "Stand in Skills 7",
-    description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+    title: "Electronics & Packaging",
+    description: "Electronics manufacturing lab procedures, packaging fundamentals, safety instruction, and hands-on student support for lab and project builds."
   },
   {
-    id: "fabrication-testing",
+    id: "process-improvement-planning",
     order: 8,
     featured: true,
-    title: "Stand in Skills 8",
-    description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+    title: "Process Improvement & Planning",
+    description: "SOP development, safety protocols, production planning, engineering economics, setup-time reduction, and continuous improvement in lab environments."
   }
 ];
