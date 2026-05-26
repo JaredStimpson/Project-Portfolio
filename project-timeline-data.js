@@ -75,8 +75,8 @@ window.projectTimelineEvents = {
       icon: 4,
       images: [
         {
-          src: "projects/edm-baseplate-fixture/media/edmBaseplateFixtureSourcing.jpg",
-          alt: "Free steel plates sourced for prototyping"
+          src: "projects/edm-baseplate-fixture/media/edmBaseplateFixturePreProcessing.jpg",
+          alt: "Steel plates staged for pre-processing and fixture prototyping"
         }
       ]
     },
@@ -238,17 +238,42 @@ window.projectTimelineEvents = {
       ]
     },
     {
-      id: "first-prototype",
+      id: "machine-tooling",
       order: 4,
       featured: true,
-      date: "Next step",
-      title: "Run First Prototype",
+      date: "Tooling result",
+      title: "Machined Hammer Mold Tooling",
       summary:
-        "First prototype machining and mold verification are the next validation steps.",
+        "Documented the machined hammer mold and material-removal results after the CAM strategy was applied.",
       details: [
-        "Prototype run TBD.",
-        "Dimensional verification TBD.",
-        "Class-use readiness TBD."
+        "Machined mold geometry is now represented with finished tooling media.",
+        "Material-removal image documents the machining outcome.",
+        "Dimensional verification and class-use readiness are still TBD."
+      ],
+      icon: 3,
+      images: [
+        {
+          src: "projects/lost-foam-hammer/media/hammerMold.jpg",
+          alt: "Finished hammer mold tooling after machining"
+        },
+        {
+          src: "projects/lost-foam-hammer/media/hammerMoldMatlRemoval.jpg",
+          alt: "Hammer mold material removal and machining result"
+        }
+      ]
+    },
+    {
+      id: "first-casting-results",
+      order: 5,
+      featured: true,
+      date: "Casting result",
+      title: "Documented Early Casting Results",
+      summary:
+        "Captured early casting results from the hammer mold process for follow-up validation and process refinement.",
+      details: [
+        "Casting images show multiple result views.",
+        "Useful for future notes about mold performance and defect reduction.",
+        "Final dimensional verification and class-use readiness are still TBD."
       ],
       icon: 3,
       images: [
@@ -263,10 +288,6 @@ window.projectTimelineEvents = {
         {
           src: "projects/lost-foam-hammer/media/hammerMoldCast3.jpg",
           alt: "Cleaned hammer casting prototype"
-        },
-        {
-          src: "projects/lost-foam-hammer/media/hammerMoldMatlRemoval.jpg",
-          alt: "Hammer mold material removal and machining result"
         }
       ]
     }
@@ -584,12 +605,16 @@ window.projectTimelineEvents = {
       icon: 3,
       images: [
         {
-          src: "projects/edm-bottleopener-fixture/media/edmBottleOpenerb4after.jpg",
-          alt: "Before and after view of the EDM-machined bottle opener"
+          src: "projects/edm-bottleopener-fixture/media/edmBottleOpenerB4.jpg",
+          alt: "Bottle opener before the EDM machining result"
         },
         {
-          src: "projects/edm-bottleopener-fixture/media/edmBottleOpenerCloseup.JPG",
-          alt: "Close-up of the EDM-machined bottle opener feature"
+          src: "projects/edm-bottleopener-fixture/media/edmBottleOpenerAfter.jpg",
+          alt: "Bottle opener after the EDM machining result"
+        },
+        {
+          src: "projects/edm-bottleopener-fixture/media/edmBottleOpenerb4after.jpg",
+          alt: "Composite before and after view of the EDM-machined bottle opener"
         }
       ]
     }
@@ -708,6 +733,151 @@ window.projectTimelineEvents = {
         "TBD: add mold setup image.",
         "TBD: add full screwdriver image.",
         "TBD: add material, defects, cycle time, and final result notes."
+      ],
+      icon: 3,
+      images: []
+    }
+  ],
+  "ring-gear": [
+    {
+      id: "prepare-slug-stock",
+      order: 1,
+      featured: true,
+      date: "Stock prep",
+      title: "Prepared Ring Gear Slug Stock",
+      summary:
+        "Started from slug stock that would become the ring gear profile.",
+      details: [
+        "Slug media documents the starting workpiece before the gear form was cut.",
+        "The wide slug image gives context for scale and stock condition.",
+        "Exact material, stock dimensions, and drawing requirements are TBD."
+      ],
+      icon: 0,
+      images: [
+        {
+          src: "projects/ring-gear/media/ringgearSlug.jpg",
+          alt: "Ring gear slug stock before EDM cutting"
+        },
+        {
+          src: "projects/ring-gear/media/ringgearSlugWide.jpg",
+          alt: "Wide view of ring gear slug stock"
+        }
+      ]
+    },
+    {
+      id: "cut-leadin",
+      order: 2,
+      featured: true,
+      date: "EDM cut setup",
+      title: "Managed Lead-In and Cut Strategy",
+      summary:
+        "Used the lead-in feature to support the EDM cutting path into the ring gear geometry.",
+      details: [
+        "Lead-in media suggests attention to where the cut starts and transitions into the part.",
+        "This is the right place to add future notes about datum setup, wire path, and cut parameters.",
+        "Machine, wire, and exact operation settings are TBD."
+      ],
+      icon: 1,
+      images: [
+        {
+          src: "projects/ring-gear/media/ringgearLeadin.jpg",
+          alt: "Lead-in feature from the ring gear EDM cutting process"
+        }
+      ]
+    },
+    {
+      id: "inspect-tooth-form",
+      order: 3,
+      featured: true,
+      date: "Inspection",
+      title: "Documented Tooth Profile Detail",
+      summary:
+        "Captured close-up media of the finished tooth form for visual review.",
+      details: [
+        "Close-up image helps show edge quality and geometry detail.",
+        "Future edits can add pitch, tooth count, tolerance, or inspection method.",
+        "Quantitative gear inspection results are TBD."
+      ],
+      icon: 2,
+      images: [
+        {
+          src: "projects/ring-gear/media/ringgearCloseup.jpg",
+          alt: "Close-up of the EDM-cut ring gear tooth profile"
+        }
+      ]
+    },
+    {
+      id: "finished-ring-gear",
+      order: 4,
+      featured: true,
+      date: "Result",
+      title: "Finished Ring Gear",
+      summary:
+        "Documented the finished ring gear geometry with an isometric result image.",
+      details: [
+        "Finished view provides the main project result image.",
+        "TBD: add final acceptance criteria, tolerance results, and application context.",
+        "TBD: note whether this was a course, research, or personal manufacturing project."
+      ],
+      icon: 3,
+      images: [
+        {
+          src: "projects/ring-gear/media/ringgearIsometric.jpg",
+          alt: "Finished ring gear shown in an isometric view"
+        }
+      ]
+    }
+  ],
+  "bt-speaker": [
+    {
+      id: "define-speaker-concept",
+      order: 1,
+      featured: true,
+      date: "Concept",
+      title: "Defined Speaker Concept",
+      summary:
+        "Set up the project page around a Bluetooth speaker concept that can be expanded with enclosure, electronics, and build details.",
+      details: [
+        "Current media provides one isometric design image.",
+        "TBD: add design requirements, speaker driver choice, battery or amplifier details, and enclosure goals.",
+        "TBD: add whether this is a CAD concept, printed enclosure, or finished build."
+      ],
+      icon: 0,
+      images: []
+    },
+    {
+      id: "model-isometric-design",
+      order: 2,
+      featured: true,
+      date: "Design",
+      title: "Modeled Isometric Speaker Design",
+      summary:
+        "Used the available isometric image as the first visual anchor for the speaker project.",
+      details: [
+        "The image appears to show the speaker form or enclosure concept.",
+        "Future edits can add CAD screenshots, internal layout, and manufacturing steps.",
+        "Exact software and enclosure manufacturing method are TBD."
+      ],
+      icon: 1,
+      images: [
+        {
+          src: "projects/bt-speaker/media/btSpeakerIsometric.jpg",
+          alt: "Isometric Bluetooth speaker project concept"
+        }
+      ]
+    },
+    {
+      id: "add-build-context",
+      order: 3,
+      featured: true,
+      date: "Next edits",
+      title: "Add Build and Electronics Context",
+      summary:
+        "The project scaffold is ready for future build photos, wiring notes, and performance results.",
+      details: [
+        "TBD: add speaker hardware and electronics integration details.",
+        "TBD: add enclosure fabrication or assembly media.",
+        "TBD: add final test, sound, or fit results."
       ],
       icon: 3,
       images: []
