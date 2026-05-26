@@ -62,7 +62,7 @@ window.portfolioProjects = [
   },
   {
     id: "cmm-touch-probe-program",
-    order: 3,
+    order: 6,
     featured: true,
     title: "Zeiss GD&T Inspection",
     tag: "Manufacturing / Metrology / Course Support",
@@ -106,18 +106,18 @@ window.portfolioProjects = [
   },
   {
     id: "lost-foam-hammer",
-    order: 4,
+    order: 3,
     featured: true,
     title: "Cal Poly Hammer Tooling",
     tag: "Manufacturing / CAM / Tooling",
     description:
-      "Developed CAM toolpaths and process planning for a hammer mold used in a Cal Poly net shape manufacturing class.",
+      "Developed CAM toolpaths, machined mold tooling, and documented casting iterations for a hammer mold used in a Cal Poly net shape manufacturing class.",
     story:
-      "I am programming 3D CNC mill toolpaths for a hammer mold that will be used by Cal Poly students in net shape manufacturing coursework. The part needs mold-quality surfaces while staying within the machine and controller constraints available for the project. The main engineering challenge is optimizing the toolpaths and G-code so the program can run on a HAAS TM-2 controller with limited memory while also reducing total cycle time. The CAM is at the final stage before the first prototype run.",
+      "I programmed 3D CNC mill toolpaths for a hammer mold that will be used by Cal Poly students in net shape manufacturing coursework. The part needs mold-quality surfaces while staying within the machine and controller constraints available for the project. The main engineering challenge was optimizing the toolpaths and G-code so the program could run on a HAAS TM-2 controller with limited memory while also reducing total cycle time. The available media now documents the tooling, foam mold details, and early casting outcomes for the process.",
     role: "CAM programming, process planning, toolpath optimization, fixturing and tooling selection, DFM review",
     tools: ["Mastercam or Fusion 360 CAM (TBD)", "HAAS TM-2", "3D toolpaths", "G-code optimization", "CNC milling", "mold tooling"],
-    timeline: "2025 to Present",
-    outcome: "CAM nearing final completion for first prototype; first machined prototype and inspection results TBD.",
+    timeline: "2025 - Present",
+    outcome: "Hammer mold tooling and early casting results documented; final class-use validation and inspection data TBD.",
     pageStyle: 1,
     image: "projects/lost-foam-hammer/media/hammerMoldMacroTopView.jpg",
     detailImage: "projects/lost-foam-hammer/media/hammerMoldMatlRemoval.jpg",
@@ -128,7 +128,7 @@ window.portfolioProjects = [
   },
   {
     id: "wax-seal-stamps",
-    order: 5,
+    order: 4,
     featured: true,
     title: "CNC Wax Seal Stamp",
     tag: "Manufacturing / CNC / Fixture Design",
@@ -150,7 +150,7 @@ window.portfolioProjects = [
   },
   {
     id: "mill-and-edm-setup",
-    order: 6,
+    order: 9,
     featured: true,
     title: "Mill and EDM Setup Fixture",
     tag: "Manufacturing / Milling / EDM Setup",
@@ -172,7 +172,7 @@ window.portfolioProjects = [
   },
   {
     id: "injection-molded-screwdriver",
-    order: 7,
+    order: 8,
     featured: true,
     title: "Injection-Molded Screwdriver",
     tag: "Manufacturing / Injection Molding / Process Analysis",
@@ -194,7 +194,7 @@ window.portfolioProjects = [
   },
   {
     id: "rail-saw-jig",
-    order: 8,
+    order: 10,
     featured: true,
     title: "Acrylic Sheet Track Saw Jig",
     tag: "Personal Build / Fixture Design / Rapid Prototyping",
@@ -216,7 +216,7 @@ window.portfolioProjects = [
   },
   {
     id: "cnc-router-trophies",
-    order: 9,
+    order: 11,
     featured: true,
     title: "CNC Router Trophies",
     tag: "Manufacturing / CNC Router / Production",
@@ -238,7 +238,7 @@ window.portfolioProjects = [
   },
   {
     id: "bridge-less-running-camp-stencil",
-    order: 10,
+    order: 12,
     featured: true,
     title: "Bridge-Less Running Camp Stencil",
     tag: "Personal Build / DFM / Laser Cutting",
@@ -260,7 +260,7 @@ window.portfolioProjects = [
   },
   {
     id: "personal-cuttingboard-project",
-    order: 11,
+    order: 13,
     featured: true,
     title: "Custom Cutting Board and Chopsticks",
     tag: "Personal Build / Laser Cutting / CAD",
@@ -282,7 +282,7 @@ window.portfolioProjects = [
   },
   {
     id: "3d-printed-doughnut-cutter",
-    order: 12,
+    order: 14,
     featured: true,
     title: "3D-Printed Doughnut Cutter",
     tag: "Personal Build / CAD / 3D Printing",
@@ -303,8 +303,52 @@ window.portfolioProjects = [
     url: "projects/3d-printed-doughnut-cutter/index.html"
   },
   {
+    id: "ring-gear",
+    order: 5,
+    featured: true,
+    title: "Ring Gear EDM Project",
+    tag: "Manufacturing / WEDM / Gear Cutting",
+    description:
+      "Cut a ring gear profile from slug stock using an EDM workflow, with process media showing the slug, lead-in, tooth form, and finished geometry.",
+    story:
+      "This project is inferred from the current ring gear media folder. The image sequence shows starting slug material, an EDM lead-in/cut feature, close-up tooth geometry, and finished isometric views of the ring gear. I treated the project as a Wire EDM process and inspection story: prepare the stock, plan the cut path, manage the lead-in and tooth form, then document the finished ring gear. Exact course context, drawing requirements, tolerances, material, and inspection results are still TBD.",
+    role: "EDM setup, process planning, workholding, manufacturing documentation, visual inspection",
+    tools: ["Wire EDM", "gear profile cutting", "workholding", "setup planning", "visual inspection", "process documentation"],
+    timeline: "TBD",
+    outcome: "Ring gear cut and documented with slug, lead-in, close-up, and finished-part media; tolerance results TBD.",
+    pageStyle: 1,
+    image: "projects/ring-gear/media/ringgearIsometric.jpg",
+    detailImage: "projects/ring-gear/media/ringgearCloseup.jpg",
+    imageAlt: "Finished ring gear shown after EDM cutting",
+    placeholder: "[Add ring gear hero image]",
+    mediaPlaceholder: "[Add ring gear detail media]",
+    url: "projects/ring-gear/index.html"
+  },
+  {
+    id: "bt-speaker",
+    order: 7,
+    featured: true,
+    title: "Bluetooth Speaker",
+    tag: "Personal Build / CAD / Product Design",
+    description:
+      "Modeled a Bluetooth speaker concept with an isometric design view ready for future build, electronics, and enclosure documentation.",
+    story:
+      "This project is inferred from the current Bluetooth speaker media folder, which currently contains an isometric product-style image. I set the page up as a clean project entry so future photos, CAD exports, electronics notes, enclosure iterations, and build results can be added without restructuring the site. The current story should be treated as a placeholder scaffold until the design goals, speaker hardware, manufacturing method, and final performance notes are filled in.",
+    role: "CAD modeling, product concept development, enclosure planning, documentation",
+    tools: ["CAD", "product design", "speaker enclosure design", "electronics integration TBD", "manufacturing method TBD"],
+    timeline: "TBD",
+    outcome: "Initial speaker concept media added; enclosure, electronics, build, and performance details TBD.",
+    pageStyle: 1,
+    image: "projects/bt-speaker/media/btSpeakerIsometric.jpg",
+    detailImage: "projects/bt-speaker/media/btSpeakerIsometric.jpg",
+    imageAlt: "Isometric view of a Bluetooth speaker project concept",
+    placeholder: "[Add Bluetooth speaker hero image]",
+    mediaPlaceholder: "[Add Bluetooth speaker detail media]",
+    url: "projects/bt-speaker/index.html"
+  },
+  {
     id: "manufacturing-class-project-highlights",
-    order: 13,
+    order: 15,
     featured: false,
     title: "Manufacturing Class Project Highlights",
     tag: "Course / Manufacturing Processes",

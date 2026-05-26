@@ -2,6 +2,34 @@
 // Keep editing project data with original media paths; this manifest
 // lets the site choose smaller generated images at runtime.
 window.portfolioImageVariants = {
+  "projects/bt-speaker/media/btSpeakerIsometric.jpg": {
+    "original": {
+      "bytes": 9460253,
+      "height": 4004,
+      "src": "projects/bt-speaker/media/btSpeakerIsometric.jpg",
+      "width": 6026
+    },
+    "variants": {
+      "large": {
+        "bytes": 205935,
+        "height": 997,
+        "src": "projects/bt-speaker/media/optimized/btSpeakerIsometric-large.jpg",
+        "width": 1500
+      },
+      "medium": {
+        "bytes": 69359,
+        "height": 598,
+        "src": "projects/bt-speaker/media/optimized/btSpeakerIsometric-medium.jpg",
+        "width": 900
+      },
+      "small": {
+        "bytes": 24130,
+        "height": 346,
+        "src": "projects/bt-speaker/media/optimized/btSpeakerIsometric-small.jpg",
+        "width": 520
+      }
+    }
+  },
   "projects/cmm-touch-probe-program/media/cmmSetup.jpg": {
     "original": {
       "bytes": 2226261,
@@ -144,29 +172,29 @@ window.portfolioImageVariants = {
   },
   "projects/edm-baseplate-fixture/media/baseplateFixtureVerification.JPG": {
     "original": {
-      "bytes": 4044120,
-      "height": 5712,
+      "bytes": 8848106,
+      "height": 4284,
       "src": "projects/edm-baseplate-fixture/media/baseplateFixtureVerification.JPG",
-      "width": 4284
+      "width": 5712
     },
     "variants": {
       "large": {
-        "bytes": 244211,
-        "height": 1500,
+        "bytes": 244744,
+        "height": 1125,
         "src": "projects/edm-baseplate-fixture/media/optimized/baseplateFixtureVerification-large.jpg",
-        "width": 1125
+        "width": 1500
       },
       "medium": {
-        "bytes": 79039,
-        "height": 900,
+        "bytes": 79458,
+        "height": 675,
         "src": "projects/edm-baseplate-fixture/media/optimized/baseplateFixtureVerification-medium.jpg",
-        "width": 675
+        "width": 900
       },
       "small": {
-        "bytes": 26106,
-        "height": 520,
+        "bytes": 26175,
+        "height": 390,
         "src": "projects/edm-baseplate-fixture/media/optimized/baseplateFixtureVerification-small.jpg",
-        "width": 390
+        "width": 520
       }
     }
   },
@@ -254,30 +282,30 @@ window.portfolioImageVariants = {
       }
     }
   },
-  "projects/edm-baseplate-fixture/media/edmBaseplateFixtureSourcing.jpg": {
+  "projects/edm-baseplate-fixture/media/edmBaseplateFixturePreProcessing.jpg": {
     "original": {
       "bytes": 4944312,
       "height": 5712,
-      "src": "projects/edm-baseplate-fixture/media/edmBaseplateFixtureSourcing.jpg",
+      "src": "projects/edm-baseplate-fixture/media/edmBaseplateFixturePreProcessing.jpg",
       "width": 4284
     },
     "variants": {
       "large": {
         "bytes": 214251,
         "height": 1500,
-        "src": "projects/edm-baseplate-fixture/media/optimized/edmBaseplateFixtureSourcing-large.jpg",
+        "src": "projects/edm-baseplate-fixture/media/optimized/edmBaseplateFixturePreProcessing-large.jpg",
         "width": 1125
       },
       "medium": {
         "bytes": 73373,
         "height": 900,
-        "src": "projects/edm-baseplate-fixture/media/optimized/edmBaseplateFixtureSourcing-medium.jpg",
+        "src": "projects/edm-baseplate-fixture/media/optimized/edmBaseplateFixturePreProcessing-medium.jpg",
         "width": 675
       },
       "small": {
         "bytes": 27440,
         "height": 520,
-        "src": "projects/edm-baseplate-fixture/media/optimized/edmBaseplateFixtureSourcing-small.jpg",
+        "src": "projects/edm-baseplate-fixture/media/optimized/edmBaseplateFixturePreProcessing-small.jpg",
         "width": 390
       }
     }
@@ -338,30 +366,58 @@ window.portfolioImageVariants = {
       }
     }
   },
-  "projects/edm-bottleopener-fixture/media/edmBottleOpenerCloseup.JPG": {
+  "projects/edm-bottleopener-fixture/media/edmBottleOpenerAfter.jpg": {
     "original": {
-      "bytes": 2757525,
-      "height": 3024,
-      "src": "projects/edm-bottleopener-fixture/media/edmBottleOpenerCloseup.JPG",
-      "width": 4032
+      "bytes": 18832604,
+      "height": 4004,
+      "src": "projects/edm-bottleopener-fixture/media/edmBottleOpenerAfter.jpg",
+      "width": 6026
     },
     "variants": {
       "large": {
-        "bytes": 303617,
-        "height": 1125,
-        "src": "projects/edm-bottleopener-fixture/media/optimized/edmBottleOpenerCloseup-large.jpg",
+        "bytes": 188227,
+        "height": 997,
+        "src": "projects/edm-bottleopener-fixture/media/optimized/edmBottleOpenerAfter-large.jpg",
         "width": 1500
       },
       "medium": {
-        "bytes": 102039,
-        "height": 675,
-        "src": "projects/edm-bottleopener-fixture/media/optimized/edmBottleOpenerCloseup-medium.jpg",
+        "bytes": 50535,
+        "height": 598,
+        "src": "projects/edm-bottleopener-fixture/media/optimized/edmBottleOpenerAfter-medium.jpg",
         "width": 900
       },
       "small": {
-        "bytes": 36689,
-        "height": 390,
-        "src": "projects/edm-bottleopener-fixture/media/optimized/edmBottleOpenerCloseup-small.jpg",
+        "bytes": 17642,
+        "height": 346,
+        "src": "projects/edm-bottleopener-fixture/media/optimized/edmBottleOpenerAfter-small.jpg",
+        "width": 520
+      }
+    }
+  },
+  "projects/edm-bottleopener-fixture/media/edmBottleOpenerB4.jpg": {
+    "original": {
+      "bytes": 18515144,
+      "height": 4004,
+      "src": "projects/edm-bottleopener-fixture/media/edmBottleOpenerB4.jpg",
+      "width": 6026
+    },
+    "variants": {
+      "large": {
+        "bytes": 178317,
+        "height": 997,
+        "src": "projects/edm-bottleopener-fixture/media/optimized/edmBottleOpenerB4-large.jpg",
+        "width": 1500
+      },
+      "medium": {
+        "bytes": 46164,
+        "height": 598,
+        "src": "projects/edm-bottleopener-fixture/media/optimized/edmBottleOpenerB4-medium.jpg",
+        "width": 900
+      },
+      "small": {
+        "bytes": 15494,
+        "height": 346,
+        "src": "projects/edm-bottleopener-fixture/media/optimized/edmBottleOpenerB4-small.jpg",
         "width": 520
       }
     }
@@ -396,27 +452,27 @@ window.portfolioImageVariants = {
   },
   "projects/edm-bottleopener-fixture/media/edmBottleOpenerb4after.jpg": {
     "original": {
-      "bytes": 8538553,
-      "height": 3024,
+      "bytes": 10936094,
+      "height": 4004,
       "src": "projects/edm-bottleopener-fixture/media/edmBottleOpenerb4after.jpg",
-      "width": 4032
+      "width": 6026
     },
     "variants": {
       "large": {
-        "bytes": 489776,
-        "height": 1125,
+        "bytes": 145316,
+        "height": 997,
         "src": "projects/edm-bottleopener-fixture/media/optimized/edmBottleOpenerb4after-large.jpg",
         "width": 1500
       },
       "medium": {
-        "bytes": 166517,
-        "height": 675,
+        "bytes": 53081,
+        "height": 598,
         "src": "projects/edm-bottleopener-fixture/media/optimized/edmBottleOpenerb4after-medium.jpg",
         "width": 900
       },
       "small": {
-        "bytes": 50365,
-        "height": 390,
+        "bytes": 21547,
+        "height": 346,
         "src": "projects/edm-bottleopener-fixture/media/optimized/edmBottleOpenerb4after-small.jpg",
         "width": 520
       }
@@ -562,6 +618,34 @@ window.portfolioImageVariants = {
       }
     }
   },
+  "projects/lost-foam-hammer/media/hammerMold.jpg": {
+    "original": {
+      "bytes": 10958647,
+      "height": 4004,
+      "src": "projects/lost-foam-hammer/media/hammerMold.jpg",
+      "width": 6026
+    },
+    "variants": {
+      "large": {
+        "bytes": 212027,
+        "height": 997,
+        "src": "projects/lost-foam-hammer/media/optimized/hammerMold-large.jpg",
+        "width": 1500
+      },
+      "medium": {
+        "bytes": 75034,
+        "height": 598,
+        "src": "projects/lost-foam-hammer/media/optimized/hammerMold-medium.jpg",
+        "width": 900
+      },
+      "small": {
+        "bytes": 27694,
+        "height": 346,
+        "src": "projects/lost-foam-hammer/media/optimized/hammerMold-small.jpg",
+        "width": 520
+      }
+    }
+  },
   "projects/lost-foam-hammer/media/hammerMoldCast1.jpg": {
     "original": {
       "bytes": 3131769,
@@ -620,27 +704,27 @@ window.portfolioImageVariants = {
   },
   "projects/lost-foam-hammer/media/hammerMoldCast3.jpg": {
     "original": {
-      "bytes": 3786874,
-      "height": 3024,
+      "bytes": 11630532,
+      "height": 4004,
       "src": "projects/lost-foam-hammer/media/hammerMoldCast3.jpg",
-      "width": 4032
+      "width": 6026
     },
     "variants": {
       "large": {
-        "bytes": 436232,
-        "height": 1125,
+        "bytes": 206407,
+        "height": 997,
         "src": "projects/lost-foam-hammer/media/optimized/hammerMoldCast3-large.jpg",
         "width": 1500
       },
       "medium": {
-        "bytes": 136561,
-        "height": 675,
+        "bytes": 72123,
+        "height": 598,
         "src": "projects/lost-foam-hammer/media/optimized/hammerMoldCast3-medium.jpg",
         "width": 900
       },
       "small": {
-        "bytes": 42117,
-        "height": 390,
+        "bytes": 26869,
+        "height": 346,
         "src": "projects/lost-foam-hammer/media/optimized/hammerMoldCast3-small.jpg",
         "width": 520
       }
@@ -732,85 +816,85 @@ window.portfolioImageVariants = {
   },
   "projects/lost-foam-hammer/media/hammerMoldFoamDetail.jpg": {
     "original": {
-      "bytes": 2932804,
-      "height": 4032,
+      "bytes": 5083145,
+      "height": 3024,
       "src": "projects/lost-foam-hammer/media/hammerMoldFoamDetail.jpg",
-      "width": 3024
+      "width": 4032
     },
     "variants": {
       "large": {
-        "bytes": 269432,
-        "height": 1500,
+        "bytes": 269830,
+        "height": 1125,
         "src": "projects/lost-foam-hammer/media/optimized/hammerMoldFoamDetail-large.jpg",
-        "width": 1125
+        "width": 1500
       },
       "medium": {
-        "bytes": 88285,
-        "height": 900,
+        "bytes": 88326,
+        "height": 675,
         "src": "projects/lost-foam-hammer/media/optimized/hammerMoldFoamDetail-medium.jpg",
-        "width": 675
+        "width": 900
       },
       "small": {
-        "bytes": 28375,
-        "height": 520,
+        "bytes": 28336,
+        "height": 390,
         "src": "projects/lost-foam-hammer/media/optimized/hammerMoldFoamDetail-small.jpg",
-        "width": 390
+        "width": 520
       }
     }
   },
   "projects/lost-foam-hammer/media/hammerMoldFoamExpanded.jpg": {
     "original": {
-      "bytes": 3037243,
-      "height": 4032,
+      "bytes": 5198290,
+      "height": 3024,
       "src": "projects/lost-foam-hammer/media/hammerMoldFoamExpanded.jpg",
-      "width": 3024
+      "width": 4032
     },
     "variants": {
       "large": {
-        "bytes": 285817,
-        "height": 1500,
+        "bytes": 284049,
+        "height": 1125,
         "src": "projects/lost-foam-hammer/media/optimized/hammerMoldFoamExpanded-large.jpg",
-        "width": 1125
+        "width": 1500
       },
       "medium": {
-        "bytes": 91631,
-        "height": 900,
+        "bytes": 90892,
+        "height": 675,
         "src": "projects/lost-foam-hammer/media/optimized/hammerMoldFoamExpanded-medium.jpg",
-        "width": 675
+        "width": 900
       },
       "small": {
-        "bytes": 28404,
-        "height": 520,
+        "bytes": 28047,
+        "height": 390,
         "src": "projects/lost-foam-hammer/media/optimized/hammerMoldFoamExpanded-small.jpg",
-        "width": 390
+        "width": 520
       }
     }
   },
   "projects/lost-foam-hammer/media/hammerMoldFoamSolid.jpg": {
     "original": {
-      "bytes": 3184920,
-      "height": 4032,
+      "bytes": 5764348,
+      "height": 3024,
       "src": "projects/lost-foam-hammer/media/hammerMoldFoamSolid.jpg",
-      "width": 3024
+      "width": 4032
     },
     "variants": {
       "large": {
-        "bytes": 318304,
-        "height": 1500,
+        "bytes": 318589,
+        "height": 1125,
         "src": "projects/lost-foam-hammer/media/optimized/hammerMoldFoamSolid-large.jpg",
-        "width": 1125
+        "width": 1500
       },
       "medium": {
-        "bytes": 111584,
-        "height": 900,
+        "bytes": 111303,
+        "height": 675,
         "src": "projects/lost-foam-hammer/media/optimized/hammerMoldFoamSolid-medium.jpg",
-        "width": 675
+        "width": 900
       },
       "small": {
-        "bytes": 39276,
-        "height": 520,
+        "bytes": 39114,
+        "height": 390,
         "src": "projects/lost-foam-hammer/media/optimized/hammerMoldFoamSolid-small.jpg",
-        "width": 390
+        "width": 520
       }
     }
   },
@@ -1038,6 +1122,146 @@ window.portfolioImageVariants = {
       }
     }
   },
+  "projects/ring-gear/media/ringgearCloseup.jpg": {
+    "original": {
+      "bytes": 6351721,
+      "height": 4004,
+      "src": "projects/ring-gear/media/ringgearCloseup.jpg",
+      "width": 6026
+    },
+    "variants": {
+      "large": {
+        "bytes": 91343,
+        "height": 997,
+        "src": "projects/ring-gear/media/optimized/ringgearCloseup-large.jpg",
+        "width": 1500
+      },
+      "medium": {
+        "bytes": 32697,
+        "height": 598,
+        "src": "projects/ring-gear/media/optimized/ringgearCloseup-medium.jpg",
+        "width": 900
+      },
+      "small": {
+        "bytes": 12680,
+        "height": 346,
+        "src": "projects/ring-gear/media/optimized/ringgearCloseup-small.jpg",
+        "width": 520
+      }
+    }
+  },
+  "projects/ring-gear/media/ringgearIsometric.jpg": {
+    "original": {
+      "bytes": 9146635,
+      "height": 4004,
+      "src": "projects/ring-gear/media/ringgearIsometric.jpg",
+      "width": 6026
+    },
+    "variants": {
+      "large": {
+        "bytes": 211269,
+        "height": 997,
+        "src": "projects/ring-gear/media/optimized/ringgearIsometric-large.jpg",
+        "width": 1500
+      },
+      "medium": {
+        "bytes": 80587,
+        "height": 598,
+        "src": "projects/ring-gear/media/optimized/ringgearIsometric-medium.jpg",
+        "width": 900
+      },
+      "small": {
+        "bytes": 30653,
+        "height": 346,
+        "src": "projects/ring-gear/media/optimized/ringgearIsometric-small.jpg",
+        "width": 520
+      }
+    }
+  },
+  "projects/ring-gear/media/ringgearLeadin.jpg": {
+    "original": {
+      "bytes": 14048958,
+      "height": 4004,
+      "src": "projects/ring-gear/media/ringgearLeadin.jpg",
+      "width": 6026
+    },
+    "variants": {
+      "large": {
+        "bytes": 122817,
+        "height": 997,
+        "src": "projects/ring-gear/media/optimized/ringgearLeadin-large.jpg",
+        "width": 1500
+      },
+      "medium": {
+        "bytes": 32760,
+        "height": 598,
+        "src": "projects/ring-gear/media/optimized/ringgearLeadin-medium.jpg",
+        "width": 900
+      },
+      "small": {
+        "bytes": 12514,
+        "height": 346,
+        "src": "projects/ring-gear/media/optimized/ringgearLeadin-small.jpg",
+        "width": 520
+      }
+    }
+  },
+  "projects/ring-gear/media/ringgearSlug.jpg": {
+    "original": {
+      "bytes": 17529423,
+      "height": 4004,
+      "src": "projects/ring-gear/media/ringgearSlug.jpg",
+      "width": 6026
+    },
+    "variants": {
+      "large": {
+        "bytes": 131110,
+        "height": 997,
+        "src": "projects/ring-gear/media/optimized/ringgearSlug-large.jpg",
+        "width": 1500
+      },
+      "medium": {
+        "bytes": 31109,
+        "height": 598,
+        "src": "projects/ring-gear/media/optimized/ringgearSlug-medium.jpg",
+        "width": 900
+      },
+      "small": {
+        "bytes": 11511,
+        "height": 346,
+        "src": "projects/ring-gear/media/optimized/ringgearSlug-small.jpg",
+        "width": 520
+      }
+    }
+  },
+  "projects/ring-gear/media/ringgearSlugWide.jpg": {
+    "original": {
+      "bytes": 8678841,
+      "height": 4004,
+      "src": "projects/ring-gear/media/ringgearSlugWide.jpg",
+      "width": 6026
+    },
+    "variants": {
+      "large": {
+        "bytes": 87680,
+        "height": 997,
+        "src": "projects/ring-gear/media/optimized/ringgearSlugWide-large.jpg",
+        "width": 1500
+      },
+      "medium": {
+        "bytes": 31635,
+        "height": 598,
+        "src": "projects/ring-gear/media/optimized/ringgearSlugWide-medium.jpg",
+        "width": 900
+      },
+      "small": {
+        "bytes": 13548,
+        "height": 346,
+        "src": "projects/ring-gear/media/optimized/ringgearSlugWide-small.jpg",
+        "width": 520
+      }
+    }
+  },
   "projects/wax-seal-stamps/media/datumDanStamp.jpg": {
     "original": {
       "bytes": 1719184,
@@ -1152,57 +1376,57 @@ window.portfolioImageVariants = {
   },
   "projects/wax-seal-stamps/media/waxStampPOC3.jpg": {
     "original": {
-      "bytes": 2151171,
-      "height": 4032,
+      "bytes": 4156217,
+      "height": 3024,
       "src": "projects/wax-seal-stamps/media/waxStampPOC3.jpg",
-      "width": 3024
+      "width": 4032
     },
     "variants": {
       "large": {
-        "bytes": 233534,
-        "height": 1500,
+        "bytes": 232947,
+        "height": 1125,
         "src": "projects/wax-seal-stamps/media/optimized/waxStampPOC3-large.jpg",
-        "width": 1125
+        "width": 1500
       },
       "medium": {
-        "bytes": 81313,
-        "height": 900,
+        "bytes": 81374,
+        "height": 675,
         "src": "projects/wax-seal-stamps/media/optimized/waxStampPOC3-medium.jpg",
-        "width": 675
+        "width": 900
       },
       "small": {
-        "bytes": 27277,
-        "height": 520,
+        "bytes": 27233,
+        "height": 390,
         "src": "projects/wax-seal-stamps/media/optimized/waxStampPOC3-small.jpg",
-        "width": 390
+        "width": 520
       }
     }
   },
   "projects/wax-seal-stamps/media/waxStampV1.jpg": {
     "original": {
-      "bytes": 3168791,
-      "height": 4032,
+      "bytes": 5967459,
+      "height": 3024,
       "src": "projects/wax-seal-stamps/media/waxStampV1.jpg",
-      "width": 3024
+      "width": 4032
     },
     "variants": {
       "large": {
-        "bytes": 385745,
-        "height": 1500,
+        "bytes": 385761,
+        "height": 1125,
         "src": "projects/wax-seal-stamps/media/optimized/waxStampV1-large.jpg",
-        "width": 1125
+        "width": 1500
       },
       "medium": {
-        "bytes": 134298,
-        "height": 900,
+        "bytes": 133511,
+        "height": 675,
         "src": "projects/wax-seal-stamps/media/optimized/waxStampV1-medium.jpg",
-        "width": 675
+        "width": 900
       },
       "small": {
-        "bytes": 45000,
-        "height": 520,
+        "bytes": 44732,
+        "height": 390,
         "src": "projects/wax-seal-stamps/media/optimized/waxStampV1-small.jpg",
-        "width": 390
+        "width": 520
       }
     }
   },

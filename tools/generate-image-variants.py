@@ -71,6 +71,16 @@ def save_variant(source_image: Image.Image, source: Path, label: str, config: di
     }
 
 
+def clear_old_variants() -> None:
+    for optimized_dir in MEDIA_ROOT.glob("*/media/optimized"):
+        if not optimized_dir.is_dir():
+            continue
+
+        for path in optimized_dir.iterdir():
+            if path.is_file() and path.suffix.lower() in IMAGE_SUFFIXES:
+                path.unlink()
+
+
 def generate() -> dict:
     manifest = {}
     sources = sorted(
@@ -115,6 +125,7 @@ def write_manifest(manifest: dict) -> None:
 
 
 def main() -> None:
+    clear_old_variants()
     manifest = generate()
     write_manifest(manifest)
 
