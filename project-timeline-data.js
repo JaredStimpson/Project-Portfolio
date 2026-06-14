@@ -298,94 +298,95 @@ window.projectTimelineEvents = {
       order: 1,
       featured: true,
       date: "Concept",
-      title: "Defined Fidelity and Assembly Goals",
+      title: "Testing of simple contour engravings",
       summary:
-        "Set the goal of creating a CNC-machined stamp that could leave a legible custom wax emblem.",
+        "The first step of this project involved testing the quality of wax imprents using simple engravng methods like a ball endmill contour trace.",
       details: [
-        "Needed small, detailed features.",
-        "Needed to fit handle assembly and fasteners.",
-        "Selected aluminum for machinability and heat conductivity."
+        "Selected aluminum for machinability and heat conductivity.",
+        "Tested .002 to .010 inch engraving depths",
+        "Created legible writing but left more to be desired in the quality of the raster logos"
       ],
       icon: 0,
       images: [
         {
+          src: "projects/wax-seal-stamps/media/waxStampPOC.jpg",
+          alt: "Proof-of-concept wax impression with .010 depth contour trace"
+        },
+        {
+          src: "projects/wax-seal-stamps/media/waxStampPOC2.jpg",
+          alt: "Proof of concept impression on .002 engraving already machined"
+        },
+        {
+          src: "projects/wax-seal-stamps/media/waxStampPOC3.jpg",
+          alt: "Proof of concept testing"
+        }
+      ]
+    },
+     {
+      id: "machine-first-test",
+      order: 2,
+      featured: true,
+      date: "Development",
+      title: "Machining of first prototype",
+      summary:
+        "The first version I made had a round stamp head and a rectangular boss. This was to reduce the complexity of holding for operation 2 when it was flipped over by allowing it to be held in the straight vice jaws.",
+      details: [
+        "Used initial testing contour trace style.",
+        "Workholding with a small boss let to deforming the part where it was held.",
+        "Verified the possibility of the project"
+      ],
+      icon: 2,
+      images: [
+        {
           src: "projects/wax-seal-stamps/media/waxStampV1.jpg",
-          alt: "Early wax seal stamp version used to define the design goal"
+          alt: "Early wax seal stamp version with square workholding boss and simple contour trace"
         }
       ]
     },
     {
       id: "design-fixture",
-      order: 2,
+      order: 3,
       featured: true,
       date: "Design/manufacturing",
-      title: "Designed Repeatable Workholding",
+      title: "Re-designed and used custom fixtureing",
       summary:
-        "Created custom workholding to secure small stamp heads during machining.",
+        "After running into deformation problems from holding onto a small boss, I redesigned the feature to be a larger round boss which could be held in soft-jaws made to it's diameter.",
       details: [
-        "Focused on repeatability and reliability.",
-        "Used soft-jaw style fixturing.",
-        "Accounted for small part geometry and tool access."
+        "Created soft-jaws to size",
+        "Allowed for enough surface area exposed for holding",
+        "Properly located relevant datums"
       ],
       icon: 1,
       images: [
-        {
-          src: "projects/wax-seal-stamps/media/datumDanStamp.jpg",
-          alt: "Machined wax seal stamp head used in the assembly"
-        },
-        {
-          src: "projects/wax-seal-stamps/media/waxStampV3.jpg",
-          alt: "Completed replaceable wax seal stamp heads"
-        }
+        
       ]
     },
     {
       id: "machine-stamp",
-      order: 3,
+      order: 4,
       featured: true,
       date: "Machining",
-      title: "Machined Detailed Stamp Features",
+      title: "Machined stamp with raster details and updated workholding feature",
       summary:
-        "Ran CNC toolpaths for the emblem geometry and assembly features.",
+        "After revisions in the design, I machined the final version which included the soft-jaw features and a higher quality engraving using a reference.",
       details: [
-        "Managed complex toolpaths.",
-        "Balanced feature fidelity with tool life and time.",
-        "Machined features needed for assembly fit."
+        "Introduced fine detail engravings using a raster refernce instead of a vector",
+        "Created multiple versions of the design as gifts",
+        "Created 'ready to use' stamp heads awaiting handle manufacturing"
       ],
       icon: 1,
       images: [
         {
           src: "projects/wax-seal-stamps/media/waxStampMacroChau.JPG",
-          alt: "Close-up of machined wax seal stamp emblem details"
-        }
-      ]
-    },
-    {
-      id: "test-wax-emblem",
-      order: 4,
-      featured: true,
-      date: "Validation",
-      title: "Tested Wax Impression",
-      summary:
-        "Verified the stamp could leave a readable wax emblem using a temporary handle.",
-      details: [
-        "Observed wax impression quality.",
-        "Confirmed functional concept.",
-        "Final measurement data TBD."
-      ],
-      icon: 2,
-      images: [
-        {
-          src: "projects/wax-seal-stamps/media/waxStampPOC.jpg",
-          alt: "Proof-of-concept wax impression from the machined stamp"
+          alt: "Close-up of machined wax seal stamp emblem details of the Chinese character 周 (Zhou)"
         },
         {
-          src: "projects/wax-seal-stamps/media/waxStampPOC2.jpg",
-          alt: "Second wax impression test from the machined stamp"
+          src: "projects/wax-seal-stamps/media/datumDanStamp.jpg",
+          alt: "A 'Datum Dan' stamp given as a gift to one of my professors that teaches GD&T, Metrology, and Quality Engineering classes"
         },
         {
-          src: "projects/wax-seal-stamps/media/waxStampPOC3.jpg",
-          alt: "Close-up wax impression validation test"
+          src: "projects/wax-seal-stamps/media/waxStampV3.jpg",
+          alt: "Custom wax seal heads for my brothers and Mom"
         }
       ]
     }
