@@ -7,7 +7,8 @@ Store durable project documentation in this folder. Local working notes and long
 1. Add original photos to the matching `projects/<project-name>/media` folder.
 2. Run `tools\\launch.bat` from File Explorer or a terminal.
 3. The launcher creates `.venv` when needed, installs the dependencies, generates missing optimized variants, and updates `image-variants.js`.
-4. Keep project data pointed at the original image, not the generated file under `media/optimized`.
-5. If you replace a photo but keep the same filename, run `tools\\launch.bat --force` to rebuild all variants.
+4. At the end, review the on-screen summary, then press any key to close the window.
+5. Keep project data pointed at the original image, not the generated file under `media/optimized`.
+6. If you replace a photo but keep the same filename, run `tools\\launch.bat --force` to rebuild all variants.
 
 The generated optimized images and `image-variants.js` are part of the deployed site and should be committed after review.

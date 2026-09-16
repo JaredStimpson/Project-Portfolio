@@ -16,6 +16,7 @@ from __future__ import annotations
 
 import argparse
 import json
+import sys
 from pathlib import Path
 
 from PIL import Image, ImageOps
@@ -108,10 +109,11 @@ def existing_variant(source: Path, label: str) -> dict:
     }
 
 
-def generate(force: bool = False) -> tuple[dict, int, int]:
+def generate(force: bool = False) -> tuple[dict, int, int, list[str]]:
     manifest = {}
     generated_count = 0
     skipped_count = 0
+    updated_sources = []
     sources = find_sources()
 
     for source in sources:
@@ -127,18 +129,23 @@ def generate(force: bool = False) -> tuple[dict, int, int]:
             },
             "variants": {},
         }
+        source_was_updated = False
 
         for label, config in VARIANTS.items():
             if force or not variant_exists(source, label):
                 entry["variants"][label] = save_variant(image, source, label, config)
                 generated_count += 1
+                source_was_updated = True
             else:
                 entry["variants"][label] = existing_variant(source, label)
                 skipped_count += 1
 
+        if source_was_updated:
+            updated_sources.append(repo_path(source))
+
         manifest[repo_path(source)] = entry
 
-    return manifest, generated_count, skipped_count
+    return manifest, generated_count, skipped_count, updated_sources
 
 
 def write_manifest(manifest: dict) -> None:
@@ -159,28 +166,78 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument(
         "--force",
         action="store_true",
-        help="Regenerate every variant even when an up-to-date file exists.",
+        help="Regenerate every variant even when it already exists.",
+    )
+    parser.add_argument(
+        "--pause",
+        action="store_true",
+        help="Wait for a key press after printing the final summary.",
     )
     return parser.parse_args()
 
 
-def main() -> None:
-    args = parse_args()
-    manifest, generated_count, skipped_count = generate(force=args.force)
-    write_manifest(manifest)
-
+def print_summary(
+    manifest: dict,
+    generated_count: int,
+    skipped_count: int,
+    updated_sources: list[str],
+    force: bool,
+) -> None:
     original_bytes = sum(item["original"]["bytes"] for item in manifest.values())
     variant_bytes = sum(
         variant["bytes"]
         for item in manifest.values()
         for variant in item["variants"].values()
     )
-    print(f"images={len(manifest)}")
-    print(f"variants_generated={generated_count}")
-    print(f"variants_current={skipped_count}")
-    print(f"original_mb={original_bytes / 1024 / 1024:.2f}")
-    print(f"variants_mb={variant_bytes / 1024 / 1024:.2f}")
-    print(f"manifest={repo_path(MANIFEST_PATH)}")
+
+    print()
+    print("Photo optimization summary")
+    print("--------------------------")
+    print(f"Mode: {'full rebuild' if force else 'missing images only'}")
+    print(f"Source photos found: {len(manifest)}")
+    print(f"Source photos updated: {len(updated_sources)}")
+    print(f"Variants generated: {generated_count}")
+    print(f"Existing variants kept: {skipped_count}")
+    print(f"Original photos total: {original_bytes / 1024 / 1024:.2f} MB")
+    print(f"Optimized variants total: {variant_bytes / 1024 / 1024:.2f} MB")
+    print(f"Manifest updated: {repo_path(MANIFEST_PATH)}")
+
+    if updated_sources:
+        print("Photos processed:")
+        for source in updated_sources:
+            print(f"  - {source}")
+    else:
+        print("Result: No missing optimized images were found.")
+
+
+def wait_for_dismissal(enabled: bool) -> None:
+    if not enabled or not sys.stdin.isatty():
+        return
+
+    print()
+    print("Press any key to close...")
+    try:
+        import msvcrt
+
+        msvcrt.getwch()
+    except ImportError:
+        input()
+
+
+def main() -> None:
+    args = parse_args()
+    manifest, generated_count, skipped_count, updated_sources = generate(
+        force=args.force
+    )
+    write_manifest(manifest)
+    print_summary(
+        manifest,
+        generated_count,
+        skipped_count,
+        updated_sources,
+        args.force,
+    )
+    wait_for_dismissal(args.pause)
 
 
 if __name__ == "__main__":

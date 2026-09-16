@@ -2,6 +2,34 @@
 // Keep editing project data with original media paths; this manifest
 // lets the site choose smaller generated images at runtime.
 window.portfolioImageVariants = {
+  "projects/bt-speaker/media/Layout.png": {
+    "original": {
+      "bytes": 49588540,
+      "height": 6063,
+      "src": "projects/bt-speaker/media/Layout.png",
+      "width": 7348
+    },
+    "variants": {
+      "large": {
+        "bytes": 356401,
+        "height": 1238,
+        "src": "projects/bt-speaker/media/optimized/Layout-large.jpg",
+        "width": 1500
+      },
+      "medium": {
+        "bytes": 129698,
+        "height": 743,
+        "src": "projects/bt-speaker/media/optimized/Layout-medium.jpg",
+        "width": 900
+      },
+      "small": {
+        "bytes": 48365,
+        "height": 429,
+        "src": "projects/bt-speaker/media/optimized/Layout-small.jpg",
+        "width": 520
+      }
+    }
+  },
   "projects/bt-speaker/media/btSpeakerIsometric.jpg": {
     "original": {
       "bytes": 9460253,
