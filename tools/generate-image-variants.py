@@ -1,15 +1,20 @@
 """Generate optimized project image variants for the portfolio.
 
-Run from the repository root:
-  python tools/generate-image-variants.py
+Recommended Windows workflow:
+  tools\\launch.bat
+
+Run directly from any working directory:
+  python tools/generate-image-variants.py [--force]
 
 The editable project data should keep pointing at original media files. This
-script creates smaller images under each media/optimized folder and writes
+script creates missing images under each media/optimized folder and writes
 image-variants.js so the site can automatically load the right-sized file.
+Pass --force after replacing an existing original or to regenerate everything.
 """
 
 from __future__ import annotations
 
+import argparse
 import json
 from pathlib import Path
 
@@ -71,25 +76,43 @@ def save_variant(source_image: Image.Image, source: Path, label: str, config: di
     }
 
 
-def clear_old_variants() -> None:
-    for optimized_dir in MEDIA_ROOT.glob("*/media/optimized"):
-        if not optimized_dir.is_dir():
+def find_sources() -> list[Path]:
+    sources = []
+    for media_dir in MEDIA_ROOT.rglob("media"):
+        if not media_dir.is_dir():
             continue
 
-        for path in optimized_dir.iterdir():
-            if path.is_file() and path.suffix.lower() in IMAGE_SUFFIXES:
-                path.unlink()
+        sources.extend(
+            path
+            for path in media_dir.iterdir()
+            if path.is_file() and path.suffix.lower() in IMAGE_SUFFIXES
+        )
+
+    return sorted(sources)
 
 
-def generate() -> dict:
+def variant_exists(source: Path, label: str) -> bool:
+    return variant_path(source, label).is_file()
+
+
+def existing_variant(source: Path, label: str) -> dict:
+    output = variant_path(source, label)
+    with Image.open(output) as image:
+        width, height = image.size
+
+    return {
+        "src": repo_path(output),
+        "width": width,
+        "height": height,
+        "bytes": output.stat().st_size,
+    }
+
+
+def generate(force: bool = False) -> tuple[dict, int, int]:
     manifest = {}
-    sources = sorted(
-        path
-        for path in MEDIA_ROOT.glob("*/media/*")
-        if path.is_file()
-        and path.suffix.lower() in IMAGE_SUFFIXES
-        and "optimized" not in path.parts
-    )
+    generated_count = 0
+    skipped_count = 0
+    sources = find_sources()
 
     for source in sources:
         with Image.open(source) as raw_image:
@@ -106,11 +129,16 @@ def generate() -> dict:
         }
 
         for label, config in VARIANTS.items():
-            entry["variants"][label] = save_variant(image, source, label, config)
+            if force or not variant_exists(source, label):
+                entry["variants"][label] = save_variant(image, source, label, config)
+                generated_count += 1
+            else:
+                entry["variants"][label] = existing_variant(source, label)
+                skipped_count += 1
 
         manifest[repo_path(source)] = entry
 
-    return manifest
+    return manifest, generated_count, skipped_count
 
 
 def write_manifest(manifest: dict) -> None:
@@ -124,9 +152,21 @@ def write_manifest(manifest: dict) -> None:
     )
 
 
+def parse_args() -> argparse.Namespace:
+    parser = argparse.ArgumentParser(
+        description="Generate responsive image variants for project media."
+    )
+    parser.add_argument(
+        "--force",
+        action="store_true",
+        help="Regenerate every variant even when an up-to-date file exists.",
+    )
+    return parser.parse_args()
+
+
 def main() -> None:
-    clear_old_variants()
-    manifest = generate()
+    args = parse_args()
+    manifest, generated_count, skipped_count = generate(force=args.force)
     write_manifest(manifest)
 
     original_bytes = sum(item["original"]["bytes"] for item in manifest.values())
@@ -136,6 +176,8 @@ def main() -> None:
         for variant in item["variants"].values()
     )
     print(f"images={len(manifest)}")
+    print(f"variants_generated={generated_count}")
+    print(f"variants_current={skipped_count}")
     print(f"original_mb={original_bytes / 1024 / 1024:.2f}")
     print(f"variants_mb={variant_bytes / 1024 / 1024:.2f}")
     print(f"manifest={repo_path(MANIFEST_PATH)}")

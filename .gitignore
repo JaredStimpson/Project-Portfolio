@@ -1,0 +1,9 @@
+# Local planning and agent notes
+/version plans/
+/vault.md
+
+# Local Python environment and caches
+/.venv/
+__pycache__/
+*.py[cod]
+
