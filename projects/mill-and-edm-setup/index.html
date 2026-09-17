@@ -12,7 +12,7 @@
     <nav class="navbar">
       <a href="../../index.html" class="logo-lockup">
         <span class="logo-mark" aria-hidden="true">CP</span>
-        <span class="logo-text">[Department / Program Name]</span>
+        <span class="logo-text">IME | Manufacturing Engineering Undergraduate</span>
       </a>
 
       <ul class="nav-links">
@@ -24,12 +24,9 @@
     </nav>
 
     <section class="hero project-hero">
-      <p class="eyebrow" data-project-field="tag">[Course / Lab / Team]</p>
-      <h1 data-project-field="title">[Project Title]</h1>
-      <p class="hero-subtitle" data-project-field="description">
-        Replace this with a short project summary: the problem, your approach,
-        and the result you want visitors to remember.
-      </p>
+      <p class="eyebrow" data-project-field="tag">Manufacturing / Milling / EDM Setup</p>
+      <h1 data-project-field="title">Mill and EDM Setup Fixture</h1>
+      <p class="hero-subtitle" data-project-field="description">Prepared a machined setup part and fixture plate installation for a milling-to-EDM workflow.</p>
       <a href="../../index.html#projects" class="button">Back to Projects</a>
     </section>
   </header>
@@ -39,34 +36,75 @@
       <aside class="project-sidebar project-timeline-sidebar">
         <h3>Project Snapshot</h3>
         <ul class="project-details">
-          <li><strong>Role:</strong> <span data-project-field="role">[Your Role]</span></li>
-          <li><strong>Tools:</strong> <span data-project-field="tools">[Tool 1], [Tool 2], [Tool 3]</span></li>
-          <li><strong>Timeline:</strong> <span data-project-field="timeline">[Quarter / Year]</span></li>
-          <li><strong>Outcome:</strong> <span data-project-field="outcome">[Result / Metric / Deliverable]</span></li>
+          <li><strong>Role:</strong> <span data-project-field="role">Machining setup, fixture plate installation, EDM preparation, workholding, process documentation</span></li>
+          <li><strong>Tools:</strong> <span data-project-field="tools">Milling, Wire EDM or sinker EDM (TBD), fixture plate, workholding, setup planning, inspection (TBD)</span></li>
+          <li><strong>Timeline:</strong> <span data-project-field="timeline">TBD</span></li>
+          <li><strong>Outcome:</strong> <span data-project-field="outcome">Fixture plate and setup part documented for an EDM workflow; final operation results TBD.</span></li>
         </ul>
       </aside>
 
       <div class="project-detail-main project-timeline-main">
         <p class="eyebrow">Timeline</p>
         <h2>Project Development</h2>
-        <p class="project-timeline-intro" data-project-field="story">
-          Replace this section with a clear explanation of the engineering
-          challenge, design decisions, testing process, and final outcome.
-        </p>
+        <p class="project-timeline-intro" data-project-field="story">This entry is inferred from the existing media, which shows an EDM setup part from multiple angles and a fixture plate installed in the machine. I treated it as a setup and workholding project that connects conventional machining preparation with EDM setup. The core story is process control: install the fixture plate, prepare or verify the setup part, and make the workholding repeatable enough for the next machining operation. Exact part purpose, operation sequence, datum scheme, and inspection results are still TBD.</p>
 
-        <div class="project-media-frame project-media-frame--timeline project-media-frame--empty" data-project-media>
-          <span>[Add project media here]</span>
+        <div class="project-media-frame project-media-frame--timeline" data-project-media>
+          <img src="../../projects/mill-and-edm-setup/media/optimized/edmSetupPart-large.jpg" alt="Fixture plate installed for a mill and EDM setup workflow" decoding="async" />
         </div>
 
         <ol class="project-timeline" data-project-timeline>
-          <li class="project-timeline-empty">Add timeline events for this project in project-timeline-data.js.</li>
-        </ol>
+        <li class="project-timeline-item">
+          <span class="project-timeline-marker" aria-hidden="true">
+            <img src="../../images/Icons/timelineStartIcon.svg" alt="" loading="lazy" decoding="async" />
+          </span>
+          <div class="project-timeline-content">
+            <p class="project-timeline-date">Setup planning</p>
+            <h3>Planned the Fixture Plate Setup</h3>
+            <p class="project-timeline-summary">Prepared the setup around a fixture plate so the part could be located for the next machining operation.</p>
+          <ul class="project-timeline-details">
+            <li>The fixture plate installation photo indicates the workholding system is the core setup element.</li>
+            <li>The project appears to connect milling preparation with an EDM operation.</li>
+            <li>Exact datum scheme and operation sequence are TBD.</li>
+          </ul>
+          </div>
+        </li>
+        <li class="project-timeline-item">
+          <span class="project-timeline-marker" aria-hidden="true">
+            <img src="../../images/Icons/timelineBuildIcon.svg" alt="" loading="lazy" decoding="async" />
+          </span>
+          <div class="project-timeline-content">
+            <p class="project-timeline-date">Build/setup</p>
+            <h3>Prepared the Setup Part</h3>
+            <p class="project-timeline-summary">Documented the machined setup part before the EDM operation.</p>
+          <ul class="project-timeline-details">
+            <li>The part images show the workpiece prepared for fixturing or EDM work.</li>
+            <li>Setup appears to prioritize access, location, and process repeatability.</li>
+            <li>Part function and final inspection requirements are TBD.</li>
+          </ul>
+          </div>
+        </li>
+        <li class="project-timeline-item">
+          <span class="project-timeline-marker" aria-hidden="true">
+            <img src="../../images/Icons/timelineTestIcon.svg" alt="" loading="lazy" decoding="async" />
+          </span>
+          <div class="project-timeline-content">
+            <p class="project-timeline-date">Verification</p>
+            <h3>Verified Workholding Readiness</h3>
+            <p class="project-timeline-summary">Confirmed the fixture plate and setup part were ready for the downstream EDM workflow.</p>
+          <ul class="project-timeline-details">
+            <li>The media supports a setup-readiness story more than a final-part story.</li>
+            <li>TBD: add final EDM operation images if this setup produced a finished part.</li>
+            <li>TBD: add tolerance, repeatability, or setup-time notes when available.</li>
+          </ul>
+          </div>
+        </li>
+      </ol>
       </div>
     </section>
   </main>
 
   <footer class="site-footer">
-    <p>&copy; [Year] Jared Stimpson. Engineering Project Portfolio.</p>
+    <p>&copy; 2026 Jared Stimpson. Engineering Project Portfolio.</p>
   </footer>
 
   <script src="../../projects-data.js"></script>

@@ -12,7 +12,7 @@
     <nav class="navbar">
       <a href="../../index.html" class="logo-lockup">
         <span class="logo-mark" aria-hidden="true">CP</span>
-        <span class="logo-text">[Department / Program Name]</span>
+        <span class="logo-text">IME | Manufacturing Engineering Undergraduate</span>
       </a>
 
       <ul class="nav-links">
@@ -24,12 +24,9 @@
     </nav>
 
     <section class="hero project-hero">
-      <p class="eyebrow" data-project-field="tag">[Course / Lab / Team]</p>
-      <h1 data-project-field="title">[Project Title]</h1>
-      <p class="hero-subtitle" data-project-field="description">
-        Replace this with a short project summary: the problem, your approach,
-        and the result you want visitors to remember.
-      </p>
+      <p class="eyebrow" data-project-field="tag">Manufacturing / WEDM / Gear Cutting</p>
+      <h1 data-project-field="title">Ring Gear EDM Project</h1>
+      <p class="hero-subtitle" data-project-field="description">Cut a ring gear profile from slug stock using an EDM workflow, with process media showing the slug, lead-in, tooth form, and finished geometry.</p>
       <a href="../../index.html#projects" class="button">Back to Projects</a>
     </section>
   </header>
@@ -39,34 +36,90 @@
       <aside class="project-sidebar project-timeline-sidebar">
         <h3>Project Snapshot</h3>
         <ul class="project-details">
-          <li><strong>Role:</strong> <span data-project-field="role">[Your Role]</span></li>
-          <li><strong>Tools:</strong> <span data-project-field="tools">[Tool 1], [Tool 2], [Tool 3]</span></li>
-          <li><strong>Timeline:</strong> <span data-project-field="timeline">[Quarter / Year]</span></li>
-          <li><strong>Outcome:</strong> <span data-project-field="outcome">[Result / Metric / Deliverable]</span></li>
+          <li><strong>Role:</strong> <span data-project-field="role">EDM setup, process planning, workholding, manufacturing documentation, visual inspection</span></li>
+          <li><strong>Tools:</strong> <span data-project-field="tools">Wire EDM, gear profile cutting, workholding, setup planning, visual inspection, process documentation</span></li>
+          <li><strong>Timeline:</strong> <span data-project-field="timeline">TBD</span></li>
+          <li><strong>Outcome:</strong> <span data-project-field="outcome">Ring gear cut and documented with slug, lead-in, close-up, and finished-part media; tolerance results TBD.</span></li>
         </ul>
       </aside>
 
       <div class="project-detail-main project-timeline-main">
         <p class="eyebrow">Timeline</p>
         <h2>Project Development</h2>
-        <p class="project-timeline-intro" data-project-field="story">
-          Replace this section with a clear explanation of the engineering
-          challenge, design decisions, testing process, and final outcome.
-        </p>
+        <p class="project-timeline-intro" data-project-field="story">This project is inferred from the current ring gear media folder. The image sequence shows starting slug material, an EDM lead-in/cut feature, close-up tooth geometry, and finished isometric views of the ring gear. I treated the project as a Wire EDM process and inspection story: prepare the stock, plan the cut path, manage the lead-in and tooth form, then document the finished ring gear. Exact course context, drawing requirements, tolerances, material, and inspection results are still TBD.</p>
 
-        <div class="project-media-frame project-media-frame--timeline project-media-frame--empty" data-project-media>
-          <span>[Add project media here]</span>
+        <div class="project-media-frame project-media-frame--timeline" data-project-media>
+          <img src="../../projects/ring-gear/media/optimized/ringgearCloseup-large.jpg" alt="Finished ring gear shown after EDM cutting" decoding="async" />
         </div>
 
         <ol class="project-timeline" data-project-timeline>
-          <li class="project-timeline-empty">Add timeline events for this project in project-timeline-data.js.</li>
-        </ol>
+        <li class="project-timeline-item">
+          <span class="project-timeline-marker" aria-hidden="true">
+            <img src="../../images/Icons/timelineStartIcon.svg" alt="" loading="lazy" decoding="async" />
+          </span>
+          <div class="project-timeline-content">
+            <p class="project-timeline-date">Stock prep</p>
+            <h3>Prepared Ring Gear Slug Stock</h3>
+            <p class="project-timeline-summary">Started from slug stock that would become the ring gear profile.</p>
+          <ul class="project-timeline-details">
+            <li>Slug media documents the starting workpiece before the gear form was cut.</li>
+            <li>The wide slug image gives context for scale and stock condition.</li>
+            <li>Exact material, stock dimensions, and drawing requirements are TBD.</li>
+          </ul>
+          </div>
+        </li>
+        <li class="project-timeline-item">
+          <span class="project-timeline-marker" aria-hidden="true">
+            <img src="../../images/Icons/timelineBuildIcon.svg" alt="" loading="lazy" decoding="async" />
+          </span>
+          <div class="project-timeline-content">
+            <p class="project-timeline-date">EDM cut setup</p>
+            <h3>Managed Lead-In and Cut Strategy</h3>
+            <p class="project-timeline-summary">Used the lead-in feature to support the EDM cutting path into the ring gear geometry.</p>
+          <ul class="project-timeline-details">
+            <li>Lead-in media suggests attention to where the cut starts and transitions into the part.</li>
+            <li>This is the right place to add future notes about datum setup, wire path, and cut parameters.</li>
+            <li>Machine, wire, and exact operation settings are TBD.</li>
+          </ul>
+          </div>
+        </li>
+        <li class="project-timeline-item">
+          <span class="project-timeline-marker" aria-hidden="true">
+            <img src="../../images/Icons/timelineTestIcon.svg" alt="" loading="lazy" decoding="async" />
+          </span>
+          <div class="project-timeline-content">
+            <p class="project-timeline-date">Inspection</p>
+            <h3>Documented Tooth Profile Detail</h3>
+            <p class="project-timeline-summary">Captured close-up media of the finished tooth form for visual review.</p>
+          <ul class="project-timeline-details">
+            <li>Close-up image helps show edge quality and geometry detail.</li>
+            <li>Future edits can add pitch, tooth count, tolerance, or inspection method.</li>
+            <li>Quantitative gear inspection results are TBD.</li>
+          </ul>
+          </div>
+        </li>
+        <li class="project-timeline-item">
+          <span class="project-timeline-marker" aria-hidden="true">
+            <img src="../../images/Icons/timelineResultIcon.svg" alt="" loading="lazy" decoding="async" />
+          </span>
+          <div class="project-timeline-content">
+            <p class="project-timeline-date">Result</p>
+            <h3>Finished Ring Gear</h3>
+            <p class="project-timeline-summary">Documented the finished ring gear geometry with an isometric result image.</p>
+          <ul class="project-timeline-details">
+            <li>Finished view provides the main project result image.</li>
+            <li>TBD: add final acceptance criteria, tolerance results, and application context.</li>
+            <li>TBD: note whether this was a course, research, or personal manufacturing project.</li>
+          </ul>
+          </div>
+        </li>
+      </ol>
       </div>
     </section>
   </main>
 
   <footer class="site-footer">
-    <p>&copy; [Year] Jared Stimpson. Engineering Project Portfolio.</p>
+    <p>&copy; 2026 Jared Stimpson. Engineering Project Portfolio.</p>
   </footer>
 
   <script src="../../projects-data.js"></script>

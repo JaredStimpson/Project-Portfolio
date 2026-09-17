@@ -12,7 +12,7 @@
     <nav class="navbar">
       <a href="../../index.html" class="logo-lockup">
         <span class="logo-mark" aria-hidden="true">CP</span>
-        <span class="logo-text">[Department / Program Name]</span>
+        <span class="logo-text">IME | Manufacturing Engineering Undergraduate</span>
       </a>
 
       <ul class="nav-links">
@@ -24,12 +24,9 @@
     </nav>
 
     <section class="hero project-hero">
-      <p class="eyebrow" data-project-field="tag">[Course / Lab / Team]</p>
-      <h1 data-project-field="title">[Project Title]</h1>
-      <p class="hero-subtitle" data-project-field="description">
-        Replace this with a short project summary: the problem, your approach,
-        and the result you want visitors to remember.
-      </p>
+      <p class="eyebrow" data-project-field="tag">Personal Build / Fixture Design / Rapid Prototyping</p>
+      <h1 data-project-field="title">Acrylic Sheet Track Saw Jig</h1>
+      <p class="hero-subtitle" data-project-field="description">Designed a 3D-printed adjustable stop that reduced repeated measurement steps when cutting acrylic sheets to fixed dimensions.</p>
       <a href="../../index.html#projects" class="button">Back to Projects</a>
     </section>
   </header>
@@ -39,34 +36,94 @@
       <aside class="project-sidebar project-timeline-sidebar">
         <h3>Project Snapshot</h3>
         <ul class="project-details">
-          <li><strong>Role:</strong> <span data-project-field="role">[Your Role]</span></li>
-          <li><strong>Tools:</strong> <span data-project-field="tools">[Tool 1], [Tool 2], [Tool 3]</span></li>
-          <li><strong>Timeline:</strong> <span data-project-field="timeline">[Quarter / Year]</span></li>
-          <li><strong>Outcome:</strong> <span data-project-field="outcome">[Result / Metric / Deliverable]</span></li>
+          <li><strong>Role:</strong> <span data-project-field="role">CAD design, rapid prototyping, embedded hardware design, fixture iteration, functional testing</span></li>
+          <li><strong>Tools:</strong> <span data-project-field="tools">3D printing, PLA, embedded nuts, wing nut, track saw, CAD (TBD), heat gun, standard hardware</span></li>
+          <li><strong>Timeline:</strong> <span data-project-field="timeline">TBD</span></li>
+          <li><strong>Outcome:</strong> <span data-project-field="outcome">Functional adjustable stop created for repeated acrylic sheet cuts; cycle-time improvement not quantified.</span></li>
         </ul>
       </aside>
 
       <div class="project-detail-main project-timeline-main">
         <p class="eyebrow">Timeline</p>
         <h2>Project Development</h2>
-        <p class="project-timeline-intro" data-project-field="story">
-          Replace this section with a clear explanation of the engineering
-          challenge, design decisions, testing process, and final outcome.
-        </p>
+        <p class="project-timeline-intro" data-project-field="story">I designed an adjustable stop for a track saw to speed up repeated acrylic sheet cuts. Instead of remeasuring before each cut, the jig set a repeatable stop position for the required dimensions. The design needed to adjust between 4 and 6 inches while resisting accidental movement. I used a wing nut and embedded nut to apply clamping tension, then iterated through rapid prototypes to solve printer-related adhesion issues without deforming the thin-walled PLA during nut insertion.</p>
 
         <div class="project-media-frame project-media-frame--timeline project-media-frame--empty" data-project-media>
-          <span>[Add project media here]</span>
+          <span>[Add acrylic track saw jig detail media]</span>
         </div>
 
         <ol class="project-timeline" data-project-timeline>
-          <li class="project-timeline-empty">Add timeline events for this project in project-timeline-data.js.</li>
-        </ol>
+        <li class="project-timeline-item">
+          <span class="project-timeline-marker" aria-hidden="true">
+            <img src="../../images/Icons/timelineStartIcon.svg" alt="" loading="lazy" decoding="async" />
+          </span>
+          <div class="project-timeline-content">
+            <p class="project-timeline-date">Problem</p>
+            <h3>Identified Repeated Measurement Bottleneck</h3>
+            <p class="project-timeline-summary">Acrylic sheet cuts required repeated measurement before each cut, slowing the process.</p>
+          <ul class="project-timeline-details">
+            <li>Needed repeatable 4 inch and 6 inch stops.</li>
+            <li>Needed to resist accidental bumps.</li>
+            <li>Needed to attach to the track saw setup.</li>
+            <li>TBD: add problem/setup media when available.</li>
+          </ul>
+          </div>
+        </li>
+        <li class="project-timeline-item">
+          <span class="project-timeline-marker" aria-hidden="true">
+            <img src="../../images/Icons/timelineBuildIcon.svg" alt="" loading="lazy" decoding="async" />
+          </span>
+          <div class="project-timeline-content">
+            <p class="project-timeline-date">Prototype</p>
+            <h3>Rapid-Prototyped Adjustable Stop</h3>
+            <p class="project-timeline-summary">Iterated on a 3D-printed stop design with embedded hardware.</p>
+          <ul class="project-timeline-details">
+            <li>Designed for standard parts.</li>
+            <li>Used an embedded nut and wing nut for tension.</li>
+            <li>Adjusted geometry for the required range.</li>
+            <li>TBD: add prototype images when available.</li>
+          </ul>
+          </div>
+        </li>
+        <li class="project-timeline-item">
+          <span class="project-timeline-marker" aria-hidden="true">
+            <img src="../../images/Icons/timelineTestIcon.svg" alt="" loading="lazy" decoding="async" />
+          </span>
+          <div class="project-timeline-content">
+            <p class="project-timeline-date">Build issue</p>
+            <h3>Solved Embedded-Nut Print Issue</h3>
+            <p class="project-timeline-summary">Managed adhesion problems caused by pausing and cooling during nut insertion.</p>
+          <ul class="project-timeline-details">
+            <li>Used heat carefully to complete the insert.</li>
+            <li>Avoided deformation of thin-walled PLA.</li>
+            <li>Maintained function of the clamping feature.</li>
+            <li>TBD: add embedded nut close-up when available.</li>
+          </ul>
+          </div>
+        </li>
+        <li class="project-timeline-item">
+          <span class="project-timeline-marker" aria-hidden="true">
+            <img src="../../images/Icons/timelineResultIcon.svg" alt="" loading="lazy" decoding="async" />
+          </span>
+          <div class="project-timeline-content">
+            <p class="project-timeline-date">Result</p>
+            <h3>Installed Adjustable Cutting Stop</h3>
+            <p class="project-timeline-summary">Mounted the fixture to the track saw guide for repeated acrylic sheet cuts.</p>
+          <ul class="project-timeline-details">
+            <li>Reduced repeated measurement steps.</li>
+            <li>Allowed adjustment between required cut lengths.</li>
+            <li>Quantified time savings TBD.</li>
+            <li>TBD: add final installed fixture media when available.</li>
+          </ul>
+          </div>
+        </li>
+      </ol>
       </div>
     </section>
   </main>
 
   <footer class="site-footer">
-    <p>&copy; [Year] Jared Stimpson. Engineering Project Portfolio.</p>
+    <p>&copy; 2026 Jared Stimpson. Engineering Project Portfolio.</p>
   </footer>
 
   <script src="../../projects-data.js"></script>

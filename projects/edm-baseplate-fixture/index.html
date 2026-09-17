@@ -12,7 +12,7 @@
     <nav class="navbar">
       <a href="../../index.html" class="logo-lockup">
         <span class="logo-mark" aria-hidden="true">CP</span>
-        <span class="logo-text">[Department / Program Name]</span>
+        <span class="logo-text">IME | Manufacturing Engineering Undergraduate</span>
       </a>
 
       <ul class="nav-links">
@@ -26,10 +26,7 @@
     <section class="hero project-hero">
       <p class="eyebrow" data-project-field="tag">Research</p>
       <h1 data-project-field="title">EDM Baseplate Fixture</h1>
-      <p class="hero-subtitle" data-project-field="description">
-        Replace this with a short project summary: the problem, your approach,
-        and the result you want visitors to remember.
-      </p>
+      <p class="hero-subtitle" data-project-field="description">Designed a fixture for repeatable Wire EDM removal of metal 3D prints from build plates, improving setup reliability for additive manufacturing research.</p>
       <a href="../../index.html#projects" class="button">Back to Projects</a>
     </section>
   </header>
@@ -39,34 +36,87 @@
       <aside class="project-sidebar project-timeline-sidebar">
         <h3>Project Snapshot</h3>
         <ul class="project-details">
-          <li><strong>Role:</strong> <span data-project-field="role">[Your Role]</span></li>
-          <li><strong>Tools:</strong> <span data-project-field="tools">[Tool 1], [Tool 2], [Tool 3]</span></li>
-          <li><strong>Timeline:</strong> <span data-project-field="timeline">[Quarter / Year]</span></li>
-          <li><strong>Outcome:</strong> <span data-project-field="outcome">[Result / Metric / Deliverable]</span></li>
+          <li><strong>Role:</strong> <span data-project-field="role">Design, Planning, Sourcing, Manufacturing, Testing, Analysis</span></li>
+          <li><strong>Tools:</strong> <span data-project-field="tools">SolidWorks, Mastercam, Waterjet, WEDM, Welding, Tapping</span></li>
+          <li><strong>Timeline:</strong> <span data-project-field="timeline">March 2026 - Present</span></li>
+          <li><strong>Outcome:</strong> <span data-project-field="outcome">Currently completing final post-processing before the first use test.</span></li>
         </ul>
       </aside>
 
       <div class="project-detail-main project-timeline-main">
         <p class="eyebrow">Timeline</p>
         <h2>Project Development</h2>
-        <p class="project-timeline-intro" data-project-field="story">
-          Replace this section with a clear explanation of the engineering
-          challenge, design decisions, testing process, and final outcome.
-        </p>
+        <p class="project-timeline-intro" data-project-field="story">As part of additive manufacturing research at the Cal Poly AFRL, printed metal parts need reliable post-processing after SLM or DED builds. One common step is removing parts from the baseplate, where Wire EDM can part off the workpiece accurately. I designed and planned a dedicated fixture so baseplate removal setups can be more repeatable, easier to qualify, and more reliable across future prints.</p>
 
-        <div class="project-media-frame project-media-frame--timeline project-media-frame--empty" data-project-media>
-          <span>[Add project media here]</span>
+        <div class="project-media-frame project-media-frame--timeline" data-project-media>
+          <img src="../../projects/edm-baseplate-fixture/media/optimized/baseplateFixtureIso-large.jpg" alt="Fixture to hold additive print baseplates for EDM part-off" decoding="async" />
         </div>
 
         <ol class="project-timeline" data-project-timeline>
-          <li class="project-timeline-empty">Add timeline events for this project in project-timeline-data.js.</li>
-        </ol>
+        <li class="project-timeline-item">
+          <span class="project-timeline-marker" aria-hidden="true">
+            <img src="../../images/Icons/timelineSourceIcon.svg" alt="" loading="lazy" decoding="async" />
+          </span>
+          <div class="project-timeline-content">
+            <p class="project-timeline-date">March 2026</p>
+            <h3>Sourcing and Design for Manufacturability</h3>
+            <p class="project-timeline-summary">I secured unused steel plate material from the IME department and designed the fixture around standard threaded locating pins, baseplate size, and manufacturing variability.</p>
+          <ul class="project-timeline-details">
+            <li>Fixture must locate and support the baseplate reliably.</li>
+            <li>Designed clearance and hole strategy around expected fabrication tolerances.</li>
+            <li>Planned the manufacturing sequence before cutting material.</li>
+          </ul>
+          </div>
+        </li>
+        <li class="project-timeline-item">
+          <span class="project-timeline-marker" aria-hidden="true">
+            <img src="../../images/Icons/timelineBuildIcon.svg" alt="" loading="lazy" decoding="async" />
+          </span>
+          <div class="project-timeline-content">
+            <p class="project-timeline-date">April 2026</p>
+            <h3>Waterjet Steel Plate Profiles</h3>
+            <p class="project-timeline-summary">After designing the fixture in SolidWorks, I cut the steel plate profiles on the waterjet to bring the parts near final shape.</p>
+          <ul class="project-timeline-details">
+            <li>Waterjet profiles established the rough geometry for the fixture plates.</li>
+            <li>Plate holes were left undersized so the Wire EDM could qualify final size and location.</li>
+          </ul>
+          </div>
+        </li>
+        <li class="project-timeline-item">
+          <span class="project-timeline-marker" aria-hidden="true">
+            <img src="../../images/Icons/timelineBuildIcon.svg" alt="" loading="lazy" decoding="async" />
+          </span>
+          <div class="project-timeline-content">
+            <p class="project-timeline-date">May 2026</p>
+            <h3>Wire EDM Qualification of Mounting Holes</h3>
+            <p class="project-timeline-summary">Using the pre-made holes as starting geometry, I programmed the Wire EDM to cut the mounting holes to the required size and location.</p>
+          <ul class="project-timeline-details">
+            <li>Used Mastercam to program the WEDM operation.</li>
+            <li>Qualified critical hole geometry after rough profiling.</li>
+          </ul>
+          </div>
+        </li>
+        <li class="project-timeline-item">
+          <span class="project-timeline-marker" aria-hidden="true">
+            <img src="../../images/Icons/timelineBuildIcon.svg" alt="" loading="lazy" decoding="async" />
+          </span>
+          <div class="project-timeline-content">
+            <p class="project-timeline-date">May 2026</p>
+            <h3>Weld and Assembly of Plates</h3>
+            <p class="project-timeline-summary">I fixtured and welded the plates together with help from an instructor, aiming to minimize datum warpage during assembly.</p>
+          <ul class="project-timeline-details">
+            <li>Welded the rib, mounting plate, and vertical plate into the fixture assembly.</li>
+            <li>Managed the assembly sequence around repeatability and datum stability.</li>
+          </ul>
+          </div>
+        </li>
+      </ol>
       </div>
     </section>
   </main>
 
   <footer class="site-footer">
-    <p>&copy; [Year] Jared Stimpson. Engineering Project Portfolio.</p>
+    <p>&copy; 2026 Jared Stimpson. Engineering Project Portfolio.</p>
   </footer>
 
   <script src="../../projects-data.js"></script>

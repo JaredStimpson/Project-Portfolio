@@ -2,6 +2,9 @@
 //
 // This file is JavaScript instead of strict JSON because normal JSON does not
 // allow comments. Keep each project id matched to the `id` in projects-data.js.
+// After editing events or their order, run:
+//   node tools/sync-project-fallbacks.js
+// This refreshes the timeline text preloaded in each project's index.html.
 //
 // How to reorder timeline events:
 // Change the `order` number. Lower numbers are earlier in time, so they render
@@ -153,6 +156,112 @@ window.projectTimelineEvents = {
         {
           src: "projects/edm-baseplate-fixture/media/baseplateFixtureIso.JPG",
           alt: "Isometric view of the EDM baseplate fixture"
+        }
+      ]
+    }
+  ],
+  "edm-bottleopener-fixture": [
+    {
+      id: "define-fixture-goal",
+      order: 1,
+      featured: true,
+      date: "Concept",
+      title: "Defined Fixture and Part-Holding Goal",
+      summary:
+        "Established the need for a bottle opener workholding setup that could support Wire EDM machining.",
+      details: [
+        "Media context suggests the main challenge was holding the bottle opener consistently for EDM work.",
+        "Fixture design had to support the part while leaving the machined features accessible.",
+        "Exact part material, tolerances, and course context are TBD."
+      ],
+      icon: 0,
+      images: [
+        {
+          src: "projects/edm-bottleopener-fixture/media/bottleOpenerFixture.JPG",
+          alt: "Bottle opener positioned on a machined fixture"
+        }
+      ]
+    },
+    {
+      id: "iterate-fixture",
+      order: 2,
+      featured: true,
+      date: "Fixture iteration",
+      title: "Iterated Fixture Geometry",
+      summary:
+        "Compared early and later fixture versions to improve the setup for the bottle opener part.",
+      details: [
+        "The V1 and V2 images show visible fixture iteration.",
+        "The setup appears to move toward a more stable, repeatable part location.",
+        "Exact design changes and reason for each revision are TBD."
+      ],
+      icon: 1,
+      images: [
+        {
+          src: "projects/edm-bottleopener-fixture/media/edmBottleopenerFixtureV1.jpg",
+          alt: "First version of the EDM bottle opener fixture"
+        },
+        {
+          src: "projects/edm-bottleopener-fixture/media/edmBottleOpenerFixtureV2.JPG",
+          alt: "Second version of the EDM bottle opener fixture"
+        },
+        {
+          src: "projects/edm-bottleopener-fixture/media/edmFixtureBottleopener.JPG",
+          alt: "Bottle opener held in the updated EDM fixture"
+        }
+      ]
+    },
+    {
+      id: "edm-setup",
+      order: 3,
+      featured: true,
+      date: "EDM setup",
+      title: "Set Up the Wire EDM Operation",
+      summary:
+        "Used the fixture to hold the bottle opener during the EDM setup and cutting process.",
+      details: [
+        "Setup photos show the fixture and bottle opener positioned in the machine.",
+        "The fixture supports access to the cutting area while constraining the part.",
+        "Machine settings, datum strategy, and operation sequence are TBD."
+      ],
+      icon: 1,
+      images: [
+        {
+          src: "projects/edm-bottleopener-fixture/media/edmFixtureBottleopenerSetup.JPG",
+          alt: "EDM setup holding the bottle opener fixture in the machine"
+        },
+        {
+          src: "projects/edm-bottleopener-fixture/media/edmFixtureBottleopenerSetup2.JPG",
+          alt: "Second view of the EDM bottle opener setup"
+        }
+      ]
+    },
+    {
+      id: "compare-result",
+      order: 4,
+      featured: true,
+      date: "Result",
+      title: "Compared the Machined Bottle Opener Result",
+      summary:
+        "Documented the bottle opener result with before/after and close-up media.",
+      details: [
+        "Before/after imagery shows the part progression.",
+        "Close-up media highlights the machined feature quality.",
+        "Final inspection results and acceptance criteria are TBD."
+      ],
+      icon: 3,
+      images: [
+        {
+          src: "projects/edm-bottleopener-fixture/media/edmBottleOpenerB4.jpg",
+          alt: "Bottle opener before the EDM machining result"
+        },
+        {
+          src: "projects/edm-bottleopener-fixture/media/edmBottleOpenerAfter.jpg",
+          alt: "Bottle opener after the EDM machining result"
+        },
+        {
+          src: "projects/edm-bottleopener-fixture/media/edmBottleOpenerb4after.jpg",
+          alt: "Composite before and after view of the EDM-machined bottle opener"
         }
       ]
     }
@@ -390,354 +499,6 @@ window.projectTimelineEvents = {
       ]
     }
   ],
-  "rail-saw-jig": [
-    {
-      id: "identify-cutting-problem",
-      order: 1,
-      featured: true,
-      date: "Problem",
-      title: "Identified Repeated Measurement Bottleneck",
-      summary:
-        "Acrylic sheet cuts required repeated measurement before each cut, slowing the process.",
-      details: [
-        "Needed repeatable 4 inch and 6 inch stops.",
-        "Needed to resist accidental bumps.",
-        "Needed to attach to the track saw setup.",
-        "TBD: add problem/setup media when available."
-      ],
-      icon: 0,
-      images: []
-    },
-    {
-      id: "prototype-stop",
-      order: 2,
-      featured: true,
-      date: "Prototype",
-      title: "Rapid-Prototyped Adjustable Stop",
-      summary:
-        "Iterated on a 3D-printed stop design with embedded hardware.",
-      details: [
-        "Designed for standard parts.",
-        "Used an embedded nut and wing nut for tension.",
-        "Adjusted geometry for the required range.",
-        "TBD: add prototype images when available."
-      ],
-      icon: 1,
-      images: []
-    },
-    {
-      id: "solve-embedded-nut",
-      order: 3,
-      featured: true,
-      date: "Build issue",
-      title: "Solved Embedded-Nut Print Issue",
-      summary:
-        "Managed adhesion problems caused by pausing and cooling during nut insertion.",
-      details: [
-        "Used heat carefully to complete the insert.",
-        "Avoided deformation of thin-walled PLA.",
-        "Maintained function of the clamping feature.",
-        "TBD: add embedded nut close-up when available."
-      ],
-      icon: 2,
-      images: []
-    },
-    {
-      id: "install-fixture",
-      order: 4,
-      featured: true,
-      date: "Result",
-      title: "Installed Adjustable Cutting Stop",
-      summary:
-        "Mounted the fixture to the track saw guide for repeated acrylic sheet cuts.",
-      details: [
-        "Reduced repeated measurement steps.",
-        "Allowed adjustment between required cut lengths.",
-        "Quantified time savings TBD.",
-        "TBD: add final installed fixture media when available."
-      ],
-      icon: 3,
-      images: []
-    }
-  ],
-  "bridge-less-running-camp-stencil": [
-    {
-      id: "define-logo-problem",
-      order: 1,
-      featured: true,
-      date: "Problem",
-      title: "Defined Bridge-Less Stencil Requirement",
-      summary:
-        "The logo needed enclosed letter features without visible stencil bridges.",
-      details: [
-        "Internal features in letters needed support.",
-        "Flat bridges would obstruct the sprayed design.",
-        "Deadline was tied to camp start.",
-        "TBD: add source logo or problem image when available."
-      ],
-      icon: 0,
-      images: []
-    },
-    {
-      id: "model-3d-bridges",
-      order: 2,
-      featured: true,
-      date: "Design",
-      title: "Modeled 3D Bridge Supports",
-      summary:
-        "Used raised bridge geometry so spray could reach around the support features.",
-      details: [
-        "Designed in Fusion 360.",
-        "Kept enclosed character details in place.",
-        "Balanced support with spray coverage.",
-        "TBD: add Fusion 360 stencil model image when available."
-      ],
-      icon: 1,
-      images: []
-    },
-    {
-      id: "fabricate-and-use",
-      order: 3,
-      featured: true,
-      date: "Result",
-      title: "Fabricated and Used Stencil",
-      summary:
-        "Completed the stencil in time for use on running camp shirts.",
-      details: [
-        "Prototype and finish work completed on schedule.",
-        "Post-use stencil images available in source portfolio.",
-        "Final shirt image/path TBD.",
-        "TBD: add top view of used stencil or shirt result."
-      ],
-      icon: 3,
-      images: []
-    }
-  ],
-  "edm-bottleopener-fixture": [
-    {
-      id: "define-fixture-goal",
-      order: 1,
-      featured: true,
-      date: "Concept",
-      title: "Defined Fixture and Part-Holding Goal",
-      summary:
-        "Established the need for a bottle opener workholding setup that could support Wire EDM machining.",
-      details: [
-        "Media context suggests the main challenge was holding the bottle opener consistently for EDM work.",
-        "Fixture design had to support the part while leaving the machined features accessible.",
-        "Exact part material, tolerances, and course context are TBD."
-      ],
-      icon: 0,
-      images: [
-        {
-          src: "projects/edm-bottleopener-fixture/media/bottleOpenerFixture.JPG",
-          alt: "Bottle opener positioned on a machined fixture"
-        }
-      ]
-    },
-    {
-      id: "iterate-fixture",
-      order: 2,
-      featured: true,
-      date: "Fixture iteration",
-      title: "Iterated Fixture Geometry",
-      summary:
-        "Compared early and later fixture versions to improve the setup for the bottle opener part.",
-      details: [
-        "The V1 and V2 images show visible fixture iteration.",
-        "The setup appears to move toward a more stable, repeatable part location.",
-        "Exact design changes and reason for each revision are TBD."
-      ],
-      icon: 1,
-      images: [
-        {
-          src: "projects/edm-bottleopener-fixture/media/edmBottleopenerFixtureV1.jpg",
-          alt: "First version of the EDM bottle opener fixture"
-        },
-        {
-          src: "projects/edm-bottleopener-fixture/media/edmBottleOpenerFixtureV2.JPG",
-          alt: "Second version of the EDM bottle opener fixture"
-        },
-        {
-          src: "projects/edm-bottleopener-fixture/media/edmFixtureBottleopener.JPG",
-          alt: "Bottle opener held in the updated EDM fixture"
-        }
-      ]
-    },
-    {
-      id: "edm-setup",
-      order: 3,
-      featured: true,
-      date: "EDM setup",
-      title: "Set Up the Wire EDM Operation",
-      summary:
-        "Used the fixture to hold the bottle opener during the EDM setup and cutting process.",
-      details: [
-        "Setup photos show the fixture and bottle opener positioned in the machine.",
-        "The fixture supports access to the cutting area while constraining the part.",
-        "Machine settings, datum strategy, and operation sequence are TBD."
-      ],
-      icon: 1,
-      images: [
-        {
-          src: "projects/edm-bottleopener-fixture/media/edmFixtureBottleopenerSetup.JPG",
-          alt: "EDM setup holding the bottle opener fixture in the machine"
-        },
-        {
-          src: "projects/edm-bottleopener-fixture/media/edmFixtureBottleopenerSetup2.JPG",
-          alt: "Second view of the EDM bottle opener setup"
-        }
-      ]
-    },
-    {
-      id: "compare-result",
-      order: 4,
-      featured: true,
-      date: "Result",
-      title: "Compared the Machined Bottle Opener Result",
-      summary:
-        "Documented the bottle opener result with before/after and close-up media.",
-      details: [
-        "Before/after imagery shows the part progression.",
-        "Close-up media highlights the machined feature quality.",
-        "Final inspection results and acceptance criteria are TBD."
-      ],
-      icon: 3,
-      images: [
-        {
-          src: "projects/edm-bottleopener-fixture/media/edmBottleOpenerB4.jpg",
-          alt: "Bottle opener before the EDM machining result"
-        },
-        {
-          src: "projects/edm-bottleopener-fixture/media/edmBottleOpenerAfter.jpg",
-          alt: "Bottle opener after the EDM machining result"
-        },
-        {
-          src: "projects/edm-bottleopener-fixture/media/edmBottleOpenerb4after.jpg",
-          alt: "Composite before and after view of the EDM-machined bottle opener"
-        }
-      ]
-    }
-  ],
-  "mill-and-edm-setup": [
-    {
-      id: "plan-setup",
-      order: 1,
-      featured: true,
-      date: "Setup planning",
-      title: "Planned the Fixture Plate Setup",
-      summary:
-        "Prepared the setup around a fixture plate so the part could be located for the next machining operation.",
-      details: [
-        "The fixture plate installation photo indicates the workholding system is the core setup element.",
-        "The project appears to connect milling preparation with an EDM operation.",
-        "Exact datum scheme and operation sequence are TBD."
-      ],
-      icon: 0,
-      images: [
-        {
-          src: "projects/mill-and-edm-setup/media/fixturePlateInstall.jpg",
-          alt: "Fixture plate installed for the mill and EDM setup"
-        }
-      ]
-    },
-    {
-      id: "prepare-setup-part",
-      order: 2,
-      featured: true,
-      date: "Build/setup",
-      title: "Prepared the Setup Part",
-      summary:
-        "Documented the machined setup part before the EDM operation.",
-      details: [
-        "The part images show the workpiece prepared for fixturing or EDM work.",
-        "Setup appears to prioritize access, location, and process repeatability.",
-        "Part function and final inspection requirements are TBD."
-      ],
-      icon: 1,
-      images: [
-        {
-          src: "projects/mill-and-edm-setup/media/edmSetupPart.jpg",
-          alt: "Machined setup part prepared for an EDM workflow"
-        },
-        {
-          src: "projects/mill-and-edm-setup/media/edmSetupPart2.jpg",
-          alt: "Second view of the machined setup part"
-        }
-      ]
-    },
-    {
-      id: "verify-workholding",
-      order: 3,
-      featured: true,
-      date: "Verification",
-      title: "Verified Workholding Readiness",
-      summary:
-        "Confirmed the fixture plate and setup part were ready for the downstream EDM workflow.",
-      details: [
-        "The media supports a setup-readiness story more than a final-part story.",
-        "TBD: add final EDM operation images if this setup produced a finished part.",
-        "TBD: add tolerance, repeatability, or setup-time notes when available."
-      ],
-      icon: 2,
-      images: []
-    }
-  ],
-  "injection-molded-screwdriver": [
-    {
-      id: "define-molded-part",
-      order: 1,
-      featured: true,
-      date: "Part review",
-      title: "Reviewed the Molded Screwdriver Part",
-      summary:
-        "Framed the screwdriver as an injection molding process-analysis project.",
-      details: [
-        "Current media shows the molded part around the gate and runner detail.",
-        "TBD: add full part and mold photos when available.",
-        "TBD: add material, mold design, and cycle information."
-      ],
-      icon: 0,
-      images: []
-    },
-    {
-      id: "inspect-gate-runner",
-      order: 2,
-      featured: true,
-      date: "Process detail",
-      title: "Inspected Gate and Runner Detail",
-      summary:
-        "Used the gate/runner close-up to document how the molded screwdriver was fed and separated.",
-      details: [
-        "The available image highlights the manufacturing interface between runner, gate, and part.",
-        "This is a useful anchor for later notes about fill quality, trimming, and defects.",
-        "Exact process observations are TBD."
-      ],
-      icon: 2,
-      images: [
-        {
-          src: "projects/injection-molded-screwdriver/media/injectionScrewdriverGateRunnerCloseup.jpg",
-          alt: "Gate and runner close-up on the injection-molded screwdriver"
-        }
-      ]
-    },
-    {
-      id: "document-next-steps",
-      order: 3,
-      featured: true,
-      date: "Next edits",
-      title: "Add Mold and Process Context",
-      summary:
-        "The page is ready for mold setup, final part, and process-result media when those files are added.",
-      details: [
-        "TBD: add mold setup image.",
-        "TBD: add full screwdriver image.",
-        "TBD: add material, defects, cycle time, and final result notes."
-      ],
-      icon: 3,
-      images: []
-    }
-  ],
   "ring-gear": [
     {
       id: "prepare-slug-stock",
@@ -878,6 +639,248 @@ window.projectTimelineEvents = {
         "TBD: add speaker hardware and electronics integration details.",
         "TBD: add enclosure fabrication or assembly media.",
         "TBD: add final test, sound, or fit results."
+      ],
+      icon: 3,
+      images: []
+    }
+  ],
+  "injection-molded-screwdriver": [
+    {
+      id: "define-molded-part",
+      order: 1,
+      featured: true,
+      date: "Part review",
+      title: "Reviewed the Molded Screwdriver Part",
+      summary:
+        "Framed the screwdriver as an injection molding process-analysis project.",
+      details: [
+        "Current media shows the molded part around the gate and runner detail.",
+        "TBD: add full part and mold photos when available.",
+        "TBD: add material, mold design, and cycle information."
+      ],
+      icon: 0,
+      images: []
+    },
+    {
+      id: "inspect-gate-runner",
+      order: 2,
+      featured: true,
+      date: "Process detail",
+      title: "Inspected Gate and Runner Detail",
+      summary:
+        "Used the gate/runner close-up to document how the molded screwdriver was fed and separated.",
+      details: [
+        "The available image highlights the manufacturing interface between runner, gate, and part.",
+        "This is a useful anchor for later notes about fill quality, trimming, and defects.",
+        "Exact process observations are TBD."
+      ],
+      icon: 2,
+      images: [
+        {
+          src: "projects/injection-molded-screwdriver/media/injectionScrewdriverGateRunnerCloseup.jpg",
+          alt: "Gate and runner close-up on the injection-molded screwdriver"
+        }
+      ]
+    },
+    {
+      id: "document-next-steps",
+      order: 3,
+      featured: true,
+      date: "Next edits",
+      title: "Add Mold and Process Context",
+      summary:
+        "The page is ready for mold setup, final part, and process-result media when those files are added.",
+      details: [
+        "TBD: add mold setup image.",
+        "TBD: add full screwdriver image.",
+        "TBD: add material, defects, cycle time, and final result notes."
+      ],
+      icon: 3,
+      images: []
+    }
+  ],
+  "mill-and-edm-setup": [
+    {
+      id: "plan-setup",
+      order: 1,
+      featured: true,
+      date: "Setup planning",
+      title: "Planned the Fixture Plate Setup",
+      summary:
+        "Prepared the setup around a fixture plate so the part could be located for the next machining operation.",
+      details: [
+        "The fixture plate installation photo indicates the workholding system is the core setup element.",
+        "The project appears to connect milling preparation with an EDM operation.",
+        "Exact datum scheme and operation sequence are TBD."
+      ],
+      icon: 0,
+      images: [
+        {
+          src: "projects/mill-and-edm-setup/media/fixturePlateInstall.jpg",
+          alt: "Fixture plate installed for the mill and EDM setup"
+        }
+      ]
+    },
+    {
+      id: "prepare-setup-part",
+      order: 2,
+      featured: true,
+      date: "Build/setup",
+      title: "Prepared the Setup Part",
+      summary:
+        "Documented the machined setup part before the EDM operation.",
+      details: [
+        "The part images show the workpiece prepared for fixturing or EDM work.",
+        "Setup appears to prioritize access, location, and process repeatability.",
+        "Part function and final inspection requirements are TBD."
+      ],
+      icon: 1,
+      images: [
+        {
+          src: "projects/mill-and-edm-setup/media/edmSetupPart.jpg",
+          alt: "Machined setup part prepared for an EDM workflow"
+        },
+        {
+          src: "projects/mill-and-edm-setup/media/edmSetupPart2.jpg",
+          alt: "Second view of the machined setup part"
+        }
+      ]
+    },
+    {
+      id: "verify-workholding",
+      order: 3,
+      featured: true,
+      date: "Verification",
+      title: "Verified Workholding Readiness",
+      summary:
+        "Confirmed the fixture plate and setup part were ready for the downstream EDM workflow.",
+      details: [
+        "The media supports a setup-readiness story more than a final-part story.",
+        "TBD: add final EDM operation images if this setup produced a finished part.",
+        "TBD: add tolerance, repeatability, or setup-time notes when available."
+      ],
+      icon: 2,
+      images: []
+    }
+  ],
+  "rail-saw-jig": [
+    {
+      id: "identify-cutting-problem",
+      order: 1,
+      featured: true,
+      date: "Problem",
+      title: "Identified Repeated Measurement Bottleneck",
+      summary:
+        "Acrylic sheet cuts required repeated measurement before each cut, slowing the process.",
+      details: [
+        "Needed repeatable 4 inch and 6 inch stops.",
+        "Needed to resist accidental bumps.",
+        "Needed to attach to the track saw setup.",
+        "TBD: add problem/setup media when available."
+      ],
+      icon: 0,
+      images: []
+    },
+    {
+      id: "prototype-stop",
+      order: 2,
+      featured: true,
+      date: "Prototype",
+      title: "Rapid-Prototyped Adjustable Stop",
+      summary:
+        "Iterated on a 3D-printed stop design with embedded hardware.",
+      details: [
+        "Designed for standard parts.",
+        "Used an embedded nut and wing nut for tension.",
+        "Adjusted geometry for the required range.",
+        "TBD: add prototype images when available."
+      ],
+      icon: 1,
+      images: []
+    },
+    {
+      id: "solve-embedded-nut",
+      order: 3,
+      featured: true,
+      date: "Build issue",
+      title: "Solved Embedded-Nut Print Issue",
+      summary:
+        "Managed adhesion problems caused by pausing and cooling during nut insertion.",
+      details: [
+        "Used heat carefully to complete the insert.",
+        "Avoided deformation of thin-walled PLA.",
+        "Maintained function of the clamping feature.",
+        "TBD: add embedded nut close-up when available."
+      ],
+      icon: 2,
+      images: []
+    },
+    {
+      id: "install-fixture",
+      order: 4,
+      featured: true,
+      date: "Result",
+      title: "Installed Adjustable Cutting Stop",
+      summary:
+        "Mounted the fixture to the track saw guide for repeated acrylic sheet cuts.",
+      details: [
+        "Reduced repeated measurement steps.",
+        "Allowed adjustment between required cut lengths.",
+        "Quantified time savings TBD.",
+        "TBD: add final installed fixture media when available."
+      ],
+      icon: 3,
+      images: []
+    }
+  ],
+  "bridge-less-running-camp-stencil": [
+    {
+      id: "define-logo-problem",
+      order: 1,
+      featured: true,
+      date: "Problem",
+      title: "Defined Bridge-Less Stencil Requirement",
+      summary:
+        "The logo needed enclosed letter features without visible stencil bridges.",
+      details: [
+        "Internal features in letters needed support.",
+        "Flat bridges would obstruct the sprayed design.",
+        "Deadline was tied to camp start.",
+        "TBD: add source logo or problem image when available."
+      ],
+      icon: 0,
+      images: []
+    },
+    {
+      id: "model-3d-bridges",
+      order: 2,
+      featured: true,
+      date: "Design",
+      title: "Modeled 3D Bridge Supports",
+      summary:
+        "Used raised bridge geometry so spray could reach around the support features.",
+      details: [
+        "Designed in Fusion 360.",
+        "Kept enclosed character details in place.",
+        "Balanced support with spray coverage.",
+        "TBD: add Fusion 360 stencil model image when available."
+      ],
+      icon: 1,
+      images: []
+    },
+    {
+      id: "fabricate-and-use",
+      order: 3,
+      featured: true,
+      date: "Result",
+      title: "Fabricated and Used Stencil",
+      summary:
+        "Completed the stencil in time for use on running camp shirts.",
+      details: [
+        "Prototype and finish work completed on schedule.",
+        "Post-use stencil images available in source portfolio.",
+        "Final shirt image/path TBD.",
+        "TBD: add top view of used stencil or shirt result."
       ],
       icon: 3,
       images: []

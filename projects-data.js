@@ -4,6 +4,13 @@
 // allow comments. Keep the shape below, edit the text values, and the homepage
 // plus each project page will rebuild automatically.
 //
+// After changing project text, order, pageStyle, or timeline data, run:
+//   node tools/sync-project-fallbacks.js
+// This copies the current data into each project's initial HTML so the page
+// shows the real content immediately, before project-page.js enhances it.
+// To check that every page still matches afterward, run:
+//   node tools/validate-project-content.js
+//
 // How to reorder projects:
 // Change the `order` number. Lower numbers show first.
 //
@@ -59,28 +66,6 @@ window.portfolioProjects = [
     placeholder: "[Add EDM baseplate fixture hero image]",
     mediaPlaceholder: "[Add EDM baseplate fixture detail media]",
     url: "projects/edm-baseplate-fixture/index.html"
-  },
-  {
-    id: "cmm-touch-probe-program",
-    order: 6,
-    featured: true,
-    title: "Zeiss GD&T Inspection",
-    tag: "Manufacturing / Metrology / Course Support",
-    description:
-      "Programmed a Zeiss Duramax CMM inspection routine and supporting SOP for first article inspection of a CNC-machined class part.",
-    story:
-      "I programmed the Zeiss Duramax CMM for use in Cal Poly IME 335 CNC 1 first article inspection. The inspection needed to verify GD&T requirements on a machined part while handling non-traditional geometry, including a complex contoured ramp. The work focused on repeatable datuming, reliable probing strategy, and clear operator communication. I authored a standard operating procedure that explained safe machine operation, part setup, datum simulation, and common troubleshooting steps for student users.",
-    role: "CMM programming, GD&T interpretation, inspection planning, SOP writing, operator safety documentation",
-    tools: ["Zeiss Duramax CMM", "CMM programming", "GD&T", "first article inspection", "datum simulation", "probing strategy", "SOP documentation"],
-    timeline: "Fall 2025",
-    outcome: "Inspection program and SOP completed for IME 335 student use; validation details TBD.",
-    pageStyle: 0,
-    image: "projects/cmm-touch-probe-program/media/cmmSetupProbe.jpg",
-    detailImage: "projects/cmm-touch-probe-program/media/cmmSetupProgram.jpg",
-    imageAlt: "Part fixtured under the probe on a Zeiss Duramax CMM for first article inspection",
-    placeholder: "[Add Zeiss CMM inspection hero image]",
-    mediaPlaceholder: "[Add Zeiss CMM software or setup media]",
-    url: "projects/cmm-touch-probe-program/index.html"
   },
   {
     id: "edm-bottleopener-fixture",
@@ -149,26 +134,70 @@ window.portfolioProjects = [
     url: "projects/wax-seal-stamps/index.html"
   },
   {
-    id: "mill-and-edm-setup",
-    order: 9,
+    id: "ring-gear",
+    order: 5,
     featured: true,
-    title: "Mill and EDM Setup Fixture",
-    tag: "Manufacturing / Milling / EDM Setup",
+    title: "Ring Gear EDM Project",
+    tag: "Manufacturing / WEDM / Gear Cutting",
     description:
-      "Prepared a machined setup part and fixture plate installation for a milling-to-EDM workflow.",
+      "Cut a ring gear profile from slug stock using an EDM workflow, with process media showing the slug, lead-in, tooth form, and finished geometry.",
     story:
-      "This entry is inferred from the existing media, which shows an EDM setup part from multiple angles and a fixture plate installed in the machine. I treated it as a setup and workholding project that connects conventional machining preparation with EDM setup. The core story is process control: install the fixture plate, prepare or verify the setup part, and make the workholding repeatable enough for the next machining operation. Exact part purpose, operation sequence, datum scheme, and inspection results are still TBD.",
-    role: "Machining setup, fixture plate installation, EDM preparation, workholding, process documentation",
-    tools: ["Milling", "Wire EDM or sinker EDM (TBD)", "fixture plate", "workholding", "setup planning", "inspection (TBD)"],
+      "This project is inferred from the current ring gear media folder. The image sequence shows starting slug material, an EDM lead-in/cut feature, close-up tooth geometry, and finished isometric views of the ring gear. I treated the project as a Wire EDM process and inspection story: prepare the stock, plan the cut path, manage the lead-in and tooth form, then document the finished ring gear. Exact course context, drawing requirements, tolerances, material, and inspection results are still TBD.",
+    role: "EDM setup, process planning, workholding, manufacturing documentation, visual inspection",
+    tools: ["Wire EDM", "gear profile cutting", "workholding", "setup planning", "visual inspection", "process documentation"],
     timeline: "TBD",
-    outcome: "Fixture plate and setup part documented for an EDM workflow; final operation results TBD.",
+    outcome: "Ring gear cut and documented with slug, lead-in, close-up, and finished-part media; tolerance results TBD.",
     pageStyle: 1,
-    image: "projects/mill-and-edm-setup/media/fixturePlateInstall.jpg",
-    detailImage: "projects/mill-and-edm-setup/media/edmSetupPart.jpg",
-    imageAlt: "Fixture plate installed for a mill and EDM setup workflow",
-    placeholder: "[Add mill and EDM setup hero image]",
-    mediaPlaceholder: "[Add mill and EDM setup detail media]",
-    url: "projects/mill-and-edm-setup/index.html"
+    image: "projects/ring-gear/media/ringgearIsometric.jpg",
+    detailImage: "projects/ring-gear/media/ringgearCloseup.jpg",
+    imageAlt: "Finished ring gear shown after EDM cutting",
+    placeholder: "[Add ring gear hero image]",
+    mediaPlaceholder: "[Add ring gear detail media]",
+    url: "projects/ring-gear/index.html"
+  },
+  {
+    id: "cmm-touch-probe-program",
+    order: 6,
+    featured: true,
+    title: "Zeiss GD&T Inspection",
+    tag: "Manufacturing / Metrology / Course Support",
+    description:
+      "Programmed a Zeiss Duramax CMM inspection routine and supporting SOP for first article inspection of a CNC-machined class part.",
+    story:
+      "I programmed the Zeiss Duramax CMM for use in Cal Poly IME 335 CNC 1 first article inspection. The inspection needed to verify GD&T requirements on a machined part while handling non-traditional geometry, including a complex contoured ramp. The work focused on repeatable datuming, reliable probing strategy, and clear operator communication. I authored a standard operating procedure that explained safe machine operation, part setup, datum simulation, and common troubleshooting steps for student users.",
+    role: "CMM programming, GD&T interpretation, inspection planning, SOP writing, operator safety documentation",
+    tools: ["Zeiss Duramax CMM", "CMM programming", "GD&T", "first article inspection", "datum simulation", "probing strategy", "SOP documentation"],
+    timeline: "Fall 2025",
+    outcome: "Inspection program and SOP completed for IME 335 student use; validation details TBD.",
+    pageStyle: 0,
+    image: "projects/cmm-touch-probe-program/media/cmmSetupProbe.jpg",
+    detailImage: "projects/cmm-touch-probe-program/media/cmmSetupProgram.jpg",
+    imageAlt: "Part fixtured under the probe on a Zeiss Duramax CMM for first article inspection",
+    placeholder: "[Add Zeiss CMM inspection hero image]",
+    mediaPlaceholder: "[Add Zeiss CMM software or setup media]",
+    url: "projects/cmm-touch-probe-program/index.html"
+  },
+  {
+    id: "bt-speaker",
+    order: 7,
+    featured: true,
+    title: "Bluetooth Speaker",
+    tag: "Personal Build / CAD / Product Design",
+    description:
+      "Modeled a Bluetooth speaker concept with an isometric design view ready for future build, electronics, and enclosure documentation.",
+    story:
+      "This project is inferred from the current Bluetooth speaker media folder, which currently contains an isometric product-style image. I set the page up as a clean project entry so future photos, CAD exports, electronics notes, enclosure iterations, and build results can be added without restructuring the site. The current story should be treated as a placeholder scaffold until the design goals, speaker hardware, manufacturing method, and final performance notes are filled in.",
+    role: "CAD modeling, product concept development, enclosure planning, documentation",
+    tools: ["CAD", "product design", "speaker enclosure design", "electronics integration TBD", "manufacturing method TBD"],
+    timeline: "TBD",
+    outcome: "Initial speaker concept media added; enclosure, electronics, build, and performance details TBD.",
+    pageStyle: 1,
+    image: "projects/bt-speaker/media/btSpeakerIsometric.jpg",
+    detailImage: "projects/bt-speaker/media/btSpeakerIsometric.jpg",
+    imageAlt: "Isometric view of a Bluetooth speaker project concept",
+    placeholder: "[Add Bluetooth speaker hero image]",
+    mediaPlaceholder: "[Add Bluetooth speaker detail media]",
+    url: "projects/bt-speaker/index.html"
   },
   {
     id: "injection-molded-screwdriver",
@@ -191,6 +220,28 @@ window.portfolioProjects = [
     placeholder: "[Add injection-molded screwdriver hero image]",
     mediaPlaceholder: "[Add injection-molded screwdriver detail media]",
     url: "projects/injection-molded-screwdriver/index.html"
+  },
+  {
+    id: "mill-and-edm-setup",
+    order: 9,
+    featured: true,
+    title: "Mill and EDM Setup Fixture",
+    tag: "Manufacturing / Milling / EDM Setup",
+    description:
+      "Prepared a machined setup part and fixture plate installation for a milling-to-EDM workflow.",
+    story:
+      "This entry is inferred from the existing media, which shows an EDM setup part from multiple angles and a fixture plate installed in the machine. I treated it as a setup and workholding project that connects conventional machining preparation with EDM setup. The core story is process control: install the fixture plate, prepare or verify the setup part, and make the workholding repeatable enough for the next machining operation. Exact part purpose, operation sequence, datum scheme, and inspection results are still TBD.",
+    role: "Machining setup, fixture plate installation, EDM preparation, workholding, process documentation",
+    tools: ["Milling", "Wire EDM or sinker EDM (TBD)", "fixture plate", "workholding", "setup planning", "inspection (TBD)"],
+    timeline: "TBD",
+    outcome: "Fixture plate and setup part documented for an EDM workflow; final operation results TBD.",
+    pageStyle: 1,
+    image: "projects/mill-and-edm-setup/media/fixturePlateInstall.jpg",
+    detailImage: "projects/mill-and-edm-setup/media/edmSetupPart.jpg",
+    imageAlt: "Fixture plate installed for a mill and EDM setup workflow",
+    placeholder: "[Add mill and EDM setup hero image]",
+    mediaPlaceholder: "[Add mill and EDM setup detail media]",
+    url: "projects/mill-and-edm-setup/index.html"
   },
   {
     id: "rail-saw-jig",
@@ -301,50 +352,6 @@ window.portfolioProjects = [
     placeholder: "[Add doughnut cutter hero image]",
     mediaPlaceholder: "[Add doughnut cutter detail media]",
     url: "projects/3d-printed-doughnut-cutter/index.html"
-  },
-  {
-    id: "ring-gear",
-    order: 5,
-    featured: true,
-    title: "Ring Gear EDM Project",
-    tag: "Manufacturing / WEDM / Gear Cutting",
-    description:
-      "Cut a ring gear profile from slug stock using an EDM workflow, with process media showing the slug, lead-in, tooth form, and finished geometry.",
-    story:
-      "This project is inferred from the current ring gear media folder. The image sequence shows starting slug material, an EDM lead-in/cut feature, close-up tooth geometry, and finished isometric views of the ring gear. I treated the project as a Wire EDM process and inspection story: prepare the stock, plan the cut path, manage the lead-in and tooth form, then document the finished ring gear. Exact course context, drawing requirements, tolerances, material, and inspection results are still TBD.",
-    role: "EDM setup, process planning, workholding, manufacturing documentation, visual inspection",
-    tools: ["Wire EDM", "gear profile cutting", "workholding", "setup planning", "visual inspection", "process documentation"],
-    timeline: "TBD",
-    outcome: "Ring gear cut and documented with slug, lead-in, close-up, and finished-part media; tolerance results TBD.",
-    pageStyle: 1,
-    image: "projects/ring-gear/media/ringgearIsometric.jpg",
-    detailImage: "projects/ring-gear/media/ringgearCloseup.jpg",
-    imageAlt: "Finished ring gear shown after EDM cutting",
-    placeholder: "[Add ring gear hero image]",
-    mediaPlaceholder: "[Add ring gear detail media]",
-    url: "projects/ring-gear/index.html"
-  },
-  {
-    id: "bt-speaker",
-    order: 7,
-    featured: true,
-    title: "Bluetooth Speaker",
-    tag: "Personal Build / CAD / Product Design",
-    description:
-      "Modeled a Bluetooth speaker concept with an isometric design view ready for future build, electronics, and enclosure documentation.",
-    story:
-      "This project is inferred from the current Bluetooth speaker media folder, which currently contains an isometric product-style image. I set the page up as a clean project entry so future photos, CAD exports, electronics notes, enclosure iterations, and build results can be added without restructuring the site. The current story should be treated as a placeholder scaffold until the design goals, speaker hardware, manufacturing method, and final performance notes are filled in.",
-    role: "CAD modeling, product concept development, enclosure planning, documentation",
-    tools: ["CAD", "product design", "speaker enclosure design", "electronics integration TBD", "manufacturing method TBD"],
-    timeline: "TBD",
-    outcome: "Initial speaker concept media added; enclosure, electronics, build, and performance details TBD.",
-    pageStyle: 1,
-    image: "projects/bt-speaker/media/btSpeakerIsometric.jpg",
-    detailImage: "projects/bt-speaker/media/btSpeakerIsometric.jpg",
-    imageAlt: "Isometric view of a Bluetooth speaker project concept",
-    placeholder: "[Add Bluetooth speaker hero image]",
-    mediaPlaceholder: "[Add Bluetooth speaker detail media]",
-    url: "projects/bt-speaker/index.html"
   },
   {
     id: "manufacturing-class-project-highlights",
